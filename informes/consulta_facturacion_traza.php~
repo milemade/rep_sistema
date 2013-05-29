@@ -1,0 +1,216 @@
+<?PHP
+include("../lib/database.php");
+$db_cliente = new Database();
+$db_facturas = new Database();
+$db_traza = new Database();
+?>
+<title>Consulta Facturacion</title>
+<link rel="STYLESHEET" type="text/css" href="estiloinf.css"> 
+<TABLE width="1012" border="1" cellpadding="2" cellspacing="1" align="center" class="textoproductos1">
+<?PHP
+
+if (!empty($codigo)) 
+	$where= " where cod_bod=$codigo ";
+$sql = " SELECT cod_bod,nom_bod FROM  bodega1  $where  order by nom_bod ";
+
+$db_cliente->query($sql);
+while($db_cliente->next_row())
+{
+   $codigo_cliente=$db_cliente->cod_bod; ?>
+<TR>
+	<TD   class="subfongris"><div align="left">CLIENTE</div></TD>
+	<TD colspan="8"   class="subfongris"><div align="left"><?=$db_cliente->nom_bod?></div></TD>
+  </TR>
+<TR>
+	<TD width="93"  class="subfongris"><div align="center">DOCUMENTO</div></TD>   
+	<TD width="89"  class="subfongris"><div align="center">FECHA</div></TD>
+	<TD width="81"   class="subfongris"><div align="center">N. FACTURA </div></TD>
+	<TD width="99"   class="subfongris"><div align="center">VALOR FACTURA</div></TD>
+	<TD width="105"  class="subfongris"><div align="center">VALOR ABONADO </div></TD>
+	<TD width="104"  class="subfongris"><div align="center">DEBITO</div></TD>
+	<TD width="119"  class="subfongris"><div align="center">CREDITO</div></TD>
+	<TD width="263"  class="subfongris"><div align="center">SALDO</div></TD>
+</TR>
+<?PHP		
+if (!empty($codigo)) 
+	$mas_where=" AND   b.cod_cli = $codigo_cliente ";
+    $sql1 = " SELECT  a.cod_car_fac,
+                        a.cod_fac,
+                        b.cod_cli,
+                        c.nom_bod,
+                        b.num_fac,
+                        b.fecha,
+                        a.valor_abono,
+                        b.tot_fac, 
+                        a.estado_car,
+                        b.estado 
+                  FROM cartera_factura a
+                  INNER JOIN m_factura b ON a.cod_fac = b.cod_fac
+                  INNER JOIN bodega1 c ON (b.cod_cli = c.cod_bod)
+            WHERE b.fecha >= '$fec_ini' AND 
+                  b.fecha <= '$fec_fin'  $mas_where
+            ORDER BY  nom_bod , num_fac    ";
+		$super_total=0;
+		$db_facturas->query($sql1);
+		while($db_facturas->next_row()){
+			echo "<TR>";
+			echo "<INPUT type='hidden' name='mapa' value='$mapa'>";
+			echo "<TD class='txtablas' width='10%'>Factura</TD>";	
+			echo "<TD class='txtablas' align='center' width='15%'>$db_facturas->fecha</TD>";
+			echo "<TD class='txtablas' width='10%'>$db_facturas->num_fac</TD>";	
+			//echo "<TD class='txtablas' width='15%'>$db->nom_bod</TD>";
+			echo "<TD class='txtablas' align='right' width='15%'>".number_format($db_facturas->tot_fac,0,".",".")."</TD>";
+			echo "<TD class='txtablas' align='right' width='15%'></TD>";
+			if($db_facturas->estado_car=="anulado"){
+				echo "<TD class='txtablas' align='right' width='15%'>".number_format($db_facturas->tot_fac,0,".",".")."</TD>";
+				echo "<TD class='txtablas' align='right' width='15%'>".number_format(0,0,".",".")."</TD>";
+			}
+			else 
+			{
+				echo "<TD class='txtablas' align='right' width='15%'></TD>";
+				echo "<TD class='txtablas' align='right' width='15%'>".number_format($db_facturas->tot_fac,0,".",".")."</TD>";
+			}
+			echo "</TR>";
+			$valor_factura=$db_facturas->tot_fac;
+			$codigo_cartera_abo=$db_facturas->cod_car_fac;
+			$codigo_cartera_not=$db_facturas->cod_fac;
+			$sql = "SELECT 
+					  'ABONO' AS documento,
+					  traza_ventas_pagos.fec_tpag as fecha_doc,
+					  traza_ventas_pagos.val_tpag as valor_decuento ,
+						traza_ventas_pagos.cod_car_tpag AS codigo_cartera
+					FROM
+					  traza_ventas_pagos
+					  INNER JOIN cartera_factura ON (traza_ventas_pagos.cod_car_tpag = cartera_factura.cod_car_fac)
+					  INNER JOIN m_factura ON (cartera_factura.cod_fac = m_factura.cod_fac)
+					where cod_car_tpag=$codigo_cartera_abo
+				  union
+					SELECT 
+					  'NOTA CREDITO' AS documento, 
+					  notas_ventas.fec_notc as fecha_doc ,
+					   notas_ventas.val_notc as valor_decuento,
+					  cartera_factura.cod_car_fac AS codigo_cartera
+					FROM
+					  cartera_factura
+					  LEFT OUTER JOIN m_factura ON (cartera_factura.cod_fac = m_factura.cod_fac)
+					  LEFT OUTER JOIN bodega1 ON (m_factura.cod_cli = bodega1.cod_bod)
+					  INNER JOIN notas_ventas ON (cartera_factura.cod_car_fac = notas_ventas.cod_ven_notc)
+					where cartera_factura.cod_car_fac = $codigo_cartera_not
+					ORDER BY
+					  fecha_doc  ";
+		$db_traza->query($sql);
+
+
+
+		while($db_traza->next_row())
+
+		{	
+
+			//echo $db_traza->valor_decuento."--";
+           if($db_traza->valor_decuento!='0') 
+		   {
+				if($db_traza->valor_decuento!="")
+	
+				$valor_factura = $valor_factura - $db_traza->valor_decuento;
+
+		?>
+
+		<TR>
+
+			<TD align='center'   class="txtablas" ><div align="left"><?=$db_traza->documento?></div></TD>
+			<TD align='center'   class="txtablas" ><div align="left"><?=$db_traza->fecha_doc?></div></TD>
+			<TD   class="txtablas">&nbsp;</TD>
+			<TD  class="txtablas">&nbsp;</TD>
+			<TD   class="txtablas" align='right'><?=number_format($db_traza->valor_decuento,0,".",".")?></TD>
+			<TD  class="txtablas">&nbsp;</TD>
+			<TD   class="txtablas" align='right'><?=number_format($db_traza->valor_decuento,0,".",".")?></TD>
+			<TD  class="txtablas" align='right' ><?=number_format($valor_factura,0,".",".")?></TD>
+		</TR>
+
+		<? 	} }?>		
+              
+		<TR>
+
+			<TD colspan="2"  class="txtablas">&nbsp;</TD>
+
+			<TD  class="txtablas">&nbsp;</TD>
+
+			<TD  class="txtablas">&nbsp;</TD>
+
+			<TD  class="txtablas">&nbsp;</TD>
+
+			<TD  class="txtablas">&nbsp;</TD>
+
+			<TD  class="txtablas"><strong class="subtitulosproductos">SALDO FINAL</strong></TD>
+
+			<TD  class="txtablas" align='right'>
+
+			<strong class="subtitulosproductos"><?=number_format($valor_factura,0,".",".")?></strong></TD>
+		</TR>
+
+		<TR>
+
+			<TD colspan="8"  class="txtablas">&nbsp;</TD>
+		</TR>
+
+			
+
+		<?	
+
+			//echo "<br>";	
+
+			$super_total+=$valor_factura;
+
+			$tot_dev+=$db_facturas->tot_dev_mfac;
+                        
+
+		//	echo "</TR>";
+
+			
+
+		}
+
+		
+
+		
+
+		//echo "</FORM> ";
+
+	?>
+
+
+
+<? }//eND WHILE BODEGA1 ?>
+  	
+
+
+
+<TR>
+
+  <TD colspan="5" class="titulogran">PERIODO <? echo $fec_ini." al ".$fec_fin;   ?></TD>
+
+  <TD colspan="4" class="titulogran">TOTAL <?=number_format($super_total,0,".",".")?></TD>
+  </TR>
+ 
+	<FORM method="POST" action="../agr_prin_factura.php">
+
+	<TR id="botonimp"><TD align="center" colspan="9">	
+
+			<INPUT type="hidden" name="mapa" value="<?=$mapa?>">
+
+			<input name="button" type="button" class="botones" onClick="imp()" value="Imprimir" />
+
+			<INPUT type="button" value="Cerrar" class="botones" onClick="window.close()">
+
+	</TD></TR></FORM>
+</TABLE>
+<?php //$db_facturas->close(); ?>
+<?php //$db_traza->close(); ?>
+<?php $db_cliente->close(); ?>
+<script>
+function imp()
+{
+    document.getElementById('botonimp').style.display="none";
+	window.print();
+}
+</script>

@@ -1,0 +1,23 @@
+SELECT bodega1.nom_bod, 
+       b.cod_usu, 
+	   b.nom_usu, 
+	   c.cod_bod, 
+	   c.nom_bod AS nom_cliente, 
+	   d.cod_bod, 
+	   boddega.nom_bod, 
+	   e.cod_fac, 
+	   e.valor_abono,
+	   a.cod_fac, 
+	   a.cod_bod, 
+	   a.cod_usu, 
+	   a.fecha, 
+	   a.num_fac, 
+	   a.tipo_pago, 
+	   a.estado
+FROM m_factura a
+JOIN usuario b ON b.cod_usu = a.cod_usu
+JOIN bodega1 c ON c.cod_bod = a.cod_cli
+JOIN bodega d ON d.cod_bod = a.cod_bod
+JOIN cartera_factura e ON e.cod_fac = a.cod_fac
+WHERE e.valor_abono=0
+ORDER BY fecha, num_fac DESC 

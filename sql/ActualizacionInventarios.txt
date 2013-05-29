@@ -1,0 +1,116 @@
+
+CREATE TABLE `m_remision` (
+  `cod_fac` int(11) NOT NULL auto_increment,
+  `cod_usu` int(11) default NULL,
+  `cod_cli` int(11) default NULL,
+  `cod_bod` int(11) default NULL,
+  `fecha` date default NULL,
+  `num_fac` int(11) NOT NULL default '0',
+  `obs` text,
+  `tipo_fac` varchar(50) default NULL,
+  `bod_cli_fac` int(11) default NULL,
+  `rem_fac` varchar(50) default NULL,
+  `cod_razon_fac` int(11) default NULL,
+  `tipo_pago` varchar(50) default NULL,
+  `estado` varchar(50) default NULL,
+  `tot_fac` varchar(10) character set utf8 collate utf8_spanish2_ci default NULL,
+  `tot_dev_mfac` int(11) NOT NULL,
+  PRIMARY KEY  (`cod_fac`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AVG_ROW_LENGTH=56 AUTO_INCREMENT=1 ;
+CREATE TABLE `d_remision` (
+  `cod_dfac` int(11) NOT NULL auto_increment,
+  `cod_mfac` int(11) default NULL,
+  `cod_tpro` int(10) unsigned default NULL COMMENT 'codigo tipo de producto',
+  `cod_cat` int(10) unsigned default NULL COMMENT 'codigo categoria',
+  `cod_peso` int(10) unsigned default NULL COMMENT 'codigo peso o talla',
+  `cod_pro` int(11) default NULL,
+  `cod_bod` int(11) NOT NULL,
+  `disponible` varchar(11) NOT NULL,
+  `cant_pro` varchar(11) default NULL,
+  `val_uni` varchar(11) character set utf8 collate utf8_spanish2_ci default NULL,
+  `total_pro` varchar(11) default NULL,
+  `serial` int(11) NOT NULL,
+  PRIMARY KEY  (`cod_dfac`),
+  KEY `serial` (`serial`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+****************************************************TABLAS TEMPORALES*********************************************************
+CREATE TABLE `mentradatemp` (
+  `cod_ment` int(11) NOT NULL auto_increment,
+  `fec_ment` date default NULL COMMENT 'fecha de la entrada',
+  `remision` int(1) NOT NULL COMMENT 'Bandera Remision',
+  `fac_ment` varchar(50) default NULL COMMENT 'factura de la entrada',
+  `obs_ment` varchar(250) default NULL COMMENT 'observacion',
+  `cod_bod` int(11) default NULL COMMENT 'codigo bodega',
+  `total_ment` int(11) default NULL,
+  `cod_prove_ment` int(11) default NULL COMMENT 'codigo del proveedor',
+  `usu_ment` int(11) NOT NULL,
+  `est_ment` varchar(20) NOT NULL COMMENT 'estado en la cartera',
+  `sal_ant_ment` int(11) NOT NULL COMMENT 'saldo anterior',
+  PRIMARY KEY  (`cod_ment`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AVG_ROW_LENGTH=44 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `dentradatemp` (
+  `cod_dent` int(11) NOT NULL auto_increment,
+  `cod_ment_dent` int(11) default NULL,
+  `cod_tpro_dent` int(11) default NULL COMMENT 'tipo de producto',
+  `cod_mar_dent` int(11) default NULL COMMENT 'marca',
+  `cod_pes_dent` int(11) default NULL COMMENT 'peso empaque',
+  `cod_ref_dent` int(11) default NULL,
+  `cod_serial` int(11) NOT NULL COMMENT 'Serial suministrado por el cliente',
+  `cant_dent` varchar(30) default NULL COMMENT 'cantidad',
+  `cos_dent` int(11) default NULL COMMENT 'costo',
+  PRIMARY KEY  (`cod_dent`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `dremitem` (
+  `cod_dfac` int(11) NOT NULL auto_increment,
+  `cod_mfac` int(11) default NULL,
+  `cod_tpro` int(10) unsigned default NULL COMMENT 'codigo tipo de producto',
+  `cod_cat` int(10) unsigned default NULL COMMENT 'codigo categoria',
+  `cod_peso` int(10) unsigned default NULL COMMENT 'codigo peso o talla',
+  `cod_pro` int(11) default NULL,
+  `cod_bod` int(11) NOT NULL,
+  `disponible` varchar(11) NOT NULL,
+  `cant_pro` varchar(11) default NULL,
+  `val_uni` varchar(11) character set utf8 collate utf8_spanish2_ci default NULL,
+  `total_pro` varchar(11) default NULL,
+  `serial` int(11) NOT NULL,
+  PRIMARY KEY  (`cod_dfac`),
+  KEY `serial` (`serial`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE `mremitemp` (
+  `cod_fac` int(11) NOT NULL auto_increment,
+  `cod_usu` int(11) default NULL,
+  `cod_cli` int(11) default NULL,
+  `cod_bod` int(11) default NULL,
+  `fecha` date default NULL,
+  `num_fac` int(11) NOT NULL default '0',
+  `obs` text,
+  `tipo_fac` varchar(50) default NULL,
+  `bod_cli_fac` int(11) default NULL,
+  `rem_fac` varchar(50) default NULL,
+  `cod_razon_fac` int(11) default NULL,
+  `tipo_pago` varchar(50) default NULL,
+  `estado` varchar(50) default NULL,
+  `tot_fac` varchar(10) character set utf8 collate utf8_spanish2_ci default NULL,
+  `tot_dev_mfac` int(11) NOT NULL,
+  PRIMARY KEY  (`cod_fac`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AVG_ROW_LENGTH=56 AUTO_INCREMENT=1 ;
+
+
+
+//Para opciones el menu en inventarios
+INSERT INTO `interfaz` VALUES ('72', 'Entradas', 'con_cargue_inventario.php', 3, 1);
+INSERT INTO `interfaz` VALUES ('73', 'Salidas', 'con_salida_inventarios.php', 3, 1);
+INSERT INTO `permisos` (`cod_usu_per`, `cod_int_per`, `con_per`, `edi_per`, `ins_per`, `eli_per`) VALUES ('1', '72', '1', '1', '1', '1');
+INSERT INTO `permisos` (`cod_usu_per`, `cod_int_per`, `con_per`, `edi_per`, `ins_per`, `eli_per`) VALUES ('1', '73', '1', '1', '1', '1');
+
+ 
+ALTER TABLE `rsocial` ADD `num_rem_rso` INT NOT NULL AFTER `num_fac_rso`;
+ALTER TABLE `d_entrada` CHANGE `cant_dent` `cant_dent` VARCHAR( 11 ) NULL DEFAULT NULL COMMENT 'cantidad';
+ALTER TABLE `d_entrada` ADD `cod_serial` INT NOT NULL;
+ALTER TABLE `m_entrada` ADD `remision` INT( 1 ) NOT NULL ;
+ALTER TABLE `kardex` CHANGE `cant_ref_kar` `cant_ref_kar` VARCHAR( 11 ) NULL DEFAULT NULL;
+ALTER TABLE `kardex` ADD `serial` INT NOT NULL 
+

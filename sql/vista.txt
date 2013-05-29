@@ -1,0 +1,10 @@
+CREATE OR REPLACE view infinventario as SELECT f.nom_bod, d.nom_mar, c.nom_tpro, b.nom_pro ,b.cod_fry_pro, a.serial, e.nom_pes, SUM( a.cant_ref_kar ) totalcan, a.valor_precio, SUM( a.valor_precio * a.cant_ref_kar ) totalpre
+FROM kardex a
+INNER JOIN producto b ON a.cod_ref_kar = b.cod_pro
+INNER JOIN tipo_producto c ON b.cod_tpro_pro = c.cod_tpro
+INNER JOIN marca d ON b.cod_mar_pro = d.cod_mar
+INNER JOIN peso e ON a.cod_talla = e.cod_pes
+INNER JOIN bodega f ON a.cod_bod_kar = f.cod_bod
+GROUP BY f.nom_bod, d.nom_mar, c.nom_tpro, b.nom_pro, b.cod_fry_pro, a.serial
+WITH ROLLUP
+

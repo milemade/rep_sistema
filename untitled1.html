@@ -1,0 +1,2323 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Documento sin t&iacute;tulo</title>
+<style type="text/css">
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.Estilo1 {font-size: 12px}
+</style> 
+
+<script type="text/javascript" src="calendario/javascript/calendar.js"></script>
+	<script type="text/javascript" src="calendario/javascript/calendar-es.js"></script>
+	<script type="text/javascript" src="calendario/javascript/calendar-setup.js"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="calendario/styles/calendar-win2k-cold-1.css" title="win2k-cold-1" />
+	<link href="css/styles.css" rel="stylesheet" type="text/css" /> 
+	<script type="text/javascript" src="js/funciones.js"></script> <script language="javascript">
+
+function datos_completos()
+{  
+	if (document.getElementById('fecha').value == "" || document.getElementById('num_fac').value == 0 )
+		return false;
+	else
+		return true;		
+
+}
+
+function  adicion() 
+{
+	/*var producto_valores ;
+	var cantidad= document.getElementById('cantidad').value;
+	///cambio por descuentos
+	var descuento_prod= parseFloat(document.getElementById('descuento').value);
+	///cambio por descuentos
+	var venta_unidad= document.getElementById('venta_unidad').value;
+	//producto_valores = buscar_valores_referencia();*/
+	if(document.getElementById("cantidad").value>0 && document.getElementById("codigo_fry").value > "" && document.getElementById("costo").value >0 && document.getElementById('combo_referncia').value > 0  && document.getElementById('peso').value > 0  ) 
+	{
+	
+		Agregar_html_entrada();		
+
+		document.getElementById('marca').value=0;
+		//document.getElementById('peso').options.length=0;
+		document.getElementById('tipo_producto').options.length=0;
+		//document.getElementById("tipo_producto").value=0;
+		document.getElementById('combo_referncia').options.length=0;
+		document.getElementById("codigo_fry").value='';
+		document.getElementById("cantidad").value='';
+		document.getElementById("costo").value='';
+		document.getElementById("codigo_fry").focus();
+		return false;
+	}
+	else 
+	{
+		alert("Ingrese una Referencia Valida junto con los demas Valores")
+		document.getElementById("codigo_fry").focus();
+	}
+}
+
+
+
+function enfocar(obj_ini,obj_fin){
+if(window.event.keyCode==13)
+{
+  window.event.keyCode=0;
+  document.getElementById(obj_fin).focus();
+  return false;
+}
+}
+
+
+function busca_proveedores() {
+	var codigo_buscar_referencia =document.getElementById('marca').value;	
+	var combo_llenar=document.getElementById('tipo_producto');	
+	combo_llenar.options.length=0;
+	var vec_productos = new Array;
+	vec_productos[0]=  new Array('','','2');
+vec_productos[1]=  new Array('','','5');
+vec_productos[2]=  new Array('','','0');
+vec_productos[3]=  new Array('','','7');
+vec_productos[4]=  new Array('','','3');
+vec_productos[5]=  new Array('','','6');
+vec_productos[6]=  new Array('','','4');
+vec_productos[7]=  new Array('','','1');
+vec_productos[8]=  new Array('','','21');
+vec_productos[9]=  new Array('67','ABRIGO MUJER PROMOCION','24');
+vec_productos[10]=  new Array('67','ABRIGO MUJER PROMOCION','5');
+vec_productos[11]=  new Array('26','ARTESANAL','7');
+vec_productos[12]=  new Array('141','BALON','28');
+vec_productos[13]=  new Array('87','BARRA MANCUERNA','7');
+vec_productos[14]=  new Array('58','BATA COLECCION','24');
+vec_productos[15]=  new Array('59','BATA PROMOCION','24');
+vec_productos[16]=  new Array('95','BILLETERA HOMBRE PROMOCION','7');
+vec_productos[17]=  new Array('96','BILLETERA MUJER PROMOCION','7');
+vec_productos[18]=  new Array('77','BLAZER HOMBRE PROMOCION','2');
+vec_productos[19]=  new Array('68','BLAZER MUJER PROMOCION','24');
+vec_productos[20]=  new Array('62','BLUSA MUJER COLECCION','24');
+vec_productos[21]=  new Array('63','BLUSA MUJER PROMOCION','24');
+vec_productos[22]=  new Array('147','BOLAS SPORT','33');
+vec_productos[23]=  new Array('147','BOLAS SPORT','35');
+vec_productos[24]=  new Array('88','BOLSO MUJER ARTESANAL','7');
+vec_productos[25]=  new Array('89','BOLSO MUJER COLECCION 1','7');
+vec_productos[26]=  new Array('91','BOLSO MUJER COLECCION 2','7');
+vec_productos[27]=  new Array('127','BOLSO MUJER NUEVA GENER.','7');
+vec_productos[28]=  new Array('90','BOLSO MUJER PROMOCION','7');
+vec_productos[29]=  new Array('134','BOTAS DE LUCHA','5');
+vec_productos[30]=  new Array('79','BOXER HOMBRE','4');
+vec_productos[31]=  new Array('80','BOXER MUJER','4');
+vec_productos[32]=  new Array('155','BUFANDA EQUIPOS','27');
+vec_productos[33]=  new Array('129','BUSO DEPORTIVO HOMBRE','5');
+vec_productos[34]=  new Array('130','BUSO DEPORTIVO NI&Ntilde;O','5');
+vec_productos[35]=  new Array('46','BUSO MUJER DEPORTIVO COLECCION','5');
+vec_productos[36]=  new Array('108','BUSO PARA ARQUERO','21');
+vec_productos[37]=  new Array('74','CAMISA FORMAL','2');
+vec_productos[38]=  new Array('114','CAMISA FORMAL PROMOCION','2');
+vec_productos[39]=  new Array('55','CAMISA SPORT','3');
+vec_productos[40]=  new Array('41','CAMISETA DEPORTIVA HOMBRE','5');
+vec_productos[41]=  new Array('41','CAMISETA DEPORTIVA HOMBRE','21');
+vec_productos[42]=  new Array('42','CAMISETA DEPORTIVA MUJER','5');
+vec_productos[43]=  new Array('69','CAMISETA EQUIPO COLECCION','21');
+vec_productos[44]=  new Array('69','CAMISETA EQUIPO COLECCION','29');
+vec_productos[45]=  new Array('82','CAMISETA ESQUELETO MUJER','4');
+vec_productos[46]=  new Array('112','CAMISETA FUTBOL LOCAL','21');
+vec_productos[47]=  new Array('132','CAMISETA MODA HOMBRE','5');
+vec_productos[48]=  new Array('57','CAMISETA POLO','3');
+vec_productos[49]=  new Array('111','CANILLERAS','27');
+vec_productos[50]=  new Array('111','CANILLERAS','21');
+vec_productos[51]=  new Array('124','CHALECO NORTH.','5');
+vec_productos[52]=  new Array('52','CHAQUETA  COLECCION','3');
+vec_productos[53]=  new Array('61','CHAQUETA  MUJER PROMOCION','24');
+vec_productos[54]=  new Array('123','CHAQUETA ABER.COLEC.','5');
+vec_productos[55]=  new Array('128','CHAQUETA CAPOTA HOMBRE','5');
+vec_productos[56]=  new Array('54','CHAQUETA CASUAL','3');
+vec_productos[57]=  new Array('120','CHAQUETA CORTA ABER.','5');
+vec_productos[58]=  new Array('73','CHAQUETA EQUIPO COLECCION','21');
+vec_productos[59]=  new Array('60','CHAQUETA MUJER COLECCION','24');
+vec_productos[60]=  new Array('45','CHAQUETA MUJER DEPORTIVA COLECCION','5');
+vec_productos[61]=  new Array('125','CHAQUETA NORTH. NUEVA COLEC.','5');
+vec_productos[62]=  new Array('51','CHAQUETA PROMOCION','3');
+vec_productos[63]=  new Array('126','CHAQUETA ROMPE VIENTO','5');
+vec_productos[64]=  new Array('53','CHAQUETA SPORT','5');
+vec_productos[65]=  new Array('53','CHAQUETA SPORT','3');
+vec_productos[66]=  new Array('133','CONJUNTO GYM MUJER','5');
+vec_productos[67]=  new Array('136','COPA PROTECTOR','27');
+vec_productos[68]=  new Array('75','CORBATA','2');
+vec_productos[69]=  new Array('64','FALDA PROMOCION','24');
+vec_productos[70]=  new Array('144','GAFAS NATACION','32');
+vec_productos[71]=  new Array('153','GENERICO','7');
+vec_productos[72]=  new Array('153','GENERICO','31');
+vec_productos[73]=  new Array('153','GENERICO','36');
+vec_productos[74]=  new Array('153','GENERICO','27');
+vec_productos[75]=  new Array('97','GORRA DEPORTIVA','7');
+vec_productos[76]=  new Array('145','GORRO NATACION','32');
+vec_productos[77]=  new Array('137','GUANTE ARQUERO','27');
+vec_productos[78]=  new Array('142','GUANTE GIMNASIO','31');
+vec_productos[79]=  new Array('99','GUANTES INVIERNO','25');
+vec_productos[80]=  new Array('139','GUAYERA - BAG SOCCER','27');
+vec_productos[81]=  new Array('116','GUAYOS FUTBOL','21');
+vec_productos[82]=  new Array('116','GUAYOS FUTBOL','30');
+vec_productos[83]=  new Array('49','JEAN HOMBRE','3');
+vec_productos[84]=  new Array('135','JUEGO DE SABANAS','7');
+vec_productos[85]=  new Array('115','KIT NUMEROS TRANSFER','21');
+vec_productos[86]=  new Array('93','MALETIN COMPU-VIAJE 1','7');
+vec_productos[87]=  new Array('94','MALETIN COMPU-VIAJE 2','7');
+vec_productos[88]=  new Array('143','MANILLA-MUNEQUERA','31');
+vec_productos[89]=  new Array('149','MAYAS BASQUET BALL','34');
+vec_productos[90]=  new Array('43','MEDIAS DEPORTE HOMBRE','5');
+vec_productos[91]=  new Array('44','MEDIAS DEPORTE MUJER','5');
+vec_productos[92]=  new Array('72','MEDIAS FUTBOL','21');
+vec_productos[93]=  new Array('92','MORRAL COMPUTADOR','7');
+vec_productos[94]=  new Array('154','NBA','21');
+vec_productos[95]=  new Array('36','NO APLICA','7');
+vec_productos[96]=  new Array('36','NO APLICA','28');
+vec_productos[97]=  new Array('36','NO APLICA','5');
+vec_productos[98]=  new Array('48','PANTALON DRIL','3');
+vec_productos[99]=  new Array('50','PANTALON HOMBRE PROMOCION','3');
+vec_productos[100]=  new Array('37','PANTALON LICRA DEPORTE PARA MUJER','5');
+vec_productos[101]=  new Array('38','PANTALON LICRA DEPORTE PARA MUJER 3/4','5');
+vec_productos[102]=  new Array('65','PANTALON MUJER PROMOCION','24');
+vec_productos[103]=  new Array('121','PANTALON SUD. ABER.','5');
+vec_productos[104]=  new Array('47','PANTALON SUDADERA','5');
+vec_productos[105]=  new Array('47','PANTALON SUDADERA','21');
+vec_productos[106]=  new Array('40','PANTALONETA MUJER','5');
+vec_productos[107]=  new Array('107','PANTALONETA PARA HOMBRE','5');
+vec_productos[108]=  new Array('107','PANTALONETA PARA HOMBRE','21');
+vec_productos[109]=  new Array('151','PILATES','36');
+vec_productos[110]=  new Array('138','PITO ARBITRO','27');
+vec_productos[111]=  new Array('98','PRENDA PROMOCION NINO','25');
+vec_productos[112]=  new Array('140','PROTECTOR BUCAL','27');
+vec_productos[113]=  new Array('148','RAQUETAS','33');
+vec_productos[114]=  new Array('148','RAQUETAS','35');
+vec_productos[115]=  new Array('86','RELOJ MP4','7');
+vec_productos[116]=  new Array('105','RELOJ PARA HOMBRE','7');
+vec_productos[117]=  new Array('106','RELOJ PARA MUJER','7');
+vec_productos[118]=  new Array('110','REPRODUCTOR MP3 2 GB','7');
+vec_productos[119]=  new Array('122','SACO ABER. NUEVA COLEC.','5');
+vec_productos[120]=  new Array('56','SACO HOMBRE COLECCION','3');
+vec_productos[121]=  new Array('66','SACO MUJER PROMOCION','24');
+vec_productos[122]=  new Array('109','SUDADERA','5');
+vec_productos[123]=  new Array('109','SUDADERA','31');
+vec_productos[124]=  new Array('118','SUDADERA 3 PIEZAS','5');
+vec_productos[125]=  new Array('131','SUDADERA LYCRA DAMA','31');
+vec_productos[126]=  new Array('119','SUDADERA PIEL ANGEL','5');
+vec_productos[127]=  new Array('150','TABLERO DARDOS','34');
+vec_productos[128]=  new Array('81','TANGA MUJER','4');
+vec_productos[129]=  new Array('146','TAPA OIDOS','32');
+vec_productos[130]=  new Array('100','TENNIS PATIN','25');
+vec_productos[131]=  new Array('83','TOP MUJER','4');
+vec_productos[132]=  new Array('70','UNIFORME LIGA ADULTO','21');
+vec_productos[133]=  new Array('71','UNIFORME LIGA NINO','21');
+vec_productos[134]=  new Array('117','UNIFORME MANGA LARGA','21');
+vec_productos[135]=  new Array('113','UNIFORME NINO LOCAL','21');
+vec_productos[136]=  new Array('78','VESTIDO PANO HOMBRE','2');
+vec_productos[137]=  new Array('76','ZAPATOS','2');
+	var cant=1;
+	combo_llenar.options[0] = new Option('Seleccione','0'); 
+	for (j=0; j<138;j++)
+	{
+		if(codigo_buscar_referencia==vec_productos[j][2]) 
+		{
+			combo_llenar.options[cant] = new Option(vec_productos[j][1],vec_productos[j][0]);  
+			cant++; 	
+		}
+	}
+}
+
+function busca_empaque() {
+	var codigo_buscar_referencia =document.getElementById('marca').value;	
+	var combo_llenar=document.getElementById('peso');	
+	combo_llenar.options.length=0;
+	var vec_productos = new Array;
+	vec_productos[0]=  new Array('','','7','95');
+vec_productos[1]=  new Array('','','5','21');
+vec_productos[2]=  new Array('','','2','74');
+vec_productos[3]=  new Array('','','36','151');
+vec_productos[4]=  new Array('','','1','3');
+vec_productos[5]=  new Array('','','3','51');
+vec_productos[6]=  new Array('','','5','121');
+vec_productos[7]=  new Array('','','31','131');
+vec_productos[8]=  new Array('','','7','96');
+vec_productos[9]=  new Array('','','5','22');
+vec_productos[10]=  new Array('','','2','75');
+vec_productos[11]=  new Array('','','21','47');
+vec_productos[12]=  new Array('','','1','4');
+vec_productos[13]=  new Array('','','3','52');
+vec_productos[14]=  new Array('','','5','122');
+vec_productos[15]=  new Array('','','5','130');
+vec_productos[16]=  new Array('','','7','97');
+vec_productos[17]=  new Array('','','6','0');
+vec_productos[18]=  new Array('','','2','76');
+vec_productos[19]=  new Array('','','21','107');
+vec_productos[20]=  new Array('','','1','5');
+vec_productos[21]=  new Array('','','3','53');
+vec_productos[22]=  new Array('','','5','123');
+vec_productos[23]=  new Array('','','5','129');
+vec_productos[24]=  new Array('','','25','98');
+vec_productos[25]=  new Array('','','6','23');
+vec_productos[26]=  new Array('','','2','77');
+vec_productos[27]=  new Array('','','21','41');
+vec_productos[28]=  new Array('','','1','6');
+vec_productos[29]=  new Array('','','3','54');
+vec_productos[30]=  new Array('','','5','124');
+vec_productos[31]=  new Array('','','5','128');
+vec_productos[32]=  new Array('','','25','99');
+vec_productos[33]=  new Array('','','6','24');
+vec_productos[34]=  new Array('','','2','78');
+vec_productos[35]=  new Array('','','7','153');
+vec_productos[36]=  new Array('','','1','7');
+vec_productos[37]=  new Array('','','3','55');
+vec_productos[38]=  new Array('','','5','125');
+vec_productos[39]=  new Array('','','27','140');
+vec_productos[40]=  new Array('','','25','100');
+vec_productos[41]=  new Array('','','6','25');
+vec_productos[42]=  new Array('','','4','79');
+vec_productos[43]=  new Array('','','27','155');
+vec_productos[44]=  new Array('','','2','14');
+vec_productos[45]=  new Array('','','3','56');
+vec_productos[46]=  new Array('','','5','126');
+vec_productos[47]=  new Array('','','27','139');
+vec_productos[48]=  new Array('','','7','110');
+vec_productos[49]=  new Array('','','7','26');
+vec_productos[50]=  new Array('','','4','80');
+vec_productos[51]=  new Array('','','36','153');
+vec_productos[52]=  new Array('','','1','8');
+vec_productos[53]=  new Array('','','3','57');
+vec_productos[54]=  new Array('','','7','127');
+vec_productos[55]=  new Array('','','27','138');
+vec_productos[56]=  new Array('','','5','107');
+vec_productos[57]=  new Array('','','21','117');
+vec_productos[58]=  new Array('','','4','81');
+vec_productos[59]=  new Array('','','27','153');
+vec_productos[60]=  new Array('','','1','9');
+vec_productos[61]=  new Array('','','24','58');
+vec_productos[62]=  new Array('','','29','69');
+vec_productos[63]=  new Array('','','27','137');
+vec_productos[64]=  new Array('','','7','106');
+vec_productos[65]=  new Array('','','5','39');
+vec_productos[66]=  new Array('','','4','82');
+vec_productos[67]=  new Array('','','35','148');
+vec_productos[68]=  new Array('','','1','10');
+vec_productos[69]=  new Array('','','24','59');
+vec_productos[70]=  new Array('','','30','116');
+vec_productos[71]=  new Array('','','27','136');
+vec_productos[72]=  new Array('','','7','105');
+vec_productos[73]=  new Array('','','0','0');
+vec_productos[74]=  new Array('','','4','83');
+vec_productos[75]=  new Array('','','31','153');
+vec_productos[76]=  new Array('','','2','11');
+vec_productos[77]=  new Array('','','24','60');
+vec_productos[78]=  new Array('','','31','142');
+vec_productos[79]=  new Array('','','5','53');
+vec_productos[80]=  new Array('','','21','108');
+vec_productos[81]=  new Array('','','5','37');
+vec_productos[82]=  new Array('','','7','84');
+vec_productos[83]=  new Array('','','28','36');
+vec_productos[84]=  new Array('','','3','11');
+vec_productos[85]=  new Array('','','24','61');
+vec_productos[86]=  new Array('','','21','154');
+vec_productos[87]=  new Array('','','5','45');
+vec_productos[88]=  new Array('','','21','69');
+vec_productos[89]=  new Array('','','5','38');
+vec_productos[90]=  new Array('','','7','85');
+vec_productos[91]=  new Array('','','5','36');
+vec_productos[92]=  new Array('','','3','12');
+vec_productos[93]=  new Array('','','24','62');
+vec_productos[94]=  new Array('','','31','109');
+vec_productos[95]=  new Array('','','7','135');
+vec_productos[96]=  new Array('','','21','111');
+vec_productos[97]=  new Array('','','5','42');
+vec_productos[98]=  new Array('','','7','86');
+vec_productos[99]=  new Array('','','7','36');
+vec_productos[100]=  new Array('','','3','13');
+vec_productos[101]=  new Array('','','24','63');
+vec_productos[102]=  new Array('','','31','143');
+vec_productos[103]=  new Array('','','5','67');
+vec_productos[104]=  new Array('','','21','116');
+vec_productos[105]=  new Array('','','5','40');
+vec_productos[106]=  new Array('','','7','87');
+vec_productos[107]=  new Array('','','3','14');
+vec_productos[108]=  new Array('','','24','64');
+vec_productos[109]=  new Array('','','32','144');
+vec_productos[110]=  new Array('','','5','109');
+vec_productos[111]=  new Array('','','21','112');
+vec_productos[112]=  new Array('','','5','41');
+vec_productos[113]=  new Array('','','7','88');
+vec_productos[114]=  new Array('','','3','15');
+vec_productos[115]=  new Array('','','24','65');
+vec_productos[116]=  new Array('','','32','145');
+vec_productos[117]=  new Array('','','21','70');
+vec_productos[118]=  new Array('','','21','113');
+vec_productos[119]=  new Array('','','5','43');
+vec_productos[120]=  new Array('','','7','89');
+vec_productos[121]=  new Array('','','3','16');
+vec_productos[122]=  new Array('','','24','66');
+vec_productos[123]=  new Array('','','32','146');
+vec_productos[124]=  new Array('','','5','134');
+vec_productos[125]=  new Array('','','2','114');
+vec_productos[126]=  new Array('','','5','44');
+vec_productos[127]=  new Array('','','7','90');
+vec_productos[128]=  new Array('','','4','17');
+vec_productos[129]=  new Array('','','24','67');
+vec_productos[130]=  new Array('','','33','147');
+vec_productos[131]=  new Array('','','1','28');
+vec_productos[132]=  new Array('','','5','46');
+vec_productos[133]=  new Array('','','21','115');
+vec_productos[134]=  new Array('','','7','91');
+vec_productos[135]=  new Array('','','21','103');
+vec_productos[136]=  new Array('','','24','68');
+vec_productos[137]=  new Array('','','33','148');
+vec_productos[138]=  new Array('','','1','29');
+vec_productos[139]=  new Array('','','5','47');
+vec_productos[140]=  new Array('','','21','104');
+vec_productos[141]=  new Array('','','28','141');
+vec_productos[142]=  new Array('','','7','92');
+vec_productos[143]=  new Array('','','3','18');
+vec_productos[144]=  new Array('','','21','71');
+vec_productos[145]=  new Array('','','34','149');
+vec_productos[146]=  new Array('','','1','30');
+vec_productos[147]=  new Array('','','3','48');
+vec_productos[148]=  new Array('','','5','118');
+vec_productos[149]=  new Array('','','27','111');
+vec_productos[150]=  new Array('','','7','93');
+vec_productos[151]=  new Array('','','5','19');
+vec_productos[152]=  new Array('','','21','72');
+vec_productos[153]=  new Array('','','34','150');
+vec_productos[154]=  new Array('','','1','1');
+vec_productos[155]=  new Array('','','3','49');
+vec_productos[156]=  new Array('','','5','119');
+vec_productos[157]=  new Array('','','5','133');
+vec_productos[158]=  new Array('','','7','94');
+vec_productos[159]=  new Array('','','5','20');
+vec_productos[160]=  new Array('','','21','73');
+vec_productos[161]=  new Array('','','35','147');
+vec_productos[162]=  new Array('','','1','2');
+vec_productos[163]=  new Array('','','3','50');
+vec_productos[164]=  new Array('','','5','120');
+vec_productos[165]=  new Array('','','5','132');
+	var cant=1;
+	combo_llenar.options[0] = new Option('Seleccione','0'); 
+	for (j=0; j<166;j++)
+	{
+		if(codigo_buscar_referencia==vec_productos[j][2] & document.getElementById('tipo_producto').value==vec_productos[j][3]) 
+		{
+			combo_llenar.options[cant] = new Option(vec_productos[j][1],vec_productos[j][0]);  
+			cant++; 	
+		}
+	}
+}
+
+function busca_referencia() {
+	var codigo_buscar_referencia =document.getElementById('peso').value;	
+	var combo_llenar=document.getElementById('combo_referncia');	
+	combo_llenar.options.length=0;
+	var vec_productos = new Array;
+	vec_productos[0]=  new Array('161','','' ,'3','12');
+vec_productos[1]=  new Array('144','','' ,'1','10');
+vec_productos[2]=  new Array('143','','' ,'1','10');
+vec_productos[3]=  new Array('142','','' ,'1','9');
+vec_productos[4]=  new Array('141','','' ,'1','9');
+vec_productos[5]=  new Array('140','','' ,'1','9');
+vec_productos[6]=  new Array('138','','' ,'1','9');
+vec_productos[7]=  new Array('137','','' ,'1','9');
+vec_productos[8]=  new Array('136','','' ,'1','8');
+vec_productos[9]=  new Array('135','','' ,'1','8');
+vec_productos[10]=  new Array('133','','' ,'1','7');
+vec_productos[11]=  new Array('145','','' ,'1','10');
+vec_productos[12]=  new Array('148','','' ,'2','11');
+vec_productos[13]=  new Array('160','','' ,'3','11');
+vec_productos[14]=  new Array('159','','' ,'3','11');
+vec_productos[15]=  new Array('158','','' ,'3','11');
+vec_productos[16]=  new Array('157','','' ,'3','11');
+vec_productos[17]=  new Array('156','','' ,'3','11');
+vec_productos[18]=  new Array('155','','' ,'3','11');
+vec_productos[19]=  new Array('154','','' ,'3','11');
+vec_productos[20]=  new Array('153','','' ,'3','11');
+vec_productos[21]=  new Array('150','','' ,'2','11');
+vec_productos[22]=  new Array('149','','' ,'2','11');
+vec_productos[23]=  new Array('132','','' ,'1','7');
+vec_productos[24]=  new Array('131','','' ,'1','7');
+vec_productos[25]=  new Array('130','','' ,'1','6');
+vec_productos[26]=  new Array('116','','' ,'1','3');
+vec_productos[27]=  new Array('115','','' ,'1','3');
+vec_productos[28]=  new Array('114','','' ,'1','3');
+vec_productos[29]=  new Array('113','','' ,'1','3');
+vec_productos[30]=  new Array('112','','' ,'1','2');
+vec_productos[31]=  new Array('111','','' ,'1','2');
+vec_productos[32]=  new Array('110','','' ,'1','2');
+vec_productos[33]=  new Array('109','','' ,'1','2');
+vec_productos[34]=  new Array('108','','' ,'1','2');
+vec_productos[35]=  new Array('107','','' ,'1','2');
+vec_productos[36]=  new Array('117','','' ,'1','4');
+vec_productos[37]=  new Array('118','','' ,'1','4');
+vec_productos[38]=  new Array('129','','' ,'1','6');
+vec_productos[39]=  new Array('128','','' ,'1','5');
+vec_productos[40]=  new Array('127','','' ,'1','5');
+vec_productos[41]=  new Array('126','','' ,'1','5');
+vec_productos[42]=  new Array('124','','' ,'1','4');
+vec_productos[43]=  new Array('123','','' ,'1','4');
+vec_productos[44]=  new Array('122','','' ,'1','4');
+vec_productos[45]=  new Array('121','','' ,'1','4');
+vec_productos[46]=  new Array('120','','' ,'1','4');
+vec_productos[47]=  new Array('119','','' ,'1','4');
+vec_productos[48]=  new Array('106','','' ,'1','1');
+vec_productos[49]=  new Array('357','','' ,'1','1');
+vec_productos[50]=  new Array('201','','' ,'5','21');
+vec_productos[51]=  new Array('200','','' ,'5','21');
+vec_productos[52]=  new Array('199','','' ,'5','21');
+vec_productos[53]=  new Array('198','','' ,'5','21');
+vec_productos[54]=  new Array('197','','' ,'5','20');
+vec_productos[55]=  new Array('196','','' ,'5','20');
+vec_productos[56]=  new Array('195','','' ,'5','20');
+vec_productos[57]=  new Array('194','','' ,'5','20');
+vec_productos[58]=  new Array('193','','' ,'5','19');
+vec_productos[59]=  new Array('192','','' ,'5','19');
+vec_productos[60]=  new Array('202','','' ,'5','21');
+vec_productos[61]=  new Array('203','','' ,'5','22');
+vec_productos[62]=  new Array('219','','' ,'0','0');
+vec_productos[63]=  new Array('212','','' ,'7','26');
+vec_productos[64]=  new Array('211','','' ,'7','26');
+vec_productos[65]=  new Array('210','','' ,'7','26');
+vec_productos[66]=  new Array('209','','' ,'7','26');
+vec_productos[67]=  new Array('208','','' ,'6','25');
+vec_productos[68]=  new Array('207','','' ,'6','24');
+vec_productos[69]=  new Array('206','','' ,'6','23');
+vec_productos[70]=  new Array('205','','' ,'6','0');
+vec_productos[71]=  new Array('204','','' ,'6','0');
+vec_productos[72]=  new Array('191','','' ,'5','19');
+vec_productos[73]=  new Array('188','','' ,'3','18');
+vec_productos[74]=  new Array('187','','' ,'3','11');
+vec_productos[75]=  new Array('172','','' ,'3','16');
+vec_productos[76]=  new Array('171','','' ,'3','15');
+vec_productos[77]=  new Array('170','','' ,'3','11');
+vec_productos[78]=  new Array('169','','' ,'3','11');
+vec_productos[79]=  new Array('168','','' ,'3','11');
+vec_productos[80]=  new Array('167','','' ,'3','14');
+vec_productos[81]=  new Array('166','','' ,'3','13');
+vec_productos[82]=  new Array('165','','' ,'3','11');
+vec_productos[83]=  new Array('164','','' ,'3','11');
+vec_productos[84]=  new Array('163','','' ,'3','11');
+vec_productos[85]=  new Array('173','','' ,'3','16');
+vec_productos[86]=  new Array('174','','' ,'3','16');
+vec_productos[87]=  new Array('186','','' ,'4','17');
+vec_productos[88]=  new Array('184','','' ,'4','17');
+vec_productos[89]=  new Array('183','','' ,'4','17');
+vec_productos[90]=  new Array('182','','' ,'4','17');
+vec_productos[91]=  new Array('181','','' ,'4','17');
+vec_productos[92]=  new Array('179','','' ,'3','16');
+vec_productos[93]=  new Array('178','','' ,'3','16');
+vec_productos[94]=  new Array('177','','' ,'3','16');
+vec_productos[95]=  new Array('176','','' ,'3','16');
+vec_productos[96]=  new Array('175','','' ,'3','16');
+vec_productos[97]=  new Array('162','','' ,'3','12');
+vec_productos[98]=  new Array('86','','' ,'1','30');
+vec_productos[99]=  new Array('68','','' ,'1','29');
+vec_productos[100]=  new Array('69','','' ,'1','29');
+vec_productos[101]=  new Array('70','','' ,'1','29');
+vec_productos[102]=  new Array('71','','' ,'1','29');
+vec_productos[103]=  new Array('72','','' ,'1','29');
+vec_productos[104]=  new Array('73','','' ,'1','29');
+vec_productos[105]=  new Array('74','','' ,'1','29');
+vec_productos[106]=  new Array('75','','' ,'1','29');
+vec_productos[107]=  new Array('76','','' ,'1','29');
+vec_productos[108]=  new Array('77','','' ,'1','29');
+vec_productos[109]=  new Array('67','','' ,'1','29');
+vec_productos[110]=  new Array('66','','' ,'1','29');
+vec_productos[111]=  new Array('139','','' ,'1','9');
+vec_productos[112]=  new Array('56','','' ,'1','28');
+vec_productos[113]=  new Array('57','','' ,'1','28');
+vec_productos[114]=  new Array('58','','' ,'1','28');
+vec_productos[115]=  new Array('59','','' ,'1','28');
+vec_productos[116]=  new Array('60','','' ,'1','28');
+vec_productos[117]=  new Array('61','','' ,'1','28');
+vec_productos[118]=  new Array('62','','' ,'1','28');
+vec_productos[119]=  new Array('63','','' ,'1','28');
+vec_productos[120]=  new Array('64','','' ,'1','28');
+vec_productos[121]=  new Array('78','','' ,'1','29');
+vec_productos[122]=  new Array('79','','' ,'1','29');
+vec_productos[123]=  new Array('80','','' ,'1','29');
+vec_productos[124]=  new Array('92','','' ,'1','1');
+vec_productos[125]=  new Array('93','','' ,'1','1');
+vec_productos[126]=  new Array('94','','' ,'1','1');
+vec_productos[127]=  new Array('95','','' ,'1','1');
+vec_productos[128]=  new Array('96','','' ,'1','1');
+vec_productos[129]=  new Array('98','','' ,'1','1');
+vec_productos[130]=  new Array('99','','' ,'1','1');
+vec_productos[131]=  new Array('100','','' ,'1','1');
+vec_productos[132]=  new Array('101','','' ,'1','1');
+vec_productos[133]=  new Array('102','','' ,'1','1');
+vec_productos[134]=  new Array('104','','' ,'1','1');
+vec_productos[135]=  new Array('91','','' ,'1','30');
+vec_productos[136]=  new Array('90','','' ,'1','30');
+vec_productos[137]=  new Array('81','','' ,'1','30');
+vec_productos[138]=  new Array('82','','' ,'1','30');
+vec_productos[139]=  new Array('83','','' ,'1','30');
+vec_productos[140]=  new Array('84','','' ,'1','30');
+vec_productos[141]=  new Array('85','','' ,'1','30');
+vec_productos[142]=  new Array('103','','' ,'1','1');
+vec_productos[143]=  new Array('89','','' ,'1','30');
+vec_productos[144]=  new Array('87','','' ,'1','30');
+vec_productos[145]=  new Array('88','','' ,'1','30');
+vec_productos[146]=  new Array('213','100% LANA 
+CHAQUETA:2 BOTONES, DOBLE ABERTURA, FO','' ,'2','14');
+vec_productos[147]=  new Array('407','ABRIGO ABER. CORTO','' ,'5','67');
+vec_productos[148]=  new Array('251','ABRIGO MUJER PROMOCION','' ,'24','67');
+vec_productos[149]=  new Array('567','AJAX VISITOR N.T','' ,'21','70');
+vec_productos[150]=  new Array('597','ARSENAL HOME N.T','' ,'21','70');
+vec_productos[151]=  new Array('599','ARSENAL VISITOR N.T','' ,'21','70');
+vec_productos[152]=  new Array('595','ATLETICO N.T','' ,'21','70');
+vec_productos[153]=  new Array('430','BALON BASKET COLORES','' ,'28','141');
+vec_productos[154]=  new Array('431','BALON BASKET PROFESIONAL','' ,'28','141');
+vec_productos[155]=  new Array('432','BALON BASKET SPTF # 5','' ,'28','141');
+vec_productos[156]=  new Array('619','BALON FUTBOL AMERICANO','0' ,'28','36');
+vec_productos[157]=  new Array('435','BALON FUTBOL G-PROMO','' ,'28','141');
+vec_productos[158]=  new Array('433','BALON FUTBOL NIKE T 90','' ,'28','141');
+vec_productos[159]=  new Array('437','BALON FUTBOL PROFESIONAL N.','' ,'28','141');
+vec_productos[160]=  new Array('434','BALON FUTBOL PUMA','' ,'28','141');
+vec_productos[161]=  new Array('606','BALON VOLEYBALL','' ,'28','141');
+vec_productos[162]=  new Array('608','BANDA DE CAPITAN','' ,'27','153');
+vec_productos[163]=  new Array('501','BANDA DE RESISTENCIA DOBLE','' ,'36','151');
+vec_productos[164]=  new Array('502','BANDA DE RESISTENCIA SENCILA','' ,'36','151');
+vec_productos[165]=  new Array('563','BARCELONA HOME N.T','' ,'21','70');
+vec_productos[166]=  new Array('568','BARCELONA VISITOR N.T
+','' ,'21','70');
+vec_productos[167]=  new Array('271','BARRA MANCUERNA
+','' ,'7','87');
+vec_productos[168]=  new Array('621','BASCU0001','0' ,'7','36');
+vec_productos[169]=  new Array('242','BATA COLECCION
+','' ,'24','58');
+vec_productos[170]=  new Array('243','BATA PROMOCION
+','' ,'24','59');
+vec_productos[171]=  new Array('564','BAYERN HOME N.T','' ,'21','70');
+vec_productos[172]=  new Array('513','BICICLETERO LYCRA','' ,'21','107');
+vec_productos[173]=  new Array('509','BICIFUTBOL LYCRA COLORES','' ,'21','107');
+vec_productos[174]=  new Array('510','BICIFUTBOL LYCRA COLORES ADULTO','' ,'21','107');
+vec_productos[175]=  new Array('279','BILLETERA HOMBRE PROMOCION
+','' ,'7','95');
+vec_productos[176]=  new Array('280','BILLETERA MUJER PROMOCION
+','' ,'7','96');
+vec_productos[177]=  new Array('261','BLAZER HOMBRE PROMOCION
+','' ,'2','77');
+vec_productos[178]=  new Array('252','BLAZER MUJER PROMOCION
+','' ,'24','68');
+vec_productos[179]=  new Array('246','BLUSA COLECCION
+','' ,'24','62');
+vec_productos[180]=  new Array('247','BLUSA PROMOCION
+','' ,'24','63');
+vec_productos[181]=  new Array('492','BOLA PILATES 75 CM','' ,'36','151');
+vec_productos[182]=  new Array('491','BOLA PILATES BODY 65 CM','' ,'36','151');
+vec_productos[183]=  new Array('483','BOLA PING PONG RUNIC X 6','' ,'33','147');
+vec_productos[184]=  new Array('490','BOLA TENNIS PENN X 3','' ,'35','147');
+vec_productos[185]=  new Array('541','BOLSA GUAYOS','' ,'27','139');
+vec_productos[186]=  new Array('272','BOLSO MUJER ARTESANAL
+','' ,'7','88');
+vec_productos[187]=  new Array('273','BOLSO MUJER COLECCION 1
+','' ,'7','89');
+vec_productos[188]=  new Array('275','BOLSO MUJER COLECCION 2
+','' ,'7','91');
+vec_productos[189]=  new Array('367','BOLSO MUJER NUEVA GENER.','' ,'7','127');
+vec_productos[190]=  new Array('274','BOLSO MUJER PROMOCION
+','' ,'7','90');
+vec_productos[191]=  new Array('263','BOXER HOMBRE
+','' ,'4','79');
+vec_productos[192]=  new Array('180','BOXER HOMBRE','' ,'4','17');
+vec_productos[193]=  new Array('264','BOXER MUJER
+','' ,'4','80');
+vec_productos[194]=  new Array('580','BUFANDA ALEMANIA','' ,'27','155');
+vec_productos[195]=  new Array('581','BUFANDA ARGENTINA','' ,'27','155');
+vec_productos[196]=  new Array('586','BUFANDA ARSENAL','' ,'27','155');
+vec_productos[197]=  new Array('583','BUFANDA BARCELONA','' ,'27','155');
+vec_productos[198]=  new Array('577','BUFANDA BRASIL','' ,'27','155');
+vec_productos[199]=  new Array('590','BUFANDA CHEALSE','' ,'27','155');
+vec_productos[200]=  new Array('579','BUFANDA ESPA&Ntilde;A','' ,'27','155');
+vec_productos[201]=  new Array('589','BUFANDA HOLANDA','' ,'27','155');
+vec_productos[202]=  new Array('585','BUFANDA INTER','' ,'27','155');
+vec_productos[203]=  new Array('578','BUFANDA ITALIA','' ,'27','155');
+vec_productos[204]=  new Array('582','BUFANDA LIVERPOOL','' ,'27','155');
+vec_productos[205]=  new Array('584','BUFANDA MANCHESTER','' ,'27','155');
+vec_productos[206]=  new Array('587','BUFANDA MILAN','' ,'27','155');
+vec_productos[207]=  new Array('576','BUFANDA MILLONARIOS','' ,'27','155');
+vec_productos[208]=  new Array('588','BUFANDA REAL','' ,'27','155');
+vec_productos[209]=  new Array('507','BUSO ARQUERO PROFESIONAL ADULTO','' ,'21','108');
+vec_productos[210]=  new Array('508','BUSO ARQUERO SEMI PROFESIONAL','' ,'21','108');
+vec_productos[211]=  new Array('368','BUSO CORTO. N.C','' ,'5','122');
+vec_productos[212]=  new Array('383','BUSO DEPORTIVO NI&Ntilde;O','' ,'5','130');
+vec_productos[213]=  new Array('603','BUSO LYCRA AZUL','' ,'21','41');
+vec_productos[214]=  new Array('602','BUSO LYCRA BLANCO','' ,'21','41');
+vec_productos[215]=  new Array('605','BUSO LYCRA NEGRO','' ,'21','41');
+vec_productos[216]=  new Array('604','BUSO LYCRA ROJO','' ,'21','41');
+vec_productos[217]=  new Array('230','BUSO MUJER DEPORTIVO COLECCION
+','' ,'5','46');
+vec_productos[218]=  new Array('287','BUSO PARA ARQUERO
+','' ,'21','103');
+vec_productos[219]=  new Array('354','BUSO PARA ARQUERO','' ,'21','108');
+vec_productos[220]=  new Array('382','BUSODEPORTIVO HOMBRE','' ,'5','129');
+vec_productos[221]=  new Array('258','CAMISA FORMAL
+','' ,'2','74');
+vec_productos[222]=  new Array('323','CAMISA FORMAL PROMOCION
+','' ,'2','114');
+vec_productos[223]=  new Array('152','CAMISA HOMBRE','' ,'3','11');
+vec_productos[224]=  new Array('151','CAMISA HOMBRE','' ,'3','11');
+vec_productos[225]=  new Array('239','CAMISA SPORT
+','' ,'3','55');
+vec_productos[226]=  new Array('440','CAMISETA CALI 2010 MITRE','' ,'29','69');
+vec_productos[227]=  new Array('226','CAMISETA DEPORTIVA HOMBRE
+','' ,'5','41');
+vec_productos[228]=  new Array('224','CAMISETA DEPORTIVA MUJER
+','' ,'5','42');
+vec_productos[229]=  new Array('302','CAMISETA EQUIPO COLECCION','' ,'21','69');
+vec_productos[230]=  new Array('266','CAMISETA ESQUELETO MUJER
+','' ,'4','82');
+vec_productos[231]=  new Array('321','CAMISETA FUTBOL LOCAL','' ,'21','112');
+vec_productos[232]=  new Array('385','CAMISETA MODA HOMBRE','' ,'5','132');
+vec_productos[233]=  new Array('540','CAMISETA NI&Ntilde;O COLOMBIA
+                   ','' ,'21','71');
+vec_productos[234]=  new Array('241','CAMISETA POLO
+','' ,'3','57');
+vec_productos[235]=  new Array('307','CAMISETA POLO T/LAC.','' ,'3','57');
+vec_productos[236]=  new Array('439','CAMISETA SELECCION COLOMBIA','' ,'29','69');
+vec_productos[237]=  new Array('441','CAMISETA TOLIMA 2010 MITRE','' ,'29','69');
+vec_productos[238]=  new Array('512','CAMISILLA LYCRA SEMI','' ,'21','41');
+vec_productos[239]=  new Array('511','CAMISILLA MANGA LARGA','' ,'21','41');
+vec_productos[240]=  new Array('427','CANILLERA CON TOBILLERA R.','' ,'27','111');
+vec_productos[241]=  new Array('429','CANILLERA CROMO CON TOBILLERA N.','' ,'27','111');
+vec_productos[242]=  new Array('418','CANILLERA N. SENCILLA SP198','' ,'27','111');
+vec_productos[243]=  new Array('417','CANILLERA NIKE CROMO SENCILLA','' ,'27','111');
+vec_productos[244]=  new Array('416','CANILLERA NIKE SPO40','' ,'27','111');
+vec_productos[245]=  new Array('428','CANILLERA NIKE T-90','' ,'27','111');
+vec_productos[246]=  new Array('415','CANILLERA RUNIC CON TOBILLERA','' ,'27','111');
+vec_productos[247]=  new Array('419','CANILLERA SENCILLA P.','' ,'27','111');
+vec_productos[248]=  new Array('315','CANILLERAS','' ,'21','111');
+vec_productos[249]=  new Array('414','CANILLERRA UMBRO CON TOBILLERA','' ,'27','111');
+vec_productos[250]=  new Array('364','CHALECO NORTH.','' ,'5','124');
+vec_productos[251]=  new Array('236','CHAQUETA  COLECCION
+','' ,'3','52');
+vec_productos[252]=  new Array('363','CHAQUETA ABER. COLEC.','' ,'5','123');
+vec_productos[253]=  new Array('413','CHAQUETA ADI. HOMBRE','' ,'5','53');
+vec_productos[254]=  new Array('412','CHAQUETA ADI. MUJER','' ,'5','45');
+vec_productos[255]=  new Array('381','CHAQUETA CAPOTA HOMBRE','' ,'5','128');
+vec_productos[256]=  new Array('238','CHAQUETA CASUAL
+','' ,'3','54');
+vec_productos[257]=  new Array('360','CHAQUETA CORTA ABER','' ,'5','120');
+vec_productos[258]=  new Array('257','CHAQUETA EQUIPO COLECCION
+','' ,'21','73');
+vec_productos[259]=  new Array('244','CHAQUETA MUJER COLECCION
+','' ,'24','60');
+vec_productos[260]=  new Array('229','CHAQUETA MUJER DEPORTIVA COLECCION
+','' ,'5','45');
+vec_productos[261]=  new Array('245','CHAQUETA MUJER PROMOCION
+','' ,'24','61');
+vec_productos[262]=  new Array('365','CHAQUETA NORTH. NUEVA COLEC.','' ,'5','125');
+vec_productos[263]=  new Array('235','CHAQUETA PROMOCION
+','' ,'3','51');
+vec_productos[264]=  new Array('366','CHAQUETA ROMPE VIENTO','' ,'5','126');
+vec_productos[265]=  new Array('237','CHAQUETA SPORT
+','' ,'3','53');
+vec_productos[266]=  new Array('557','CHEALSE HOME N.T','' ,'21','70');
+vec_productos[267]=  new Array('569','CHELSEA VISITOR N.T
+','' ,'21','70');
+vec_productos[268]=  new Array('607','CODERA MEDICINAL','' ,'36','153');
+vec_productos[269]=  new Array('493','COLCHONETA YOGA','' ,'36','151');
+vec_productos[270]=  new Array('494','COLCHONETA YOGA GREMEST','' ,'36','151');
+vec_productos[271]=  new Array('386','CONJUNTO GYM MUJER','' ,'5','133');
+vec_productos[272]=  new Array('420','COPA PROTECTOR ','' ,'27','136');
+vec_productos[273]=  new Array('259','CORBATA
+','' ,'2','75');
+vec_productos[274]=  new Array('380','COVER TRAINING AMARILLO','' ,'21','70');
+vec_productos[275]=  new Array('623','COVER TRAINING BLANCO','0' ,'21','71');
+vec_productos[276]=  new Array('622','COVER TRAINING ROJO','0' ,'21','70');
+vec_productos[277]=  new Array('495','DONA PILATES BODY','' ,'36','151');
+vec_productos[278]=  new Array('612','ESTUCHE BOLA TENNIS X 12','' ,'35','147');
+vec_productos[279]=  new Array('496','FAJA ABDOMINAL','' ,'36','151');
+vec_productos[280]=  new Array('248','FALDA PROMOCION
+','' ,'24','64');
+vec_productos[281]=  new Array('480','GAFA NATACION ANTI FOG. PROFESIONAL','' ,'32','144');
+vec_productos[282]=  new Array('281','GORRA DEPORTIVA
+','' ,'7','97');
+vec_productos[283]=  new Array('481','GORRO NATACION PROFESIONAL','' ,'32','145');
+vec_productos[284]=  new Array('423','GUANTE ARQUERO ADULTO','' ,'27','137');
+vec_productos[285]=  new Array('421','GUANTE ARQUERO JR','' ,'27','137');
+vec_productos[286]=  new Array('591','GUANTE ARQUERO NINO','' ,'27','137');
+vec_productos[287]=  new Array('476','GUANTE NEOPRENE MUNEQUERA','' ,'31','142');
+vec_productos[288]=  new Array('477','GUANTE NEOPRENE SENCILLO','' ,'31','142');
+vec_productos[289]=  new Array('478','GUANTE SPEENING PALMA CUERO','' ,'31','142');
+vec_productos[290]=  new Array('283','GUANTES INVIERNO
+','' ,'25','99');
+vec_productos[291]=  new Array('453','GUANTES PESAS G-TECH','' ,'31','142');
+vec_productos[292]=  new Array('454','GUANTES PESAS MARCA','' ,'31','142');
+vec_productos[293]=  new Array('425','GUAYERA FUTBOL ','' ,'27','139');
+vec_productos[294]=  new Array('443','GUAYO ADULTO FUTBOL NIKE PREMIER II','' ,'30','116');
+vec_productos[295]=  new Array('442','GUAYO ADULTO NIKE MARQUIS TF','' ,'30','116');
+vec_productos[296]=  new Array('451','GUAYO FUTBOL NINO NIKE','' ,'30','116');
+vec_productos[297]=  new Array('452','GUAYO NINO NIKE PREMIER FG-R','' ,'30','116');
+vec_productos[298]=  new Array('352','GUAYOS FUTFOL','' ,'21','116');
+vec_productos[299]=  new Array('351','HOJA TRANSFER','' ,'21','115');
+vec_productos[300]=  new Array('562','INTER HOME N.T','' ,'21','70');
+vec_productos[301]=  new Array('570','INTER VISITOR N.T
+','' ,'21','70');
+vec_productos[302]=  new Array('233','JEAN HOMBRE
+','' ,'3','49');
+vec_productos[303]=  new Array('411','JUEGO DE SABANAS 2.0','' ,'7','135');
+vec_productos[304]=  new Array('409','JUEGO SABANAS 1.20','' ,'7','135');
+vec_productos[305]=  new Array('410','JUEGO SABANAS 1.6','' ,'7','135');
+vec_productos[306]=  new Array('596','JUVENTUS HOME N.T','' ,'21','70');
+vec_productos[307]=  new Array('601','JUVENTUS VISITOR NT','' ,'21','70');
+vec_productos[308]=  new Array('558','LIVERPOL HOME N.T','' ,'21','70');
+vec_productos[309]=  new Array('571','LIVERPOOL VISITOR N.T
+','' ,'21','70');
+vec_productos[310]=  new Array('277','MALETIN COMPU-VIAJE 1
+','' ,'7','93');
+vec_productos[311]=  new Array('278','MALETIN COMPU-VIAJE 2
+','' ,'7','94');
+vec_productos[312]=  new Array('488','MALLAS BASKET RUNIC','' ,'34','149');
+vec_productos[313]=  new Array('572','MANCHESTER HOME N.T
+','' ,'21','70');
+vec_productos[314]=  new Array('573','MANCHESTER VISITOR N.T
+','' ,'21','70');
+vec_productos[315]=  new Array('387','MAQUINA TERMOFIJADORA 110V','' ,'5','134');
+vec_productos[316]=  new Array('514','MEDI FUTBOL SEMI PROFESIONAL','' ,'21','72');
+vec_productos[317]=  new Array('515','MEDIA FUTBOL PROFESIONAL','' ,'21','72');
+vec_productos[318]=  new Array('348','MEDIA FUTBOL PROFESIONAL','' ,'21','72');
+vec_productos[319]=  new Array('256','MEDIA FUTBOL SEMI-PROFESIONAL
+','' ,'21','72');
+vec_productos[320]=  new Array('227','MEDIAS DEPORTE HOMBRE
+','' ,'5','43');
+vec_productos[321]=  new Array('228','MEDIAS DEPORTE MUJER
+','' ,'5','44');
+vec_productos[322]=  new Array('574','MILAN HOME N.T
+','' ,'21','70');
+vec_productos[323]=  new Array('436','MINI BALON FUTBOL','' ,'28','141');
+vec_productos[324]=  new Array('438','MINI BALON FUTBOL LUJO','' ,'28','141');
+vec_productos[325]=  new Array('276','MORRAL COMPUTADOR
+','' ,'7','92');
+vec_productos[326]=  new Array('479','MUNEQUERAS','' ,'31','143');
+vec_productos[327]=  new Array('565','OLIMPIQUE HOME N.T','' ,'21','70');
+vec_productos[328]=  new Array('575','OLIMPIQUE VISITOR N.T
+','' ,'21','70');
+vec_productos[329]=  new Array('505','PANTALON ARQUERO PROFESIONAL ADULTO','' ,'21','47');
+vec_productos[330]=  new Array('506','PANTALON ARQUERO SEMI PROFESIONAL','' ,'21','47');
+vec_productos[331]=  new Array('232','PANTALON DRIL
+','' ,'3','48');
+vec_productos[332]=  new Array('234','PANTALON HOMBRE PROMOCION
+','' ,'3','50');
+vec_productos[333]=  new Array('222','PANTALON LICRADO MUJER 3/4
+
+','' ,'5','38');
+vec_productos[334]=  new Array('221','PANTALON LICRADO MUJER LARGO
+','' ,'5','37');
+vec_productos[335]=  new Array('249','PANTALON MUJER PROMOCION
+','' ,'24','65');
+vec_productos[336]=  new Array('353','PANTALON PARA ARQUERO','' ,'21','104');
+vec_productos[337]=  new Array('361','PANTALON SUD. ABER','' ,'5','121');
+vec_productos[338]=  new Array('231','PANTALON SUDADERA
+','' ,'5','47');
+vec_productos[339]=  new Array('293','PANTALONETA HOMBRE','' ,'5','39');
+vec_productos[340]=  new Array('225','PANTALONETA MUJER
+','' ,'5','40');
+vec_productos[341]=  new Array('294','PANTALONETA PARA HOMBRE','' ,'5','107');
+vec_productos[342]=  new Array('566','PETO','' ,'21','70');
+vec_productos[343]=  new Array('422','PITO ARBITRO ACME','' ,'27','138');
+vec_productos[344]=  new Array('424','PITO ARBITRO FOX 40','' ,'27','138');
+vec_productos[345]=  new Array('516','PLANCHA TOURMALINA DIGITAL','' ,'7','153');
+vec_productos[346]=  new Array('598','PORTO HOME N.T','' ,'21','70');
+vec_productos[347]=  new Array('620','PRENDA PROMOCION','0' ,'5','36');
+vec_productos[348]=  new Array('282','PRENDA PROMOCION NINO
+','' ,'25','98');
+vec_productos[349]=  new Array('426','PROTECTOR BUCAL','' ,'27','140');
+vec_productos[350]=  new Array('486','RAQUETA PING PONG BUTTER WAKABA','' ,'33','148');
+vec_productos[351]=  new Array('484','RAQUETA PING PONG PRO','' ,'33','148');
+vec_productos[352]=  new Array('485','RAQUETA PING PONG RUTTER CHAMP','' ,'33','148');
+vec_productos[353]=  new Array('610','RAQUETA SQUASH','' ,'35','148');
+vec_productos[354]=  new Array('609','RAQUETA TENNIS','' ,'35','148');
+vec_productos[355]=  new Array('560','REAL HOME N.T','' ,'21','70');
+vec_productos[356]=  new Array('561','REAL VISITOR N.T','' ,'21','70');
+vec_productos[357]=  new Array('268','RELOJ HOMBRE
+','' ,'7','84');
+vec_productos[358]=  new Array('270','RELOJ MP4
+','' ,'7','86');
+vec_productos[359]=  new Array('269','RELOJ MUJER
+','' ,'7','85');
+vec_productos[360]=  new Array('296','RELOJ PARA HOMBRE','' ,'7','105');
+vec_productos[361]=  new Array('295','RELOJ PARA MUJER','' ,'7','106');
+vec_productos[362]=  new Array('306','REPRODUCTOR MP3 2 GB','' ,'7','110');
+vec_productos[363]=  new Array('600','RIVER HOME N.T','' ,'21','70');
+vec_productos[364]=  new Array('504','RODILLERA NEOPRENE ROTULA MEDICINAL','' ,'36','151');
+vec_productos[365]=  new Array('497','RODILLO ABDOMINAL BODY','' ,'36','151');
+vec_productos[366]=  new Array('362','SACO ABER. NUEVA COLEC.','' ,'5','122');
+vec_productos[367]=  new Array('240','SACO COLECCION
+','' ,'3','56');
+vec_productos[368]=  new Array('250','SACO MUJER PROMOCION
+','' ,'24','66');
+vec_productos[369]=  new Array('487','SET 2 RAQUETAS 3 PING PONG','' ,'33','148');
+vec_productos[370]=  new Array('611','SET BOLA TENNIS PROF. X 3','' ,'35','147');
+vec_productos[371]=  new Array('503','SOGA DE SALTAR','' ,'36','151');
+vec_productos[372]=  new Array('220','SUDADERA
+','' ,'5','109');
+vec_productos[373]=  new Array('190','SUDADERA','' ,'5','19');
+vec_productos[374]=  new Array('189','SUDADERA','' ,'5','19');
+vec_productos[375]=  new Array('358','SUDADERA 3 PIEZAS','' ,'5','118');
+vec_productos[376]=  new Array('406','SUDADERA ABER. 2 PIEZAS','' ,'5','109');
+vec_productos[377]=  new Array('384','SUDADERA LYCRA DAMA','' ,'31','131');
+vec_productos[378]=  new Array('408','SUDADERA NI&Ntilde;O','' ,'5','109');
+vec_productos[379]=  new Array('359','SUDADERA PIEL ANGEL','' ,'5','119');
+vec_productos[380]=  new Array('475','SUDADERA SAUNA','' ,'31','109');
+vec_productos[381]=  new Array('489','TABLERO DARDOS','' ,'34','150');
+vec_productos[382]=  new Array('265','TANGA MUJER
+','' ,'4','81');
+vec_productos[383]=  new Array('482','TAPA OIDO SILICONA','' ,'32','146');
+vec_productos[384]=  new Array('284','TENNIS PATIN
+','' ,'25','100');
+vec_productos[385]=  new Array('498','TENSOR DE MANO','' ,'36','151');
+vec_productos[386]=  new Array('499','TERABAN TUBULAR','' ,'36','151');
+vec_productos[387]=  new Array('613','TERMO PLASTICO','' ,'31','153');
+vec_productos[388]=  new Array('500','TOBILLERA MEDICINAL','' ,'36','151');
+vec_productos[389]=  new Array('267','TOP MUJER
+','' ,'4','83');
+vec_productos[390]=  new Array('396','UEFA AJAX HOME','' ,'21','70');
+vec_productos[391]=  new Array('340','UEFA AMARILLO','' ,'21','70');
+vec_productos[392]=  new Array('450','UEFA ARGELIA','' ,'21','70');
+vec_productos[393]=  new Array('331','UEFA ARSENAL HOME','' ,'21','70');
+vec_productos[394]=  new Array('332','UEFA ARSENAL VISITOR','' ,'21','70');
+vec_productos[395]=  new Array('393','UEFA ARSENAL VISITOR 2','' ,'21','70');
+vec_productos[396]=  new Array('394','UEFA ATLETICO HOME','' ,'21','70');
+vec_productos[397]=  new Array('341','UEFA AZUL','' ,'21','70');
+vec_productos[398]=  new Array('327','UEFA BARZA HOME','' ,'21','70');
+vec_productos[399]=  new Array('328','UEFA BARZA VISITOR','' ,'21','70');
+vec_productos[400]=  new Array('339','UEFA BAYER HOME','' ,'21','70');
+vec_productos[401]=  new Array('392','UEFA BAYERN VISITOR','' ,'21','70');
+vec_productos[402]=  new Array('346','UEFA BLANCO','' ,'21','70');
+vec_productos[403]=  new Array('391','UEFA BOCA HOME','' ,'21','70');
+vec_productos[404]=  new Array('345','UEFA CELESTE','' ,'21','70');
+vec_productos[405]=  new Array('334','UEFA CHEALSE HOME','' ,'21','70');
+vec_productos[406]=  new Array('335','UEFA CHEALSE VISITOR','' ,'21','70');
+vec_productos[407]=  new Array('347','UEFA GRIS','' ,'21','70');
+vec_productos[408]=  new Array('336','UEFA INTER HOME','' ,'21','70');
+vec_productos[409]=  new Array('388','UEFA INTER VISITOR','' ,'21','70');
+vec_productos[410]=  new Array('338','UEFA JUVENTUS HOME','' ,'21','70');
+vec_productos[411]=  new Array('333','UEFA LIVERPOL HOME','' ,'21','70');
+vec_productos[412]=  new Array('449','UEFA LYONNNAIS','' ,'21','70');
+vec_productos[413]=  new Array('329','UEFA MANCHESTER HOME','' ,'21','70');
+vec_productos[414]=  new Array('330','UEFA MANCHESTER VISITOR','' ,'21','70');
+vec_productos[415]=  new Array('337','UEFA MILAN HOME','' ,'21','70');
+vec_productos[416]=  new Array('344','UEFA NARANJA','' ,'21','70');
+vec_productos[417]=  new Array('349','UEFA NEGRO','' ,'21','70');
+vec_productos[418]=  new Array('390','UEFA OLIMPIQUE HOME','' ,'21','70');
+vec_productos[419]=  new Array('399','UEFA PARIS HOME','' ,'21','70');
+vec_productos[420]=  new Array('389','UEFA PORTO HOME','' ,'21','70');
+vec_productos[421]=  new Array('397','UEFA PSV HOME','' ,'21','70');
+vec_productos[422]=  new Array('325','UEFA REAL HOME','' ,'21','70');
+vec_productos[423]=  new Array('326','UEFA REAL VISITOR','' ,'21','70');
+vec_productos[424]=  new Array('342','UEFA ROJO','' ,'21','70');
+vec_productos[425]=  new Array('395','UEFA SPORTING HOME','' ,'21','70');
+vec_productos[426]=  new Array('343','UEFA VERDE','' ,'21','70');
+vec_productos[427]=  new Array('398','UEFA WOLFSBURG HOME','' ,'21','70');
+vec_productos[428]=  new Array('376','UNIFORME ADULTO ALEMANIA','' ,'21','70');
+vec_productos[429]=  new Array('523','UNIFORME ADULTO ALEMANIA VISITOR
+','' ,'21','70');
+vec_productos[430]=  new Array('517','UNIFORME ADULTO ARGENTINA','' ,'21','70');
+vec_productos[431]=  new Array('550','UNIFORME ADULTO ARGENTINA VISITANTE','' ,'21','70');
+vec_productos[432]=  new Array('524','UNIFORME ADULTO ARGENTINA VISITOR
+','' ,'21','70');
+vec_productos[433]=  new Array('624','UNIFORME ADULTO BAYERN VISIT N.T','0' ,'21','70');
+vec_productos[434]=  new Array('525','UNIFORME ADULTO BRAZIL LOCAL
+','' ,'21','70');
+vec_productos[435]=  new Array('526','UNIFORME ADULTO CAMERUM LOCAL
+','' ,'21','70');
+vec_productos[436]=  new Array('527','UNIFORME ADULTO COSTA MARFIL LOCAL
+','' ,'21','70');
+vec_productos[437]=  new Array('528','UNIFORME ADULTO DINAMARCA LOCAL
+','' ,'21','70');
+vec_productos[438]=  new Array('379','UNIFORME ADULTO ESPA&Ntilde;A','' ,'21','70');
+vec_productos[439]=  new Array('529','UNIFORME ADULTO ESPA&Ntilde;A VISITOR
+','' ,'21','70');
+vec_productos[440]=  new Array('520','UNIFORME ADULTO ESPANA','' ,'21','70');
+vec_productos[441]=  new Array('518','UNIFORME ADULTO FRANCIA','' ,'21','70');
+vec_productos[442]=  new Array('530','UNIFORME ADULTO FRANCIA VISITOR
+','' ,'21','70');
+vec_productos[443]=  new Array('531','UNIFORME ADULTO GRECIA LOCAL
+','' ,'21','70');
+vec_productos[444]=  new Array('378','UNIFORME ADULTO HOLANDA','' ,'21','70');
+vec_productos[445]=  new Array('532','UNIFORME ADULTO HOLANDA VISITOR
+','' ,'21','70');
+vec_productos[446]=  new Array('377','UNIFORME ADULTO INGLATERRA','' ,'21','70');
+vec_productos[447]=  new Array('519','UNIFORME ADULTO INGLATERRA','' ,'21','70');
+vec_productos[448]=  new Array('521','UNIFORME ADULTO ITALIA ','' ,'21','70');
+vec_productos[449]=  new Array('543','UNIFORME ADULTO ITALIA HOME','' ,'21','70');
+vec_productos[450]=  new Array('533','UNIFORME ADULTO JAPON LOCAL
+','' ,'21','70');
+vec_productos[451]=  new Array('542','UNIFORME ADULTO KOREA','' ,'21','70');
+vec_productos[452]=  new Array('534','UNIFORME ADULTO MEXICO LOCAL
+','' ,'21','70');
+vec_productos[453]=  new Array('535','UNIFORME ADULTO NIGERIA LOCAL
+','' ,'21','70');
+vec_productos[454]=  new Array('539','UNIFORME ADULTO PARAGUAY VISITOR     ','' ,'21','70');
+vec_productos[455]=  new Array('549','UNIFORME ADULTO PORTUGAL HOME','' ,'21','70');
+vec_productos[456]=  new Array('536','UNIFORME ADULTO PORTUGAL VISITOR
+','' ,'21','70');
+vec_productos[457]=  new Array('522','UNIFORME ADULTO SUR AFRICA','' ,'21','70');
+vec_productos[458]=  new Array('537','UNIFORME ADULTO USA LOCAL
+','' ,'21','70');
+vec_productos[459]=  new Array('551','UNIFORME ADULTO USA VISITOR','' ,'21','70');
+vec_productos[460]=  new Array('614','UNIFORME AS ROMA HOME N.T','0' ,'21','70');
+vec_productos[461]=  new Array('455','UNIFORME BASKETBALL ATLANTA','' ,'21','154');
+vec_productos[462]=  new Array('457','UNIFORME BASKETBALL CAVALIERS','' ,'21','154');
+vec_productos[463]=  new Array('594','UNIFORME BASKETBALL CELTICS','' ,'21','154');
+vec_productos[464]=  new Array('458','UNIFORME BASKETBALL CLEVELAND
+','' ,'21','154');
+vec_productos[465]=  new Array('459','UNIFORME BASKETBALL DALLAS AZUL','' ,'21','154');
+vec_productos[466]=  new Array('460','UNIFORME BASKETBALL DALLAS BLANCA','' ,'21','154');
+vec_productos[467]=  new Array('461','UNIFORME BASKETBALL DENVER','' ,'21','154');
+vec_productos[468]=  new Array('462','UNIFORME BASKETBALL DETROIT','' ,'21','154');
+vec_productos[469]=  new Array('463','UNIFORME BASKETBALL HAWKS','' ,'21','154');
+vec_productos[470]=  new Array('592','UNIFORME BASKETBALL HEAT','' ,'21','154');
+vec_productos[471]=  new Array('465','UNIFORME BASKETBALL LAKER BLANCA','' ,'21','154');
+vec_productos[472]=  new Array('466','UNIFORME BASKETBALL LAKER MORADA','' ,'21','154');
+vec_productos[473]=  new Array('464','UNIFORME BASKETBALL LAKERS AMARILLA','' ,'21','154');
+vec_productos[474]=  new Array('456','UNIFORME BASKETBALL LAKERS BLANCO','' ,'21','154');
+vec_productos[475]=  new Array('467','UNIFORME BASKETBALL MIAMI','' ,'21','154');
+vec_productos[476]=  new Array('468','UNIFORME BASKETBALL NEW ORLEANS BLANCA','' ,'21','154');
+vec_productos[477]=  new Array('469','UNIFORME BASKETBALL NEW ORLEANS CELESTE','' ,'21','154');
+vec_productos[478]=  new Array('470','UNIFORME BASKETBALL NUGGETS','' ,'21','154');
+vec_productos[479]=  new Array('593','UNIFORME BASKETBALL PHONEX
+','' ,'21','154');
+vec_productos[480]=  new Array('471','UNIFORME BASKETBALL PISTONS','' ,'21','154');
+vec_productos[481]=  new Array('472','UNIFORME BASKETBALL ROCKETS','' ,'21','154');
+vec_productos[482]=  new Array('473','UNIFORME BASKETBALL SPURS','' ,'21','154');
+vec_productos[483]=  new Array('474','UNIFORME BASKETBALL SUNS','' ,'21','154');
+vec_productos[484]=  new Array('615','UNIFORME BOCA JR N.T','0' ,'21','70');
+vec_productos[485]=  new Array('547','UNIFORME BRASIL VISITOR ADULTO','' ,'21','70');
+vec_productos[486]=  new Array('616','UNIFORME CHEASE AWAY2 N.T','0' ,'21','70');
+vec_productos[487]=  new Array('303','UNIFORME LIGA ADULTO','' ,'21','70');
+vec_productos[488]=  new Array('255','UNIFORME LIGA NINO
+','' ,'21','71');
+vec_productos[489]=  new Array('324','UNIFORME LOCAL PROMOCION NINO','' ,'21','113');
+vec_productos[490]=  new Array('356','UNIFORME MANGA LARGA','' ,'21','117');
+vec_productos[491]=  new Array('375','UNIFORME NI&Ntilde;O ARGENTINA','' ,'21','71');
+vec_productos[492]=  new Array('370','UNIFORME NI&Ntilde;O BARCELONA','' ,'21','71');
+vec_productos[493]=  new Array('371','UNIFORME NI&Ntilde;O CHEALSE','' ,'21','71');
+vec_productos[494]=  new Array('545','UNIFORME NI&Ntilde;O FRANCIA VISITOR','' ,'21','71');
+vec_productos[495]=  new Array('544','UNIFORME NI&Ntilde;O ITALIA HOME','' ,'21','71');
+vec_productos[496]=  new Array('372','UNIFORME NI&Ntilde;O MANCHESTER','' ,'21','71');
+vec_productos[497]=  new Array('373','UNIFORME NI&Ntilde;O MILAN','' ,'21','71');
+vec_productos[498]=  new Array('374','UNIFORME NI&Ntilde;O MILL.','' ,'21','71');
+vec_productos[499]=  new Array('369','UNIFORME NI&Ntilde;O REAL','' ,'21','71');
+vec_productos[500]=  new Array('446','UNIFORME NINO ALEMANIA','' ,'21','71');
+vec_productos[501]=  new Array('552','UNIFORME NINO BAYERN HOME','' ,'21','71');
+vec_productos[502]=  new Array('447','UNIFORME NINO BRASIL','' ,'21','71');
+vec_productos[503]=  new Array('444','UNIFORME NINO ESPANA','' ,'21','71');
+vec_productos[504]=  new Array('445','UNIFORME NINO FRANCIA','' ,'21','71');
+vec_productos[505]=  new Array('448','UNIFORME NINO INGLATERRA','' ,'21','71');
+vec_productos[506]=  new Array('553','UNIFORME NINO INTER HOME','' ,'21','71');
+vec_productos[507]=  new Array('322','UNIFORME NINO LOCAL','' ,'21','113');
+vec_productos[508]=  new Array('538','UNIFORME NINO SUDAFRICA','' ,'21','71');
+vec_productos[509]=  new Array('554','UNIFORME NINO UEFA AZUL','' ,'21','71');
+vec_productos[510]=  new Array('556','UNIFORME NINO UEFA NARANJA','' ,'21','71');
+vec_productos[511]=  new Array('555','UNIFORME NINO UEFA ROJO','' ,'21','71');
+vec_productos[512]=  new Array('617','UNIFORME SPORTING HOME N.T','0' ,'21','70');
+vec_productos[513]=  new Array('618','UNIFORME WOFSBURG HOME N.T','0' ,'21','70');
+vec_productos[514]=  new Array('262','VESTIDO PANO HOMBRE
+','' ,'2','78');
+vec_productos[515]=  new Array('146','VESTIDO PANO HOMBRE','' ,'2','11');
+vec_productos[516]=  new Array('147','VESTIDO PANO HOMBRE','' ,'2','11');
+vec_productos[517]=  new Array('260','ZAPATOS
+','' ,'2','76');
+vec_productos[518]=  new Array('405','ZIPPER AZUL','' ,'21','70');
+vec_productos[519]=  new Array('400','ZIPPER CELESTE','' ,'21','70');
+vec_productos[520]=  new Array('401','ZIPPER OCRE','' ,'21','70');
+vec_productos[521]=  new Array('402','ZIPPER ROJO','' ,'21','70');
+vec_productos[522]=  new Array('404','ZIPPER VERDE','' ,'21','70');
+vec_productos[523]=  new Array('403','ZIPPRE AMARILLO','' ,'21','70');
+	var cant=1;
+	combo_llenar.options[0] = new Option('Seleccione','0'); 
+	for (j=0; j<524;j++)
+	{
+		if(document.getElementById('marca').value==vec_productos[j][3] & document.getElementById('tipo_producto').value==vec_productos[j][4]) 
+		{
+			combo_llenar.options[cant] = new Option(vec_productos[j][1],vec_productos[j][0]);  
+			cant++; 	
+		}
+	}
+}
+
+function busca_codigo() {
+	var codigo_buscar_referencia =document.getElementById('combo_referncia').value;	
+	var combo_llenar=document.getElementById('codigo_fry');	
+	combo_llenar.value='';
+	var vec_productos = new Array;
+	document.getElementById('cantidad').focus();
+	vec_productos[0]=  new Array('431','BAB0002');
+vec_productos[1]=  new Array('432','BAB0003');
+vec_productos[2]=  new Array('430','BAB0001');
+vec_productos[3]=  new Array('429','ACFU0013');
+vec_productos[4]=  new Array('386','CGYM0001');
+vec_productos[5]=  new Array('385','CAMODH0001');
+vec_productos[6]=  new Array('384','SUDLYC0001');
+vec_productos[7]=  new Array('383','BUDENI0001');
+vec_productos[8]=  new Array('382','BUSDEPOR0001');
+vec_productos[9]=  new Array('381','CHACA0001');
+vec_productos[10]=  new Array('428','ACFU0012');
+vec_productos[11]=  new Array('427','ACFU0011');
+vec_productos[12]=  new Array('426','ACFU0016');
+vec_productos[13]=  new Array('425','ACFU0010');
+vec_productos[14]=  new Array('424','ACFU0009');
+vec_productos[15]=  new Array('423','ACFU0015');
+vec_productos[16]=  new Array('422','ACFU0014');
+vec_productos[17]=  new Array('421','ACFU0008');
+vec_productos[18]=  new Array('420','ACFU0007');
+vec_productos[19]=  new Array('419','ACFU0006');
+vec_productos[20]=  new Array('418','ACFU0005');
+vec_productos[21]=  new Array('417','ACFU0004');
+vec_productos[22]=  new Array('416','ACFU0003');
+vec_productos[23]=  new Array('415','ACFU0002');
+vec_productos[24]=  new Array('413','ADIHO001');
+vec_productos[25]=  new Array('412','ADIMU001');
+vec_productos[26]=  new Array('411','SABA003');
+vec_productos[27]=  new Array('410','SABA002');
+vec_productos[28]=  new Array('409','SABA001');
+vec_productos[29]=  new Array('407','ABER008');
+vec_productos[30]=  new Array('408','SUDNI001');
+vec_productos[31]=  new Array('402','UEFA052');
+vec_productos[32]=  new Array('403','UEFA053');
+vec_productos[33]=  new Array('404','UEFA054');
+vec_productos[34]=  new Array('405','UEFA055');
+vec_productos[35]=  new Array('406','ABER007');
+vec_productos[36]=  new Array('399','UEFA049');
+vec_productos[37]=  new Array('400','UEFA050');
+vec_productos[38]=  new Array('401','UEFA051');
+vec_productos[39]=  new Array('393','UEFA043');
+vec_productos[40]=  new Array('394','UEFA044');
+vec_productos[41]=  new Array('395','UEFA045');
+vec_productos[42]=  new Array('396','UEFA046');
+vec_productos[43]=  new Array('397','UEFA047');
+vec_productos[44]=  new Array('398','UEFA048');
+vec_productos[45]=  new Array('392','UEFA042');
+vec_productos[46]=  new Array('391','UEFA041');
+vec_productos[47]=  new Array('390','UEFA040');
+vec_productos[48]=  new Array('389','UEFA039');
+vec_productos[49]=  new Array('388','UEFA038');
+vec_productos[50]=  new Array('387','BOT1001');
+vec_productos[51]=  new Array('56','REL0229');
+vec_productos[52]=  new Array('57','REL0230');
+vec_productos[53]=  new Array('58','REL0231');
+vec_productos[54]=  new Array('59','REL0232');
+vec_productos[55]=  new Array('60','REL0233');
+vec_productos[56]=  new Array('61','REL0234');
+vec_productos[57]=  new Array('62','REL0235');
+vec_productos[58]=  new Array('63','REL0236');
+vec_productos[59]=  new Array('64','REL0237');
+vec_productos[60]=  new Array('66','REL0302');
+vec_productos[61]=  new Array('67','REL0303');
+vec_productos[62]=  new Array('68','REL0304');
+vec_productos[63]=  new Array('69','REL0305');
+vec_productos[64]=  new Array('70','REL0306');
+vec_productos[65]=  new Array('71','REL0307');
+vec_productos[66]=  new Array('72','REL0308');
+vec_productos[67]=  new Array('73','REL0309');
+vec_productos[68]=  new Array('74','REL0310');
+vec_productos[69]=  new Array('75','REL0311');
+vec_productos[70]=  new Array('76','REL0312');
+vec_productos[71]=  new Array('77','REL0313');
+vec_productos[72]=  new Array('78','REL0314');
+vec_productos[73]=  new Array('79','REL0315');
+vec_productos[74]=  new Array('80','REL0316');
+vec_productos[75]=  new Array('81','REL0401');
+vec_productos[76]=  new Array('82','REL0402');
+vec_productos[77]=  new Array('83','REL0403');
+vec_productos[78]=  new Array('84','REL0404');
+vec_productos[79]=  new Array('85','REL0405');
+vec_productos[80]=  new Array('86','REL0406');
+vec_productos[81]=  new Array('87','REL0407');
+vec_productos[82]=  new Array('88','REL0408');
+vec_productos[83]=  new Array('89','REL0409');
+vec_productos[84]=  new Array('90','REL0410');
+vec_productos[85]=  new Array('91','REL0411');
+vec_productos[86]=  new Array('92','REL0501');
+vec_productos[87]=  new Array('93','REL0502');
+vec_productos[88]=  new Array('94','REL0503');
+vec_productos[89]=  new Array('95','REL0504');
+vec_productos[90]=  new Array('96','REL0505');
+vec_productos[91]=  new Array('98','REL0507');
+vec_productos[92]=  new Array('99','REL0508');
+vec_productos[93]=  new Array('100','REL0509');
+vec_productos[94]=  new Array('101','REL0510');
+vec_productos[95]=  new Array('102','REL0511');
+vec_productos[96]=  new Array('103','REL0512');
+vec_productos[97]=  new Array('104','REL0513');
+vec_productos[98]=  new Array('106','REL0515');
+vec_productos[99]=  new Array('107','REL0601');
+vec_productos[100]=  new Array('108','REL0602');
+vec_productos[101]=  new Array('109','REL0603');
+vec_productos[102]=  new Array('110','REL0604');
+vec_productos[103]=  new Array('111','REL0605');
+vec_productos[104]=  new Array('112','REL0606');
+vec_productos[105]=  new Array('113','REL0701');
+vec_productos[106]=  new Array('114','REL0702');
+vec_productos[107]=  new Array('115','REL0703');
+vec_productos[108]=  new Array('116','REL0704');
+vec_productos[109]=  new Array('117','REL0801');
+vec_productos[110]=  new Array('118','REL0802');
+vec_productos[111]=  new Array('119','REL0803');
+vec_productos[112]=  new Array('120','REL0804');
+vec_productos[113]=  new Array('121','REL0805');
+vec_productos[114]=  new Array('122','REL0806');
+vec_productos[115]=  new Array('123','REL0807');
+vec_productos[116]=  new Array('124','REL0808');
+vec_productos[117]=  new Array('126','REL0901');
+vec_productos[118]=  new Array('127','REL0902');
+vec_productos[119]=  new Array('128','REL0903');
+vec_productos[120]=  new Array('129','REL1001');
+vec_productos[121]=  new Array('130','REL1002');
+vec_productos[122]=  new Array('131','REL1101');
+vec_productos[123]=  new Array('132','REL1102');
+vec_productos[124]=  new Array('133','REL1103');
+vec_productos[125]=  new Array('213','VES0201');
+vec_productos[126]=  new Array('135','REL1202');
+vec_productos[127]=  new Array('136','REL1203');
+vec_productos[128]=  new Array('137','REL1301');
+vec_productos[129]=  new Array('138','REL1302');
+vec_productos[130]=  new Array('139','REL1303');
+vec_productos[131]=  new Array('140','REL1304');
+vec_productos[132]=  new Array('141','REL1305');
+vec_productos[133]=  new Array('142','REL1306');
+vec_productos[134]=  new Array('143','REL1401');
+vec_productos[135]=  new Array('144','REL1402');
+vec_productos[136]=  new Array('145','REL1403');
+vec_productos[137]=  new Array('146','VES0101');
+vec_productos[138]=  new Array('147','VES0102');
+vec_productos[139]=  new Array('148','VES0103');
+vec_productos[140]=  new Array('149','VES0104');
+vec_productos[141]=  new Array('150','VES0105');
+vec_productos[142]=  new Array('151','CAM0101');
+vec_productos[143]=  new Array('152','CAM0102');
+vec_productos[144]=  new Array('153','CAM0103');
+vec_productos[145]=  new Array('154','CAM0104');
+vec_productos[146]=  new Array('155','CAM0105');
+vec_productos[147]=  new Array('156','CAM0106');
+vec_productos[148]=  new Array('157','CAM0107');
+vec_productos[149]=  new Array('158','CAM0108');
+vec_productos[150]=  new Array('159','CAM0109');
+vec_productos[151]=  new Array('160','CHA0101');
+vec_productos[152]=  new Array('161','CHA0102');
+vec_productos[153]=  new Array('162','CHA0103');
+vec_productos[154]=  new Array('163','CHA0104');
+vec_productos[155]=  new Array('164','CHA0105');
+vec_productos[156]=  new Array('165','CHA0106');
+vec_productos[157]=  new Array('166','CHA0201');
+vec_productos[158]=  new Array('167','CHA0202');
+vec_productos[159]=  new Array('168','CHA0301');
+vec_productos[160]=  new Array('169','CHA0302');
+vec_productos[161]=  new Array('170','CHA0303');
+vec_productos[162]=  new Array('171','CHM0101');
+vec_productos[163]=  new Array('172','CHM0201');
+vec_productos[164]=  new Array('173','CHM0202');
+vec_productos[165]=  new Array('174','CHM0203');
+vec_productos[166]=  new Array('175','CHM0204');
+vec_productos[167]=  new Array('176','CHM0205');
+vec_productos[168]=  new Array('177','CHM0206');
+vec_productos[169]=  new Array('178','CHM0207');
+vec_productos[170]=  new Array('179','CHM0208');
+vec_productos[171]=  new Array('180','BOX0101');
+vec_productos[172]=  new Array('181','BOX0102');
+vec_productos[173]=  new Array('182','BOX0103');
+vec_productos[174]=  new Array('183','BOM0101');
+vec_productos[175]=  new Array('184','ESQ0101');
+vec_productos[176]=  new Array('287','BUA0001');
+vec_productos[177]=  new Array('186','TOP0101');
+vec_productos[178]=  new Array('187','PAN0101');
+vec_productos[179]=  new Array('188','PAN0201');
+vec_productos[180]=  new Array('189','SUD0101');
+vec_productos[181]=  new Array('190','SUD0102');
+vec_productos[182]=  new Array('191','SUD0103');
+vec_productos[183]=  new Array('192','SUD0104');
+vec_productos[184]=  new Array('193','SUD0105');
+vec_productos[185]=  new Array('194','SUD0201');
+vec_productos[186]=  new Array('195','SUD0202');
+vec_productos[187]=  new Array('196','SUD0203');
+vec_productos[188]=  new Array('197','SUD0204');
+vec_productos[189]=  new Array('198','SUD0301');
+vec_productos[190]=  new Array('199','SUD0302');
+vec_productos[191]=  new Array('200','SUD0303');
+vec_productos[192]=  new Array('201','SUD0304');
+vec_productos[193]=  new Array('202','SUD0305');
+vec_productos[194]=  new Array('203','SUD0401');
+vec_productos[195]=  new Array('204','MP30101');
+vec_productos[196]=  new Array('205','TRA0101');
+vec_productos[197]=  new Array('206','USB0101');
+vec_productos[198]=  new Array('207','USB0102');
+vec_productos[199]=  new Array('208','USB0103');
+vec_productos[200]=  new Array('209','BOL0101');
+vec_productos[201]=  new Array('210','BOL0102');
+vec_productos[202]=  new Array('211','BOL0103');
+vec_productos[203]=  new Array('212','BOL0104');
+vec_productos[204]=  new Array('414','ACFU0001');
+vec_productos[205]=  new Array('356','UML0001');
+vec_productos[206]=  new Array('293','PTH0001');
+vec_productos[207]=  new Array('219','');
+vec_productos[208]=  new Array('220','SUD0001');
+vec_productos[209]=  new Array('221','PLM0001');
+vec_productos[210]=  new Array('222','PLM0002');
+vec_productos[211]=  new Array('224','CDM0001');
+vec_productos[212]=  new Array('225','PTM0001');
+vec_productos[213]=  new Array('226','CDH0001');
+vec_productos[214]=  new Array('227','MDH0001');
+vec_productos[215]=  new Array('228','MDM0001');
+vec_productos[216]=  new Array('229','CMD0001');
+vec_productos[217]=  new Array('230','BMD0001');
+vec_productos[218]=  new Array('231','PSH0001');
+vec_productos[219]=  new Array('232','PDH0001');
+vec_productos[220]=  new Array('233','PJH0001');
+vec_productos[221]=  new Array('234','PHM0001');
+vec_productos[222]=  new Array('235','CHP0001');
+vec_productos[223]=  new Array('236','CHC0001');
+vec_productos[224]=  new Array('237','CHS0001');
+vec_productos[225]=  new Array('238','CHI0001');
+vec_productos[226]=  new Array('239','CAS0001');
+vec_productos[227]=  new Array('240','SHC0001');
+vec_productos[228]=  new Array('241','CAP0001');
+vec_productos[229]=  new Array('242','BAC0001');
+vec_productos[230]=  new Array('243','BAP0001');
+vec_productos[231]=  new Array('244','CMC0001');
+vec_productos[232]=  new Array('245','CMP0001');
+vec_productos[233]=  new Array('246','BLC0001');
+vec_productos[234]=  new Array('247','BLP0001');
+vec_productos[235]=  new Array('248','FMP0001');
+vec_productos[236]=  new Array('249','PMP0001');
+vec_productos[237]=  new Array('250','SMC0001');
+vec_productos[238]=  new Array('251','ABP0001');
+vec_productos[239]=  new Array('252','BZM0001');
+vec_productos[240]=  new Array('307','CAP0002');
+vec_productos[241]=  new Array('255','ULN0001');
+vec_productos[242]=  new Array('256','MFC0001');
+vec_productos[243]=  new Array('257','CHE0001');
+vec_productos[244]=  new Array('258','CAF0001');
+vec_productos[245]=  new Array('259','COR0001');
+vec_productos[246]=  new Array('260','ZAP0001');
+vec_productos[247]=  new Array('261','BZH0001');
+vec_productos[248]=  new Array('262','VHC0001');
+vec_productos[249]=  new Array('263','BOX0001');
+vec_productos[250]=  new Array('264','BOM0001');
+vec_productos[251]=  new Array('265','TAN0001');
+vec_productos[252]=  new Array('266','CEM0001');
+vec_productos[253]=  new Array('267','TOP0001');
+vec_productos[254]=  new Array('268','REH0001');
+vec_productos[255]=  new Array('269','REM0001');
+vec_productos[256]=  new Array('270','RMP0001');
+vec_productos[257]=  new Array('271','BMG0001');
+vec_productos[258]=  new Array('272','BMA0001');
+vec_productos[259]=  new Array('273','BMC0001');
+vec_productos[260]=  new Array('274','BMP0001');
+vec_productos[261]=  new Array('275','BMC0002');
+vec_productos[262]=  new Array('276','MOC0001');
+vec_productos[263]=  new Array('277','MCV0001');
+vec_productos[264]=  new Array('278','MCV0002');
+vec_productos[265]=  new Array('279','BIC0001');
+vec_productos[266]=  new Array('280','BIM0001');
+vec_productos[267]=  new Array('281','GOD0001');
+vec_productos[268]=  new Array('282','PPN0001');
+vec_productos[269]=  new Array('283','GUA0001');
+vec_productos[270]=  new Array('284','TEP0001');
+vec_productos[271]=  new Array('306','RMP0004');
+vec_productos[272]=  new Array('294','PTH0001');
+vec_productos[273]=  new Array('295','REM0001');
+vec_productos[274]=  new Array('296','REH0001');
+vec_productos[275]=  new Array('354','BUA001');
+vec_productos[276]=  new Array('302','CEC0001');
+vec_productos[277]=  new Array('303','ULA0001');
+vec_productos[278]=  new Array('614','UEFA0103');
+vec_productos[279]=  new Array('315','CAN0001');
+vec_productos[280]=  new Array('352','GUAF0001');
+vec_productos[281]=  new Array('321','CEL0001');
+vec_productos[282]=  new Array('322','UNL0001');
+vec_productos[283]=  new Array('323','CAF0002');
+vec_productos[284]=  new Array('324','UNL0002');
+vec_productos[285]=  new Array('325','UEFA001');
+vec_productos[286]=  new Array('326','UEFA002');
+vec_productos[287]=  new Array('327','UEFA003');
+vec_productos[288]=  new Array('328','UEFA004');
+vec_productos[289]=  new Array('329','UEFA005');
+vec_productos[290]=  new Array('330','UEFA006');
+vec_productos[291]=  new Array('331','UEFA007');
+vec_productos[292]=  new Array('332','UEFA008');
+vec_productos[293]=  new Array('333','UEFA009');
+vec_productos[294]=  new Array('334','UEFA010');
+vec_productos[295]=  new Array('335','UEFA011');
+vec_productos[296]=  new Array('336','UEFA012');
+vec_productos[297]=  new Array('337','UEFA013');
+vec_productos[298]=  new Array('338','UEFA014');
+vec_productos[299]=  new Array('339','UEFA015');
+vec_productos[300]=  new Array('340','UEFA016');
+vec_productos[301]=  new Array('341','UEFA017');
+vec_productos[302]=  new Array('342','UEFA018');
+vec_productos[303]=  new Array('343','UEFA019');
+vec_productos[304]=  new Array('344','UEFA020');
+vec_productos[305]=  new Array('345','UEFA021');
+vec_productos[306]=  new Array('346','UEFA022');
+vec_productos[307]=  new Array('347','UEFA023');
+vec_productos[308]=  new Array('348','MFC0002');
+vec_productos[309]=  new Array('349','UEFA024');
+vec_productos[310]=  new Array('351','KIN0001');
+vec_productos[311]=  new Array('353','PAR0001');
+vec_productos[312]=  new Array('357','refpreuba');
+vec_productos[313]=  new Array('358','ABER0001');
+vec_productos[314]=  new Array('359','ABER0002');
+vec_productos[315]=  new Array('360','ABER0003');
+vec_productos[316]=  new Array('361','ABER0004');
+vec_productos[317]=  new Array('362','ABER0005');
+vec_productos[318]=  new Array('363','ABER0006');
+vec_productos[319]=  new Array('364','NORT0001');
+vec_productos[320]=  new Array('365','NORT0002');
+vec_productos[321]=  new Array('366','CHRV0001');
+vec_productos[322]=  new Array('367','BONG0001');
+vec_productos[323]=  new Array('368','BUSO0007');
+vec_productos[324]=  new Array('369','UEFA0025');
+vec_productos[325]=  new Array('370','UEFA0026');
+vec_productos[326]=  new Array('371','UEFA0027');
+vec_productos[327]=  new Array('372','UEFA0028');
+vec_productos[328]=  new Array('373','UEFA0029');
+vec_productos[329]=  new Array('374','UEFA0030');
+vec_productos[330]=  new Array('375','UEFA0031');
+vec_productos[331]=  new Array('376','UEFA0032');
+vec_productos[332]=  new Array('377','UEFA0033');
+vec_productos[333]=  new Array('378','UEFA0034');
+vec_productos[334]=  new Array('379','UEFA0035');
+vec_productos[335]=  new Array('380','UEFA0036');
+vec_productos[336]=  new Array('433','BAF0001');
+vec_productos[337]=  new Array('434','BAF0002');
+vec_productos[338]=  new Array('435','BAF0003');
+vec_productos[339]=  new Array('436','BAF0004');
+vec_productos[340]=  new Array('437','BAF0005');
+vec_productos[341]=  new Array('438','BAF0006');
+vec_productos[342]=  new Array('439','CAC0001');
+vec_productos[343]=  new Array('440','CAC0002');
+vec_productos[344]=  new Array('441','CAC0003');
+vec_productos[345]=  new Array('442','GUYA0001');
+vec_productos[346]=  new Array('443','GUYAOOO2');
+vec_productos[347]=  new Array('444','UEFA0037');
+vec_productos[348]=  new Array('445','UEFA0038');
+vec_productos[349]=  new Array('446','UEFA0039');
+vec_productos[350]=  new Array('447','UEFA0040');
+vec_productos[351]=  new Array('448','UEFA0041');
+vec_productos[352]=  new Array('449','UEFA056');
+vec_productos[353]=  new Array('450','UEFA057');
+vec_productos[354]=  new Array('451','GUYN0001');
+vec_productos[355]=  new Array('452','GUYN0002');
+vec_productos[356]=  new Array('453','GYM0001');
+vec_productos[357]=  new Array('454','GYM0002');
+vec_productos[358]=  new Array('455','NBA001');
+vec_productos[359]=  new Array('456','NBA002');
+vec_productos[360]=  new Array('457','NBA003');
+vec_productos[361]=  new Array('458','NBA004');
+vec_productos[362]=  new Array('459','NBA005');
+vec_productos[363]=  new Array('460','NBA006');
+vec_productos[364]=  new Array('461','NBA007');
+vec_productos[365]=  new Array('462','NBA008');
+vec_productos[366]=  new Array('463','NBA009');
+vec_productos[367]=  new Array('464','NBA010');
+vec_productos[368]=  new Array('465','NBA011');
+vec_productos[369]=  new Array('466','NBA012');
+vec_productos[370]=  new Array('467','NBA013');
+vec_productos[371]=  new Array('468','NBA014');
+vec_productos[372]=  new Array('469','NBA015');
+vec_productos[373]=  new Array('470','NBA016');
+vec_productos[374]=  new Array('471','NBA017');
+vec_productos[375]=  new Array('472','NBA018');
+vec_productos[376]=  new Array('473','NBA019');
+vec_productos[377]=  new Array('474','NBA020');
+vec_productos[378]=  new Array('475','GYM0003');
+vec_productos[379]=  new Array('476','GYM0004');
+vec_productos[380]=  new Array('477','GYM0005');
+vec_productos[381]=  new Array('478','GYM0006');
+vec_productos[382]=  new Array('479','MUNE0001');
+vec_productos[383]=  new Array('480','NATA0001');
+vec_productos[384]=  new Array('481','NATA0004');
+vec_productos[385]=  new Array('482','NATA0005');
+vec_productos[386]=  new Array('483','PING0001');
+vec_productos[387]=  new Array('484','PING0002');
+vec_productos[388]=  new Array('485','PING0003');
+vec_productos[389]=  new Array('486','PING0004');
+vec_productos[390]=  new Array('487','PING0005');
+vec_productos[391]=  new Array('488','RECR0002');
+vec_productos[392]=  new Array('489','RECR0001');
+vec_productos[393]=  new Array('490','TENI0001');
+vec_productos[394]=  new Array('491','TERA0001');
+vec_productos[395]=  new Array('492','TERA0002');
+vec_productos[396]=  new Array('493','TERA0003');
+vec_productos[397]=  new Array('494','TERA0004');
+vec_productos[398]=  new Array('495','TERA0005');
+vec_productos[399]=  new Array('496','TERA0006');
+vec_productos[400]=  new Array('497','TERA0007');
+vec_productos[401]=  new Array('498','TERA0008');
+vec_productos[402]=  new Array('499','TERA0009');
+vec_productos[403]=  new Array('500','TERA0010');
+vec_productos[404]=  new Array('501','TERA0011');
+vec_productos[405]=  new Array('502','TERA0012');
+vec_productos[406]=  new Array('503','TERA0013');
+vec_productos[407]=  new Array('504','TERA0014');
+vec_productos[408]=  new Array('505','ARQU0001');
+vec_productos[409]=  new Array('506','ARQU0002');
+vec_productos[410]=  new Array('507','ARQU0003');
+vec_productos[411]=  new Array('508','ARQU0004');
+vec_productos[412]=  new Array('509','LYCR0001');
+vec_productos[413]=  new Array('510','LYCR0002');
+vec_productos[414]=  new Array('511','LYCR0003');
+vec_productos[415]=  new Array('512','LYCR0004');
+vec_productos[416]=  new Array('513','LYCR0005');
+vec_productos[417]=  new Array('514','MFPN0001');
+vec_productos[418]=  new Array('515','MFPN0002');
+vec_productos[419]=  new Array('516','PLANCHA001');
+vec_productos[420]=  new Array('517','UEFA0042');
+vec_productos[421]=  new Array('518','UEFA0043');
+vec_productos[422]=  new Array('519','UEFA0044');
+vec_productos[423]=  new Array('520','UEFA0045');
+vec_productos[424]=  new Array('521','UEFA0046');
+vec_productos[425]=  new Array('522','UEFA0047');
+vec_productos[426]=  new Array('523','UEFA0048');
+vec_productos[427]=  new Array('524','UEFA0049');
+vec_productos[428]=  new Array('525','UEFA0050');
+vec_productos[429]=  new Array('526','UEFA0051');
+vec_productos[430]=  new Array('527','UEFA0052');
+vec_productos[431]=  new Array('528','UEFA0053');
+vec_productos[432]=  new Array('529','UEFA0054');
+vec_productos[433]=  new Array('530','UEFA0055');
+vec_productos[434]=  new Array('531','UEFA0056');
+vec_productos[435]=  new Array('532','UEFA0057');
+vec_productos[436]=  new Array('533','UEFA0058');
+vec_productos[437]=  new Array('534','UEFA0059');
+vec_productos[438]=  new Array('535','UEFA0060');
+vec_productos[439]=  new Array('536','UEFA0061');
+vec_productos[440]=  new Array('537','UEFA0062');
+vec_productos[441]=  new Array('538','UEFA0063');
+vec_productos[442]=  new Array('539','UEFA0064');
+vec_productos[443]=  new Array('540','CNC0001 ');
+vec_productos[444]=  new Array('541','BAGGUA0001');
+vec_productos[445]=  new Array('542','UEFA0065');
+vec_productos[446]=  new Array('543','UEFA0066');
+vec_productos[447]=  new Array('544','UEFA0067');
+vec_productos[448]=  new Array('545','UEFA0068');
+vec_productos[449]=  new Array('557','UEFA0078');
+vec_productos[450]=  new Array('547','UEFA0069');
+vec_productos[451]=  new Array('549','UEFA0070');
+vec_productos[452]=  new Array('550','UEFA0071');
+vec_productos[453]=  new Array('551','UEFA0072');
+vec_productos[454]=  new Array('552','UEFA0073');
+vec_productos[455]=  new Array('553','UEFA0074');
+vec_productos[456]=  new Array('554','UEFA0075');
+vec_productos[457]=  new Array('555','UEFA0076');
+vec_productos[458]=  new Array('556','UEFA0077');
+vec_productos[459]=  new Array('558','UEFA0079');
+vec_productos[460]=  new Array('560','UEFA0080');
+vec_productos[461]=  new Array('561','UEFA0081');
+vec_productos[462]=  new Array('562','UEFA0082');
+vec_productos[463]=  new Array('563','UEFA0083');
+vec_productos[464]=  new Array('564','UEFA0084');
+vec_productos[465]=  new Array('565','UEFA0085');
+vec_productos[466]=  new Array('566','UEFA0086');
+vec_productos[467]=  new Array('567','UEFA0087');
+vec_productos[468]=  new Array('568','UEFA0088');
+vec_productos[469]=  new Array('569','UEFA0089');
+vec_productos[470]=  new Array('570','UEFA0090');
+vec_productos[471]=  new Array('571','UEFA0091');
+vec_productos[472]=  new Array('572','UEFA0092');
+vec_productos[473]=  new Array('573','UEFA0093');
+vec_productos[474]=  new Array('574','UEFA0094');
+vec_productos[475]=  new Array('575','UEFA0095');
+vec_productos[476]=  new Array('576','ACFU0017');
+vec_productos[477]=  new Array('577','ACFU0018');
+vec_productos[478]=  new Array('578','ACFU0019');
+vec_productos[479]=  new Array('579','ACFU0020');
+vec_productos[480]=  new Array('580','ACFU0021');
+vec_productos[481]=  new Array('581','ACFU0022');
+vec_productos[482]=  new Array('582','ACFU0023');
+vec_productos[483]=  new Array('583','ACFU0024');
+vec_productos[484]=  new Array('584','ACFU0025');
+vec_productos[485]=  new Array('585','ACFU0026');
+vec_productos[486]=  new Array('586','ACFU0027');
+vec_productos[487]=  new Array('587','ACFU0028');
+vec_productos[488]=  new Array('588','ACFU0029');
+vec_productos[489]=  new Array('589','ACFU0030');
+vec_productos[490]=  new Array('590','ACFU0031');
+vec_productos[491]=  new Array('591','ACFU0032');
+vec_productos[492]=  new Array('592','NBA021');
+vec_productos[493]=  new Array('593','NBA022');
+vec_productos[494]=  new Array('594','NBA023');
+vec_productos[495]=  new Array('595','UEFA0096');
+vec_productos[496]=  new Array('596','UEFA0097');
+vec_productos[497]=  new Array('597','UEFA0098');
+vec_productos[498]=  new Array('598','UEFA0099');
+vec_productos[499]=  new Array('599','UEFA0100');
+vec_productos[500]=  new Array('600','UEFA0101');
+vec_productos[501]=  new Array('601','UEFA0102');
+vec_productos[502]=  new Array('602','LYC007');
+vec_productos[503]=  new Array('603','LYC008');
+vec_productos[504]=  new Array('604','LYC009 ');
+vec_productos[505]=  new Array('605','LYC010');
+vec_productos[506]=  new Array('606','BAV0001');
+vec_productos[507]=  new Array('607','TERA0015');
+vec_productos[508]=  new Array('608','ACFU0033');
+vec_productos[509]=  new Array('609','RATE0001');
+vec_productos[510]=  new Array('610','RASQ0001');
+vec_productos[511]=  new Array('611','BOLTEN0001');
+vec_productos[512]=  new Array('612','BOLTEN0002');
+vec_productos[513]=  new Array('613','TERM0001');
+vec_productos[514]=  new Array('615','UEFA0105');
+vec_productos[515]=  new Array('616','UEFA0106');
+vec_productos[516]=  new Array('617','UEFA0107');
+vec_productos[517]=  new Array('618','UEFA0108');
+vec_productos[518]=  new Array('619','BFA0001');
+vec_productos[519]=  new Array('620','PROMO11');
+vec_productos[520]=  new Array('621','BASCU0001');
+vec_productos[521]=  new Array('622','UEFA0137');
+vec_productos[522]=  new Array('623','UEFA0138');
+vec_productos[523]=  new Array('624','UEFA0104');
+	for (j=0; j<524;j++)
+	{
+		if(codigo_buscar_referencia==vec_productos[j][0]) 
+		{
+			combo_llenar.value=vec_productos[j][1];
+		}
+	}
+}
+
+function cargar_combos()
+{
+	var codigo_buscar_referencia =document.getElementById('codigo_fry').value;	
+	document.getElementById('peso').focus();
+	var vec_productos = new Array;
+	vec_productos[0]=  new Array('431','BALON BASKET PROFESIONAL','BAB0002','141','28','BALONES','','','BALON');
+vec_productos[1]=  new Array('432','BALON BASKET SPTF # 5','BAB0003','141','28','BALONES','','','BALON');
+vec_productos[2]=  new Array('430','BALON BASKET COLORES','BAB0001','141','28','BALONES','','','BALON');
+vec_productos[3]=  new Array('429','CANILLERA CROMO CON TOBILLERA N.','ACFU0013','111','27','ACCESORIOS FUTBOL','','','CANILLERAS');
+vec_productos[4]=  new Array('386','CONJUNTO GYM MUJER','CGYM0001','133','5','ROPA DEPORTIVA','','','CONJUNTO GYM MUJER');
+vec_productos[5]=  new Array('385','CAMISETA MODA HOMBRE','CAMODH0001','132','5','ROPA DEPORTIVA','','','CAMISETA MODA HOMBRE');
+vec_productos[6]=  new Array('384','SUDADERA LYCRA DAMA','SUDLYC0001','131','31','GYM','','','SUDADERA LYCRA DAMA');
+vec_productos[7]=  new Array('383','BUSO DEPORTIVO NI&Ntilde;O','BUDENI0001','130','5','ROPA DEPORTIVA','','','BUSO DEPORTIVO NI&Ntilde;O');
+vec_productos[8]=  new Array('382','BUSODEPORTIVO HOMBRE','BUSDEPOR0001','129','5','ROPA DEPORTIVA','','','BUSO DEPORTIVO HOMBRE');
+vec_productos[9]=  new Array('381','CHAQUETA CAPOTA HOMBRE','CHACA0001','128','5','ROPA DEPORTIVA','','','CHAQUETA CAPOTA HOMBRE');
+vec_productos[10]=  new Array('428','CANILLERA NIKE T-90','ACFU0012','111','27','ACCESORIOS FUTBOL','','','CANILLERAS');
+vec_productos[11]=  new Array('427','CANILLERA CON TOBILLERA R.','ACFU0011','111','27','ACCESORIOS FUTBOL','','','CANILLERAS');
+vec_productos[12]=  new Array('426','PROTECTOR BUCAL','ACFU0016','140','27','ACCESORIOS FUTBOL','','','PROTECTOR BUCAL');
+vec_productos[13]=  new Array('425','GUAYERA FUTBOL ','ACFU0010','139','27','ACCESORIOS FUTBOL','','','GUAYERA - BAG SOCCER');
+vec_productos[14]=  new Array('424','PITO ARBITRO FOX 40','ACFU0009','138','27','ACCESORIOS FUTBOL','','','PITO ARBITRO');
+vec_productos[15]=  new Array('423','GUANTE ARQUERO ADULTO','ACFU0015','137','27','ACCESORIOS FUTBOL','','','GUANTE ARQUERO');
+vec_productos[16]=  new Array('422','PITO ARBITRO ACME','ACFU0014','138','27','ACCESORIOS FUTBOL','','','PITO ARBITRO');
+vec_productos[17]=  new Array('421','GUANTE ARQUERO JR','ACFU0008','137','27','ACCESORIOS FUTBOL','','','GUANTE ARQUERO');
+vec_productos[18]=  new Array('420','COPA PROTECTOR ','ACFU0007','136','27','ACCESORIOS FUTBOL','','','COPA PROTECTOR');
+vec_productos[19]=  new Array('419','CANILLERA SENCILLA P.','ACFU0006','111','27','ACCESORIOS FUTBOL','','','CANILLERAS');
+vec_productos[20]=  new Array('418','CANILLERA N. SENCILLA SP198','ACFU0005','111','27','ACCESORIOS FUTBOL','','','CANILLERAS');
+vec_productos[21]=  new Array('417','CANILLERA NIKE CROMO SENCILLA','ACFU0004','111','27','ACCESORIOS FUTBOL','','','CANILLERAS');
+vec_productos[22]=  new Array('416','CANILLERA NIKE SPO40','ACFU0003','111','27','ACCESORIOS FUTBOL','','','CANILLERAS');
+vec_productos[23]=  new Array('415','CANILLERA RUNIC CON TOBILLERA','ACFU0002','111','27','ACCESORIOS FUTBOL','','','CANILLERAS');
+vec_productos[24]=  new Array('413','CHAQUETA ADI. HOMBRE','ADIHO001','53','5','ROPA DEPORTIVA','','','CHAQUETA SPORT');
+vec_productos[25]=  new Array('412','CHAQUETA ADI. MUJER','ADIMU001','45','5','ROPA DEPORTIVA','','','CHAQUETA MUJER DEPORTIVA COLECCION');
+vec_productos[26]=  new Array('411','JUEGO DE SABANAS 2.0','SABA003','135','7','ACCESORIOS','','','JUEGO DE SABANAS');
+vec_productos[27]=  new Array('410','JUEGO SABANAS 1.6','SABA002','135','7','ACCESORIOS','','','JUEGO DE SABANAS');
+vec_productos[28]=  new Array('409','JUEGO SABANAS 1.20','SABA001','135','7','ACCESORIOS','','','JUEGO DE SABANAS');
+vec_productos[29]=  new Array('407','ABRIGO ABER. CORTO','ABER008','67','5','ROPA DEPORTIVA','','','ABRIGO MUJER PROMOCION');
+vec_productos[30]=  new Array('408','SUDADERA NI&Ntilde;O','SUDNI001','109','5','ROPA DEPORTIVA','','','SUDADERA');
+vec_productos[31]=  new Array('402','ZIPPER ROJO','UEFA052','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[32]=  new Array('403','ZIPPRE AMARILLO','UEFA053','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[33]=  new Array('404','ZIPPER VERDE','UEFA054','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[34]=  new Array('405','ZIPPER AZUL','UEFA055','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[35]=  new Array('406','SUDADERA ABER. 2 PIEZAS','ABER007','109','5','ROPA DEPORTIVA','','','SUDADERA');
+vec_productos[36]=  new Array('399','UEFA PARIS HOME','UEFA049','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[37]=  new Array('400','ZIPPER CELESTE','UEFA050','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[38]=  new Array('401','ZIPPER OCRE','UEFA051','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[39]=  new Array('393','UEFA ARSENAL VISITOR 2','UEFA043','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[40]=  new Array('394','UEFA ATLETICO HOME','UEFA044','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[41]=  new Array('395','UEFA SPORTING HOME','UEFA045','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[42]=  new Array('396','UEFA AJAX HOME','UEFA046','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[43]=  new Array('397','UEFA PSV HOME','UEFA047','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[44]=  new Array('398','UEFA WOLFSBURG HOME','UEFA048','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[45]=  new Array('392','UEFA BAYERN VISITOR','UEFA042','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[46]=  new Array('391','UEFA BOCA HOME','UEFA041','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[47]=  new Array('390','UEFA OLIMPIQUE HOME','UEFA040','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[48]=  new Array('389','UEFA PORTO HOME','UEFA039','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[49]=  new Array('388','UEFA INTER VISITOR','UEFA038','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[50]=  new Array('387','MAQUINA TERMOFIJADORA 110V','BOT1001','134','5','ROPA DEPORTIVA','','','BOTAS DE LUCHA');
+vec_productos[51]=  new Array('209','','BOL0101','26','7','ACCESORIOS','','','ARTESANAL');
+vec_productos[52]=  new Array('210','','BOL0102','26','7','ACCESORIOS','','','ARTESANAL');
+vec_productos[53]=  new Array('211','','BOL0103','26','7','ACCESORIOS','','','ARTESANAL');
+vec_productos[54]=  new Array('212','','BOL0104','26','7','ACCESORIOS','','','ARTESANAL');
+vec_productos[55]=  new Array('414','CANILLERRA UMBRO CON TOBILLERA','ACFU0001','111','27','ACCESORIOS FUTBOL','','','CANILLERAS');
+vec_productos[56]=  new Array('356','UNIFORME MANGA LARGA','UML0001','117','21','UNIFORMES','','','UNIFORME MANGA LARGA');
+vec_productos[57]=  new Array('220','SUDADERA
+','SUD0001','109','5','ROPA DEPORTIVA','','','SUDADERA');
+vec_productos[58]=  new Array('221','PANTALON LICRADO MUJER LARGO
+','PLM0001','37','5','ROPA DEPORTIVA','','','PANTALON LICRA DEPORTE PARA MUJER');
+vec_productos[59]=  new Array('222','PANTALON LICRADO MUJER 3/4
+
+','PLM0002','38','5','ROPA DEPORTIVA','','','PANTALON LICRA DEPORTE PARA MUJER 3/4');
+vec_productos[60]=  new Array('224','CAMISETA DEPORTIVA MUJER
+','CDM0001','42','5','ROPA DEPORTIVA','','','CAMISETA DEPORTIVA MUJER');
+vec_productos[61]=  new Array('225','PANTALONETA MUJER
+','PTM0001','40','5','ROPA DEPORTIVA','','','PANTALONETA MUJER');
+vec_productos[62]=  new Array('226','CAMISETA DEPORTIVA HOMBRE
+','CDH0001','41','5','ROPA DEPORTIVA','','','CAMISETA DEPORTIVA HOMBRE');
+vec_productos[63]=  new Array('227','MEDIAS DEPORTE HOMBRE
+','MDH0001','43','5','ROPA DEPORTIVA','','','MEDIAS DEPORTE HOMBRE');
+vec_productos[64]=  new Array('228','MEDIAS DEPORTE MUJER
+','MDM0001','44','5','ROPA DEPORTIVA','','','MEDIAS DEPORTE MUJER');
+vec_productos[65]=  new Array('229','CHAQUETA MUJER DEPORTIVA COLECCION
+','CMD0001','45','5','ROPA DEPORTIVA','','','CHAQUETA MUJER DEPORTIVA COLECCION');
+vec_productos[66]=  new Array('230','BUSO MUJER DEPORTIVO COLECCION
+','BMD0001','46','5','ROPA DEPORTIVA','','','BUSO MUJER DEPORTIVO COLECCION');
+vec_productos[67]=  new Array('231','PANTALON SUDADERA
+','PSH0001','47','5','ROPA DEPORTIVA','','','PANTALON SUDADERA');
+vec_productos[68]=  new Array('232','PANTALON DRIL
+','PDH0001','48','3','ROPA SPORT','','','PANTALON DRIL');
+vec_productos[69]=  new Array('233','JEAN HOMBRE
+','PJH0001','49','3','ROPA SPORT','','','JEAN HOMBRE');
+vec_productos[70]=  new Array('234','PANTALON HOMBRE PROMOCION
+','PHM0001','50','3','ROPA SPORT','','','PANTALON HOMBRE PROMOCION');
+vec_productos[71]=  new Array('235','CHAQUETA PROMOCION
+','CHP0001','51','3','ROPA SPORT','','','CHAQUETA PROMOCION');
+vec_productos[72]=  new Array('236','CHAQUETA  COLECCION
+','CHC0001','52','3','ROPA SPORT','','','CHAQUETA  COLECCION');
+vec_productos[73]=  new Array('237','CHAQUETA SPORT
+','CHS0001','53','3','ROPA SPORT','','','CHAQUETA SPORT');
+vec_productos[74]=  new Array('238','CHAQUETA CASUAL
+','CHI0001','54','3','ROPA SPORT','','','CHAQUETA CASUAL');
+vec_productos[75]=  new Array('239','CAMISA SPORT
+','CAS0001','55','3','ROPA SPORT','','','CAMISA SPORT');
+vec_productos[76]=  new Array('240','SACO COLECCION
+','SHC0001','56','3','ROPA SPORT','','','SACO HOMBRE COLECCION');
+vec_productos[77]=  new Array('241','CAMISETA POLO
+','CAP0001','57','3','ROPA SPORT','','','CAMISETA POLO');
+vec_productos[78]=  new Array('242','BATA COLECCION
+','BAC0001','58','24','ROPA MUJER','','','BATA COLECCION');
+vec_productos[79]=  new Array('243','BATA PROMOCION
+','BAP0001','59','24','ROPA MUJER','','','BATA PROMOCION');
+vec_productos[80]=  new Array('244','CHAQUETA MUJER COLECCION
+','CMC0001','60','24','ROPA MUJER','','','CHAQUETA MUJER COLECCION');
+vec_productos[81]=  new Array('245','CHAQUETA MUJER PROMOCION
+','CMP0001','61','24','ROPA MUJER','','','CHAQUETA  MUJER PROMOCION');
+vec_productos[82]=  new Array('246','BLUSA COLECCION
+','BLC0001','62','24','ROPA MUJER','','','BLUSA MUJER COLECCION');
+vec_productos[83]=  new Array('247','BLUSA PROMOCION
+','BLP0001','63','24','ROPA MUJER','','','BLUSA MUJER PROMOCION');
+vec_productos[84]=  new Array('248','FALDA PROMOCION
+','FMP0001','64','24','ROPA MUJER','','','FALDA PROMOCION');
+vec_productos[85]=  new Array('249','PANTALON MUJER PROMOCION
+','PMP0001','65','24','ROPA MUJER','','','PANTALON MUJER PROMOCION');
+vec_productos[86]=  new Array('250','SACO MUJER PROMOCION
+','SMC0001','66','24','ROPA MUJER','','','SACO MUJER PROMOCION');
+vec_productos[87]=  new Array('251','ABRIGO MUJER PROMOCION
+','ABP0001','67','24','ROPA MUJER','','','ABRIGO MUJER PROMOCION');
+vec_productos[88]=  new Array('252','BLAZER MUJER PROMOCION
+','BZM0001','68','24','ROPA MUJER','','','BLAZER MUJER PROMOCION');
+vec_productos[89]=  new Array('307','CAMISETA POLO T/LAC.','CAP0002','57','3','ROPA SPORT','','','CAMISETA POLO');
+vec_productos[90]=  new Array('255','UNIFORME LIGA NINO
+','ULN0001','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[91]=  new Array('256','MEDIA FUTBOL SEMI-PROFESIONAL
+','MFC0001','72','21','UNIFORMES','','','MEDIAS FUTBOL');
+vec_productos[92]=  new Array('257','CHAQUETA EQUIPO COLECCION
+','CHE0001','73','21','UNIFORMES','','','CHAQUETA EQUIPO COLECCION');
+vec_productos[93]=  new Array('258','CAMISA FORMAL
+','CAF0001','74','2','ROPA FORMAL','','','CAMISA FORMAL');
+vec_productos[94]=  new Array('259','CORBATA
+','COR0001','75','2','ROPA FORMAL','','','CORBATA');
+vec_productos[95]=  new Array('260','ZAPATOS
+','ZAP0001','76','2','ROPA FORMAL','','','ZAPATOS');
+vec_productos[96]=  new Array('261','BLAZER HOMBRE PROMOCION
+','BZH0001','77','2','ROPA FORMAL','','','BLAZER HOMBRE PROMOCION');
+vec_productos[97]=  new Array('262','VESTIDO PANO HOMBRE
+','VHC0001','78','2','ROPA FORMAL','','','VESTIDO PANO HOMBRE');
+vec_productos[98]=  new Array('263','BOXER HOMBRE
+','BOX0001','79','4','ROPA INTERIOR','','','BOXER HOMBRE');
+vec_productos[99]=  new Array('264','BOXER MUJER
+','BOM0001','80','4','ROPA INTERIOR','','','BOXER MUJER');
+vec_productos[100]=  new Array('265','TANGA MUJER
+','TAN0001','81','4','ROPA INTERIOR','','','TANGA MUJER');
+vec_productos[101]=  new Array('266','CAMISETA ESQUELETO MUJER
+','CEM0001','82','4','ROPA INTERIOR','','','CAMISETA ESQUELETO MUJER');
+vec_productos[102]=  new Array('267','TOP MUJER
+','TOP0001','83','4','ROPA INTERIOR','','','TOP MUJER');
+vec_productos[103]=  new Array('270','RELOJ MP4
+','RMP0001','86','7','ACCESORIOS','','','RELOJ MP4');
+vec_productos[104]=  new Array('271','BARRA MANCUERNA
+','BMG0001','87','7','ACCESORIOS','','','BARRA MANCUERNA');
+vec_productos[105]=  new Array('272','BOLSO MUJER ARTESANAL
+','BMA0001','88','7','ACCESORIOS','','','BOLSO MUJER ARTESANAL');
+vec_productos[106]=  new Array('273','BOLSO MUJER COLECCION 1
+','BMC0001','89','7','ACCESORIOS','','','BOLSO MUJER COLECCION 1');
+vec_productos[107]=  new Array('274','BOLSO MUJER PROMOCION
+','BMP0001','90','7','ACCESORIOS','','','BOLSO MUJER PROMOCION');
+vec_productos[108]=  new Array('275','BOLSO MUJER COLECCION 2
+','BMC0002','91','7','ACCESORIOS','','','BOLSO MUJER COLECCION 2');
+vec_productos[109]=  new Array('276','MORRAL COMPUTADOR
+','MOC0001','92','7','ACCESORIOS','','','MORRAL COMPUTADOR');
+vec_productos[110]=  new Array('277','MALETIN COMPU-VIAJE 1
+','MCV0001','93','7','ACCESORIOS','','','MALETIN COMPU-VIAJE 1');
+vec_productos[111]=  new Array('278','MALETIN COMPU-VIAJE 2
+','MCV0002','94','7','ACCESORIOS','','','MALETIN COMPU-VIAJE 2');
+vec_productos[112]=  new Array('279','BILLETERA HOMBRE PROMOCION
+','BIC0001','95','7','ACCESORIOS','','','BILLETERA HOMBRE PROMOCION');
+vec_productos[113]=  new Array('280','BILLETERA MUJER PROMOCION
+','BIM0001','96','7','ACCESORIOS','','','BILLETERA MUJER PROMOCION');
+vec_productos[114]=  new Array('281','GORRA DEPORTIVA
+','GOD0001','97','7','ACCESORIOS','','','GORRA DEPORTIVA');
+vec_productos[115]=  new Array('282','PRENDA PROMOCION NINO
+','PPN0001','98','25','ROPA NINOS','','','PRENDA PROMOCION NINO');
+vec_productos[116]=  new Array('283','GUANTES INVIERNO
+','GUA0001','99','25','ROPA NINOS','','','GUANTES INVIERNO');
+vec_productos[117]=  new Array('284','TENNIS PATIN
+','TEP0001','100','25','ROPA NINOS','','','TENNIS PATIN');
+vec_productos[118]=  new Array('306','REPRODUCTOR MP3 2 GB','RMP0004','110','7','ACCESORIOS','','','REPRODUCTOR MP3 2 GB');
+vec_productos[119]=  new Array('294','PANTALONETA PARA HOMBRE','PTH0001','107','5','ROPA DEPORTIVA','','','PANTALONETA PARA HOMBRE');
+vec_productos[120]=  new Array('295','RELOJ PARA MUJER','REM0001','106','7','ACCESORIOS','','','RELOJ PARA MUJER');
+vec_productos[121]=  new Array('296','RELOJ PARA HOMBRE','REH0001','105','7','ACCESORIOS','','','RELOJ PARA HOMBRE');
+vec_productos[122]=  new Array('354','BUSO PARA ARQUERO','BUA001','108','21','UNIFORMES','','','BUSO PARA ARQUERO');
+vec_productos[123]=  new Array('302','CAMISETA EQUIPO COLECCION','CEC0001','69','21','UNIFORMES','','','CAMISETA EQUIPO COLECCION');
+vec_productos[124]=  new Array('303','UNIFORME LIGA ADULTO','ULA0001','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[125]=  new Array('614','UNIFORME AS ROMA HOME N.T','UEFA0103','70','21','UNIFORMES','0','','UNIFORME LIGA ADULTO');
+vec_productos[126]=  new Array('315','CANILLERAS','CAN0001','111','21','UNIFORMES','','','CANILLERAS');
+vec_productos[127]=  new Array('352','GUAYOS FUTFOL','GUAF0001','116','21','UNIFORMES','','','GUAYOS FUTBOL');
+vec_productos[128]=  new Array('321','CAMISETA FUTBOL LOCAL','CEL0001','112','21','UNIFORMES','','','CAMISETA FUTBOL LOCAL');
+vec_productos[129]=  new Array('322','UNIFORME NINO LOCAL','UNL0001','113','21','UNIFORMES','','','UNIFORME NINO LOCAL');
+vec_productos[130]=  new Array('323','CAMISA FORMAL PROMOCION
+','CAF0002','114','2','ROPA FORMAL','','','CAMISA FORMAL PROMOCION');
+vec_productos[131]=  new Array('324','UNIFORME LOCAL PROMOCION NINO','UNL0002','113','21','UNIFORMES','','','UNIFORME NINO LOCAL');
+vec_productos[132]=  new Array('325','UEFA REAL HOME','UEFA001','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[133]=  new Array('326','UEFA REAL VISITOR','UEFA002','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[134]=  new Array('327','UEFA BARZA HOME','UEFA003','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[135]=  new Array('328','UEFA BARZA VISITOR','UEFA004','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[136]=  new Array('329','UEFA MANCHESTER HOME','UEFA005','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[137]=  new Array('330','UEFA MANCHESTER VISITOR','UEFA006','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[138]=  new Array('331','UEFA ARSENAL HOME','UEFA007','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[139]=  new Array('332','UEFA ARSENAL VISITOR','UEFA008','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[140]=  new Array('333','UEFA LIVERPOL HOME','UEFA009','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[141]=  new Array('334','UEFA CHEALSE HOME','UEFA010','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[142]=  new Array('335','UEFA CHEALSE VISITOR','UEFA011','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[143]=  new Array('336','UEFA INTER HOME','UEFA012','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[144]=  new Array('337','UEFA MILAN HOME','UEFA013','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[145]=  new Array('338','UEFA JUVENTUS HOME','UEFA014','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[146]=  new Array('339','UEFA BAYER HOME','UEFA015','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[147]=  new Array('340','UEFA AMARILLO','UEFA016','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[148]=  new Array('341','UEFA AZUL','UEFA017','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[149]=  new Array('342','UEFA ROJO','UEFA018','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[150]=  new Array('343','UEFA VERDE','UEFA019','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[151]=  new Array('344','UEFA NARANJA','UEFA020','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[152]=  new Array('345','UEFA CELESTE','UEFA021','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[153]=  new Array('346','UEFA BLANCO','UEFA022','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[154]=  new Array('347','UEFA GRIS','UEFA023','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[155]=  new Array('348','MEDIA FUTBOL PROFESIONAL','MFC0002','72','21','UNIFORMES','','','MEDIAS FUTBOL');
+vec_productos[156]=  new Array('349','UEFA NEGRO','UEFA024','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[157]=  new Array('351','HOJA TRANSFER','KIN0001','115','21','UNIFORMES','','','KIT NUMEROS TRANSFER');
+vec_productos[158]=  new Array('358','SUDADERA 3 PIEZAS','ABER0001','118','5','ROPA DEPORTIVA','','','SUDADERA 3 PIEZAS');
+vec_productos[159]=  new Array('359','SUDADERA PIEL ANGEL','ABER0002','119','5','ROPA DEPORTIVA','','','SUDADERA PIEL ANGEL');
+vec_productos[160]=  new Array('360','CHAQUETA CORTA ABER','ABER0003','120','5','ROPA DEPORTIVA','','','CHAQUETA CORTA ABER.');
+vec_productos[161]=  new Array('361','PANTALON SUD. ABER','ABER0004','121','5','ROPA DEPORTIVA','','','PANTALON SUD. ABER.');
+vec_productos[162]=  new Array('362','SACO ABER. NUEVA COLEC.','ABER0005','122','5','ROPA DEPORTIVA','','','SACO ABER. NUEVA COLEC.');
+vec_productos[163]=  new Array('363','CHAQUETA ABER. COLEC.','ABER0006','123','5','ROPA DEPORTIVA','','','CHAQUETA ABER.COLEC.');
+vec_productos[164]=  new Array('364','CHALECO NORTH.','NORT0001','124','5','ROPA DEPORTIVA','','','CHALECO NORTH.');
+vec_productos[165]=  new Array('365','CHAQUETA NORTH. NUEVA COLEC.','NORT0002','125','5','ROPA DEPORTIVA','','','CHAQUETA NORTH. NUEVA COLEC.');
+vec_productos[166]=  new Array('366','CHAQUETA ROMPE VIENTO','CHRV0001','126','5','ROPA DEPORTIVA','','','CHAQUETA ROMPE VIENTO');
+vec_productos[167]=  new Array('367','BOLSO MUJER NUEVA GENER.','BONG0001','127','7','ACCESORIOS','','','BOLSO MUJER NUEVA GENER.');
+vec_productos[168]=  new Array('368','BUSO CORTO. N.C','BUSO0007','122','5','ROPA DEPORTIVA','','','SACO ABER. NUEVA COLEC.');
+vec_productos[169]=  new Array('369','UNIFORME NI&Ntilde;O REAL','UEFA0025','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[170]=  new Array('370','UNIFORME NI&Ntilde;O BARCELONA','UEFA0026','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[171]=  new Array('371','UNIFORME NI&Ntilde;O CHEALSE','UEFA0027','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[172]=  new Array('372','UNIFORME NI&Ntilde;O MANCHESTER','UEFA0028','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[173]=  new Array('373','UNIFORME NI&Ntilde;O MILAN','UEFA0029','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[174]=  new Array('374','UNIFORME NI&Ntilde;O MILL.','UEFA0030','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[175]=  new Array('375','UNIFORME NI&Ntilde;O ARGENTINA','UEFA0031','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[176]=  new Array('376','UNIFORME ADULTO ALEMANIA','UEFA0032','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[177]=  new Array('377','UNIFORME ADULTO INGLATERRA','UEFA0033','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[178]=  new Array('378','UNIFORME ADULTO HOLANDA','UEFA0034','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[179]=  new Array('379','UNIFORME ADULTO ESPA&Ntilde;A','UEFA0035','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[180]=  new Array('380','COVER TRAINING AMARILLO','UEFA0036','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[181]=  new Array('433','BALON FUTBOL NIKE T 90','BAF0001','141','28','BALONES','','','BALON');
+vec_productos[182]=  new Array('434','BALON FUTBOL PUMA','BAF0002','141','28','BALONES','','','BALON');
+vec_productos[183]=  new Array('435','BALON FUTBOL G-PROMO','BAF0003','141','28','BALONES','','','BALON');
+vec_productos[184]=  new Array('436','MINI BALON FUTBOL','BAF0004','141','28','BALONES','','','BALON');
+vec_productos[185]=  new Array('437','BALON FUTBOL PROFESIONAL N.','BAF0005','141','28','BALONES','','','BALON');
+vec_productos[186]=  new Array('438','MINI BALON FUTBOL LUJO','BAF0006','141','28','BALONES','','','BALON');
+vec_productos[187]=  new Array('439','CAMISETA SELECCION COLOMBIA','CAC0001','69','29','CAMISETAS COLECCION','','','CAMISETA EQUIPO COLECCION');
+vec_productos[188]=  new Array('440','CAMISETA CALI 2010 MITRE','CAC0002','69','29','CAMISETAS COLECCION','','','CAMISETA EQUIPO COLECCION');
+vec_productos[189]=  new Array('441','CAMISETA TOLIMA 2010 MITRE','CAC0003','69','29','CAMISETAS COLECCION','','','CAMISETA EQUIPO COLECCION');
+vec_productos[190]=  new Array('442','GUAYO ADULTO NIKE MARQUIS TF','GUYA0001','116','30','GUAYOS','','','GUAYOS FUTBOL');
+vec_productos[191]=  new Array('443','GUAYO ADULTO FUTBOL NIKE PREMIER II','GUYAOOO2','116','30','GUAYOS','','','GUAYOS FUTBOL');
+vec_productos[192]=  new Array('444','UNIFORME NINO ESPANA','UEFA0037','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[193]=  new Array('445','UNIFORME NINO FRANCIA','UEFA0038','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[194]=  new Array('446','UNIFORME NINO ALEMANIA','UEFA0039','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[195]=  new Array('447','UNIFORME NINO BRASIL','UEFA0040','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[196]=  new Array('448','UNIFORME NINO INGLATERRA','UEFA0041','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[197]=  new Array('449','UEFA LYONNNAIS','UEFA056','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[198]=  new Array('450','UEFA ARGELIA','UEFA057','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[199]=  new Array('451','GUAYO FUTBOL NINO NIKE','GUYN0001','116','30','GUAYOS','','','GUAYOS FUTBOL');
+vec_productos[200]=  new Array('452','GUAYO NINO NIKE PREMIER FG-R','GUYN0002','116','30','GUAYOS','','','GUAYOS FUTBOL');
+vec_productos[201]=  new Array('453','GUANTES PESAS G-TECH','GYM0001','142','31','GYM','','','GUANTE GIMNASIO');
+vec_productos[202]=  new Array('454','GUANTES PESAS MARCA','GYM0002','142','31','GYM','','','GUANTE GIMNASIO');
+vec_productos[203]=  new Array('455','UNIFORME BASKETBALL ATLANTA','NBA001','154','21','UNIFORMES','','','NBA');
+vec_productos[204]=  new Array('456','UNIFORME BASKETBALL LAKERS BLANCO','NBA002','154','21','UNIFORMES','','','NBA');
+vec_productos[205]=  new Array('457','UNIFORME BASKETBALL CAVALIERS','NBA003','154','21','UNIFORMES','','','NBA');
+vec_productos[206]=  new Array('458','UNIFORME BASKETBALL CLEVELAND
+','NBA004','154','21','UNIFORMES','','','NBA');
+vec_productos[207]=  new Array('459','UNIFORME BASKETBALL DALLAS AZUL','NBA005','154','21','UNIFORMES','','','NBA');
+vec_productos[208]=  new Array('460','UNIFORME BASKETBALL DALLAS BLANCA','NBA006','154','21','UNIFORMES','','','NBA');
+vec_productos[209]=  new Array('461','UNIFORME BASKETBALL DENVER','NBA007','154','21','UNIFORMES','','','NBA');
+vec_productos[210]=  new Array('462','UNIFORME BASKETBALL DETROIT','NBA008','154','21','UNIFORMES','','','NBA');
+vec_productos[211]=  new Array('463','UNIFORME BASKETBALL HAWKS','NBA009','154','21','UNIFORMES','','','NBA');
+vec_productos[212]=  new Array('464','UNIFORME BASKETBALL LAKERS AMARILLA','NBA010','154','21','UNIFORMES','','','NBA');
+vec_productos[213]=  new Array('465','UNIFORME BASKETBALL LAKER BLANCA','NBA011','154','21','UNIFORMES','','','NBA');
+vec_productos[214]=  new Array('466','UNIFORME BASKETBALL LAKER MORADA','NBA012','154','21','UNIFORMES','','','NBA');
+vec_productos[215]=  new Array('467','UNIFORME BASKETBALL MIAMI','NBA013','154','21','UNIFORMES','','','NBA');
+vec_productos[216]=  new Array('468','UNIFORME BASKETBALL NEW ORLEANS BLANCA','NBA014','154','21','UNIFORMES','','','NBA');
+vec_productos[217]=  new Array('469','UNIFORME BASKETBALL NEW ORLEANS CELESTE','NBA015','154','21','UNIFORMES','','','NBA');
+vec_productos[218]=  new Array('470','UNIFORME BASKETBALL NUGGETS','NBA016','154','21','UNIFORMES','','','NBA');
+vec_productos[219]=  new Array('471','UNIFORME BASKETBALL PISTONS','NBA017','154','21','UNIFORMES','','','NBA');
+vec_productos[220]=  new Array('472','UNIFORME BASKETBALL ROCKETS','NBA018','154','21','UNIFORMES','','','NBA');
+vec_productos[221]=  new Array('473','UNIFORME BASKETBALL SPURS','NBA019','154','21','UNIFORMES','','','NBA');
+vec_productos[222]=  new Array('474','UNIFORME BASKETBALL SUNS','NBA020','154','21','UNIFORMES','','','NBA');
+vec_productos[223]=  new Array('475','SUDADERA SAUNA','GYM0003','109','31','GYM','','','SUDADERA');
+vec_productos[224]=  new Array('476','GUANTE NEOPRENE MUNEQUERA','GYM0004','142','31','GYM','','','GUANTE GIMNASIO');
+vec_productos[225]=  new Array('477','GUANTE NEOPRENE SENCILLO','GYM0005','142','31','GYM','','','GUANTE GIMNASIO');
+vec_productos[226]=  new Array('478','GUANTE SPEENING PALMA CUERO','GYM0006','142','31','GYM','','','GUANTE GIMNASIO');
+vec_productos[227]=  new Array('479','MUNEQUERAS','MUNE0001','143','31','GYM','','','MANILLA-MUNEQUERA');
+vec_productos[228]=  new Array('480','GAFA NATACION ANTI FOG. PROFESIONAL','NATA0001','144','32','NATACION','','','GAFAS NATACION');
+vec_productos[229]=  new Array('481','GORRO NATACION PROFESIONAL','NATA0004','145','32','NATACION','','','GORRO NATACION');
+vec_productos[230]=  new Array('482','TAPA OIDO SILICONA','NATA0005','146','32','NATACION','','','TAPA OIDOS');
+vec_productos[231]=  new Array('483','BOLA PING PONG RUNIC X 6','PING0001','147','33','PING PONG','','','BOLAS SPORT');
+vec_productos[232]=  new Array('484','RAQUETA PING PONG PRO','PING0002','148','33','PING PONG','','','RAQUETAS');
+vec_productos[233]=  new Array('485','RAQUETA PING PONG RUTTER CHAMP','PING0003','148','33','PING PONG','','','RAQUETAS');
+vec_productos[234]=  new Array('486','RAQUETA PING PONG BUTTER WAKABA','PING0004','148','33','PING PONG','','','RAQUETAS');
+vec_productos[235]=  new Array('487','SET 2 RAQUETAS 3 PING PONG','PING0005','148','33','PING PONG','','','RAQUETAS');
+vec_productos[236]=  new Array('488','MALLAS BASKET RUNIC','RECR0002','149','34','RECREACION','','','MAYAS BASQUET BALL');
+vec_productos[237]=  new Array('489','TABLERO DARDOS','RECR0001','150','34','RECREACION','','','TABLERO DARDOS');
+vec_productos[238]=  new Array('490','BOLA TENNIS PENN X 3','TENI0001','147','35','TENIS','','','BOLAS SPORT');
+vec_productos[239]=  new Array('491','BOLA PILATES BODY 65 CM','TERA0001','151','36','TERAPIA','','','PILATES');
+vec_productos[240]=  new Array('492','BOLA PILATES 75 CM','TERA0002','151','36','TERAPIA','','','PILATES');
+vec_productos[241]=  new Array('493','COLCHONETA YOGA','TERA0003','151','36','TERAPIA','','','PILATES');
+vec_productos[242]=  new Array('494','COLCHONETA YOGA GREMEST','TERA0004','151','36','TERAPIA','','','PILATES');
+vec_productos[243]=  new Array('495','DONA PILATES BODY','TERA0005','151','36','TERAPIA','','','PILATES');
+vec_productos[244]=  new Array('496','FAJA ABDOMINAL','TERA0006','151','36','TERAPIA','','','PILATES');
+vec_productos[245]=  new Array('497','RODILLO ABDOMINAL BODY','TERA0007','151','36','TERAPIA','','','PILATES');
+vec_productos[246]=  new Array('498','TENSOR DE MANO','TERA0008','151','36','TERAPIA','','','PILATES');
+vec_productos[247]=  new Array('499','TERABAN TUBULAR','TERA0009','151','36','TERAPIA','','','PILATES');
+vec_productos[248]=  new Array('500','TOBILLERA MEDICINAL','TERA0010','151','36','TERAPIA','','','PILATES');
+vec_productos[249]=  new Array('501','BANDA DE RESISTENCIA DOBLE','TERA0011','151','36','TERAPIA','','','PILATES');
+vec_productos[250]=  new Array('502','BANDA DE RESISTENCIA SENCILA','TERA0012','151','36','TERAPIA','','','PILATES');
+vec_productos[251]=  new Array('503','SOGA DE SALTAR','TERA0013','151','36','TERAPIA','','','PILATES');
+vec_productos[252]=  new Array('504','RODILLERA NEOPRENE ROTULA MEDICINAL','TERA0014','151','36','TERAPIA','','','PILATES');
+vec_productos[253]=  new Array('505','PANTALON ARQUERO PROFESIONAL ADULTO','ARQU0001','47','21','UNIFORMES','','','PANTALON SUDADERA');
+vec_productos[254]=  new Array('506','PANTALON ARQUERO SEMI PROFESIONAL','ARQU0002','47','21','UNIFORMES','','','PANTALON SUDADERA');
+vec_productos[255]=  new Array('507','BUSO ARQUERO PROFESIONAL ADULTO','ARQU0003','108','21','UNIFORMES','','','BUSO PARA ARQUERO');
+vec_productos[256]=  new Array('508','BUSO ARQUERO SEMI PROFESIONAL','ARQU0004','108','21','UNIFORMES','','','BUSO PARA ARQUERO');
+vec_productos[257]=  new Array('509','BICIFUTBOL LYCRA COLORES','LYCR0001','107','21','UNIFORMES','','','PANTALONETA PARA HOMBRE');
+vec_productos[258]=  new Array('510','BICIFUTBOL LYCRA COLORES ADULTO','LYCR0002','107','21','UNIFORMES','','','PANTALONETA PARA HOMBRE');
+vec_productos[259]=  new Array('511','CAMISILLA MANGA LARGA','LYCR0003','41','21','UNIFORMES','','','CAMISETA DEPORTIVA HOMBRE');
+vec_productos[260]=  new Array('512','CAMISILLA LYCRA SEMI','LYCR0004','41','21','UNIFORMES','','','CAMISETA DEPORTIVA HOMBRE');
+vec_productos[261]=  new Array('513','BICICLETERO LYCRA','LYCR0005','107','21','UNIFORMES','','','PANTALONETA PARA HOMBRE');
+vec_productos[262]=  new Array('514','MEDI FUTBOL SEMI PROFESIONAL','MFPN0001','72','21','UNIFORMES','','','MEDIAS FUTBOL');
+vec_productos[263]=  new Array('515','MEDIA FUTBOL PROFESIONAL','MFPN0002','72','21','UNIFORMES','','','MEDIAS FUTBOL');
+vec_productos[264]=  new Array('516','PLANCHA TOURMALINA DIGITAL','PLANCHA001','153','7','ACCESORIOS','','','GENERICO');
+vec_productos[265]=  new Array('517','UNIFORME ADULTO ARGENTINA','UEFA0042','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[266]=  new Array('518','UNIFORME ADULTO FRANCIA','UEFA0043','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[267]=  new Array('519','UNIFORME ADULTO INGLATERRA','UEFA0044','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[268]=  new Array('520','UNIFORME ADULTO ESPANA','UEFA0045','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[269]=  new Array('521','UNIFORME ADULTO ITALIA ','UEFA0046','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[270]=  new Array('522','UNIFORME ADULTO SUR AFRICA','UEFA0047','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[271]=  new Array('523','UNIFORME ADULTO ALEMANIA VISITOR
+','UEFA0048','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[272]=  new Array('524','UNIFORME ADULTO ARGENTINA VISITOR
+','UEFA0049','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[273]=  new Array('525','UNIFORME ADULTO BRAZIL LOCAL
+','UEFA0050','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[274]=  new Array('526','UNIFORME ADULTO CAMERUM LOCAL
+','UEFA0051','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[275]=  new Array('527','UNIFORME ADULTO COSTA MARFIL LOCAL
+','UEFA0052','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[276]=  new Array('528','UNIFORME ADULTO DINAMARCA LOCAL
+','UEFA0053','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[277]=  new Array('529','UNIFORME ADULTO ESPA&Ntilde;A VISITOR
+','UEFA0054','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[278]=  new Array('530','UNIFORME ADULTO FRANCIA VISITOR
+','UEFA0055','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[279]=  new Array('531','UNIFORME ADULTO GRECIA LOCAL
+','UEFA0056','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[280]=  new Array('532','UNIFORME ADULTO HOLANDA VISITOR
+','UEFA0057','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[281]=  new Array('533','UNIFORME ADULTO JAPON LOCAL
+','UEFA0058','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[282]=  new Array('534','UNIFORME ADULTO MEXICO LOCAL
+','UEFA0059','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[283]=  new Array('535','UNIFORME ADULTO NIGERIA LOCAL
+','UEFA0060','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[284]=  new Array('536','UNIFORME ADULTO PORTUGAL VISITOR
+','UEFA0061','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[285]=  new Array('537','UNIFORME ADULTO USA LOCAL
+','UEFA0062','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[286]=  new Array('538','UNIFORME NINO SUDAFRICA','UEFA0063','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[287]=  new Array('539','UNIFORME ADULTO PARAGUAY VISITOR     ','UEFA0064','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[288]=  new Array('540','CAMISETA NI&Ntilde;O COLOMBIA
+                   ','CNC0001 ','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[289]=  new Array('541','BOLSA GUAYOS','BAGGUA0001','139','27','ACCESORIOS FUTBOL','','','GUAYERA - BAG SOCCER');
+vec_productos[290]=  new Array('542','UNIFORME ADULTO KOREA','UEFA0065','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[291]=  new Array('543','UNIFORME ADULTO ITALIA HOME','UEFA0066','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[292]=  new Array('544','UNIFORME NI&Ntilde;O ITALIA HOME','UEFA0067','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[293]=  new Array('545','UNIFORME NI&Ntilde;O FRANCIA VISITOR','UEFA0068','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[294]=  new Array('557','CHEALSE HOME N.T','UEFA0078','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[295]=  new Array('547','UNIFORME BRASIL VISITOR ADULTO','UEFA0069','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[296]=  new Array('549','UNIFORME ADULTO PORTUGAL HOME','UEFA0070','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[297]=  new Array('550','UNIFORME ADULTO ARGENTINA VISITANTE','UEFA0071','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[298]=  new Array('551','UNIFORME ADULTO USA VISITOR','UEFA0072','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[299]=  new Array('552','UNIFORME NINO BAYERN HOME','UEFA0073','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[300]=  new Array('553','UNIFORME NINO INTER HOME','UEFA0074','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[301]=  new Array('554','UNIFORME NINO UEFA AZUL','UEFA0075','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[302]=  new Array('555','UNIFORME NINO UEFA ROJO','UEFA0076','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[303]=  new Array('556','UNIFORME NINO UEFA NARANJA','UEFA0077','71','21','UNIFORMES','','','UNIFORME LIGA NINO');
+vec_productos[304]=  new Array('558','LIVERPOL HOME N.T','UEFA0079','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[305]=  new Array('560','REAL HOME N.T','UEFA0080','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[306]=  new Array('561','REAL VISITOR N.T','UEFA0081','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[307]=  new Array('562','INTER HOME N.T','UEFA0082','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[308]=  new Array('563','BARCELONA HOME N.T','UEFA0083','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[309]=  new Array('564','BAYERN HOME N.T','UEFA0084','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[310]=  new Array('565','OLIMPIQUE HOME N.T','UEFA0085','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[311]=  new Array('566','PETO','UEFA0086','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[312]=  new Array('567','AJAX VISITOR N.T
+','UEFA0087','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[313]=  new Array('568','BARCELONA VISITOR N.T
+','UEFA0088','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[314]=  new Array('569','CHELSEA VISITOR N.T
+','UEFA0089','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[315]=  new Array('570','INTER VISITOR N.T
+','UEFA0090','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[316]=  new Array('571','LIVERPOOL VISITOR N.T
+','UEFA0091','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[317]=  new Array('572','MANCHESTER HOME N.T
+','UEFA0092','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[318]=  new Array('573','MANCHESTER VISITOR N.T
+','UEFA0093','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[319]=  new Array('574','MILAN HOME N.T
+','UEFA0094','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[320]=  new Array('575','OLIMPIQUE VISITOR N.T
+','UEFA0095','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[321]=  new Array('576','BUFANDA MILLONARIOS','ACFU0017','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[322]=  new Array('577','BUFANDA BRASIL','ACFU0018','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[323]=  new Array('578','BUFANDA ITALIA','ACFU0019','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[324]=  new Array('579','BUFANDA ESPA&Ntilde;A','ACFU0020','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[325]=  new Array('580','BUFANDA ALEMANIA','ACFU0021','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[326]=  new Array('581','BUFANDA ARGENTINA','ACFU0022','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[327]=  new Array('582','BUFANDA LIVERPOOL','ACFU0023','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[328]=  new Array('583','BUFANDA BARCELONA','ACFU0024','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[329]=  new Array('584','BUFANDA MANCHESTER','ACFU0025','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[330]=  new Array('585','BUFANDA INTER','ACFU0026','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[331]=  new Array('586','BUFANDA ARSENAL','ACFU0027','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[332]=  new Array('587','BUFANDA MILAN','ACFU0028','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[333]=  new Array('588','BUFANDA REAL','ACFU0029','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[334]=  new Array('589','BUFANDA HOLANDA','ACFU0030','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[335]=  new Array('590','BUFANDA CHEALSE','ACFU0031','155','27','ACCESORIOS FUTBOL','','','BUFANDA EQUIPOS');
+vec_productos[336]=  new Array('591','GUANTE ARQUERO NINO','ACFU0032','137','27','ACCESORIOS FUTBOL','','','GUANTE ARQUERO');
+vec_productos[337]=  new Array('592','UNIFORME BASKETBALL HEAT','NBA021','154','21','UNIFORMES','','','NBA');
+vec_productos[338]=  new Array('593','UNIFORME BASKETBALL PHONEX
+','NBA022','154','21','UNIFORMES','','','NBA');
+vec_productos[339]=  new Array('594','UNIFORME BASKETBALL CELTICS','NBA023','154','21','UNIFORMES','','','NBA');
+vec_productos[340]=  new Array('595','ATLETICO N.T','UEFA0096','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[341]=  new Array('596','JUVENTUS HOME N.T','UEFA0097','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[342]=  new Array('597','ARSENAL HOME N.T','UEFA0098','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[343]=  new Array('598','PORTO HOME N.T','UEFA0099','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[344]=  new Array('599','ARSENAL VISITOR N.T','UEFA0100','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[345]=  new Array('600','RIVER HOME N.T','UEFA0101','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[346]=  new Array('601','JUVENTUS VISITOR NT','UEFA0102','70','21','UNIFORMES','','','UNIFORME LIGA ADULTO');
+vec_productos[347]=  new Array('602','BUSO LYCRA BLANCO','LYC007','41','21','UNIFORMES','','','CAMISETA DEPORTIVA HOMBRE');
+vec_productos[348]=  new Array('603','BUSO LYCRA AZUL','LYC008','41','21','UNIFORMES','','','CAMISETA DEPORTIVA HOMBRE');
+vec_productos[349]=  new Array('604','BUSO LYCRA ROJO','LYC009 ','41','21','UNIFORMES','','','CAMISETA DEPORTIVA HOMBRE');
+vec_productos[350]=  new Array('605','BUSO LYCRA NEGRO','LYC010','41','21','UNIFORMES','','','CAMISETA DEPORTIVA HOMBRE');
+vec_productos[351]=  new Array('606','BALON VOLEYBALL','BAV0001','141','28','BALONES','','','BALON');
+vec_productos[352]=  new Array('607','CODERA MEDICINAL','TERA0015','153','36','TERAPIA','','','GENERICO');
+vec_productos[353]=  new Array('608','BANDA DE CAPITAN','ACFU0033','153','27','ACCESORIOS FUTBOL','','','GENERICO');
+vec_productos[354]=  new Array('609','RAQUETA TENNIS','RATE0001','148','35','TENIS','','','RAQUETAS');
+vec_productos[355]=  new Array('610','RAQUETA SQUASH','RASQ0001','148','35','TENIS','','','RAQUETAS');
+vec_productos[356]=  new Array('611','SET BOLA TENNIS PROF. X 3','BOLTEN0001','147','35','TENIS','','','BOLAS SPORT');
+vec_productos[357]=  new Array('612','ESTUCHE BOLA TENNIS X 12','BOLTEN0002','147','35','TENIS','','','BOLAS SPORT');
+vec_productos[358]=  new Array('613','TERMO PLASTICO','TERM0001','153','31','GYM','','','GENERICO');
+vec_productos[359]=  new Array('615','UNIFORME BOCA JR N.T','UEFA0105','70','21','UNIFORMES','0','','UNIFORME LIGA ADULTO');
+vec_productos[360]=  new Array('616','UNIFORME CHEASE AWAY2 N.T','UEFA0106','70','21','UNIFORMES','0','','UNIFORME LIGA ADULTO');
+vec_productos[361]=  new Array('617','UNIFORME SPORTING HOME N.T','UEFA0107','70','21','UNIFORMES','0','','UNIFORME LIGA ADULTO');
+vec_productos[362]=  new Array('618','UNIFORME WOFSBURG HOME N.T','UEFA0108','70','21','UNIFORMES','0','','UNIFORME LIGA ADULTO');
+vec_productos[363]=  new Array('619','BALON FUTBOL AMERICANO','BFA0001','36','28','BALONES','0','','NO APLICA');
+vec_productos[364]=  new Array('620','PRENDA PROMOCION','PROMO11','36','5','ROPA DEPORTIVA','0','','NO APLICA');
+vec_productos[365]=  new Array('621','BASCU0001','BASCU0001','36','7','ACCESORIOS','0','','NO APLICA');
+vec_productos[366]=  new Array('622','COVER TRAINING ROJO','UEFA0137','70','21','UNIFORMES','0','','UNIFORME LIGA ADULTO');
+vec_productos[367]=  new Array('623','COVER TRAINING BLANCO','UEFA0138','71','21','UNIFORMES','0','','UNIFORME LIGA NINO');
+vec_productos[368]=  new Array('624','UNIFORME ADULTO BAYERN VISIT N.T','UEFA0104','70','21','UNIFORMES','0','','UNIFORME LIGA ADULTO');
+	var bandera=0;
+	for (j=0; j<369;j++)
+	{
+		if(codigo_buscar_referencia==vec_productos[j][2]) 
+		{
+			//alert(vec_productos[j][5])
+			//alert()
+			//document.getElementById('marca').options[0] = new Option(vec_productos[j][5],vec_productos[j][4]); 
+			document.getElementById('marca').value=vec_productos[j][4];
+			document.getElementById('tipo_producto').options[0] = new Option(vec_productos[j][8],vec_productos[j][3]);
+			document.getElementById('combo_referncia').options[0] = new Option(vec_productos[j][1],vec_productos[j][0]); 
+			bandera=1;
+		}
+	}
+	if(bandera==0)
+	{
+		document.getElementById('marca').options.length=0;
+		//document.getElementById('peso').options.length=0;
+		document.getElementById('combo_referncia').options.length=0;
+		document.getElementById("tipo_producto").value=0;
+		//document.getElementById("codigo_fry").value='';
+		document.getElementById("cantidad").value='';
+		document.getElementById("costo").value='';
+		document.getElementById("codigo_fry").focus();
+		alert('Esta Referencia No esta Registrada o Verifique la parametrizacion del Producto')
+	}
+
+}
+
+function buscar_producto(){
+var ruta="con_consulta_inf.php";
+var tamano="recibo";
+var ancho=0;
+var alto=0;
+	
+if(tamano=="mediano") {
+	ancho=900;
+	alto=600;
+}
+
+if(tamano=="grande") {
+	ancho=900;
+	alto=700;
+}
+
+if(tamano=="recibo") {
+	ancho=700;
+	alto=500;
+}
+
+
+
+var marginleft = (screen.width - ancho) / 2;
+var margintop = (screen.height - alto) / 2;
+propiedades = 'menubar=0,resizable=1,height='+alto+',width='+ancho+',top='+margintop+',left='+marginleft+',toolbar=0,scrollbars=yes';
+window.open(""+ruta+"?codigo=0","Busqueda",propiedades)
+
+}
+
+
+document.onkeydown = function(e) 
+{ 
+	
+	
+	if(e) 
+	document.onkeypress = function(){return true;} 
+
+
+	var evt = e?e:event; 
+	if(evt.keyCode==120 || evt.keyCode==121) 
+	{ 
+		if(evt.keyCode==120)
+		buscar_producto();
+		if(evt.keyCode==121){
+		calcula_cambio();
+		cambio_guardar();		
+		}
+	
+		if(e) 
+		document.onkeypress = function(){return false;} 
+		else 
+		{ 
+		evt.keyCode = 0; 
+		evt.returnValue = false; 
+		} 
+	} 
+} 
+
+
+</script>
+
+<script type="text/javascript" src="js/js.js"></script>
+</head>
+<body >
+<div id="total">
+<form  name="forma" id="forma" action="man_cargue.php"  method="post">
+<table width="750" border="0" cellspacing="0" cellpadding="0" align="center" >
+  <tr>
+   <td bgcolor="#E9E9E9" >
+   <table width="100%" height="30" border="0" cellspacing="0" cellpadding="0" align="center" > 
+      <tr>
+        <td width="5" height="30">&nbsp;</td>
+        <td width="20" ><img src="imagenes/icoguardar.png" alt="Nueno Registro" width="16" height="16" border="0" onClick="cambio_guardar()" style="cursor:pointer"/></td>
+        <td width="61" class="ctablaform">Guardar</td>
+        <td width="21" class="ctablaform"><a href="con_cargue.php?confirmacion=0&editar=1&insertar=1&eliminar=1"><img src="imagenes/cancel.png" alt="Cancelar" width="16" height="16" border="0" /></a></td>
+        <td width="65" class="ctablaform">Cancelar </td>
+        <td width="22" class="ctablaform"><a href="#"><img src="imagenes/iconolupa.gif" alt="Buscar" width="16" height="16" border="0" onclick="buscar_producto()" /></a><a href="con_cargue.php?confirmacion=0&editar=1&insertar=1&eliminar=1"></a></td>
+        <td width="70" class="ctablaform">Consultar (F9) </td>
+        <td width="21" class="ctablaform"></td>
+        <td width="60" class="ctablaform">&nbsp;</td>
+        <td width="24" valign="middle" class="ctablaform">&nbsp;</td>
+        <td width="193" valign="middle">
+          <input type="hidden" name="editar"   id="editar"   value="1">
+		  <input type="hidden" name="insertar" id="insertar" value="1">
+		  <input type="hidden" name="eliminar" id="eliminar" value="1">
+          <input type="hidden" name="codigo" id="codigo" value="0" /> </td>
+        
+        <td width="67" valign="middle">&nbsp;</td>
+      </tr>
+    </table>
+	</td>
+  </tr>
+  <tr>
+    <td height="4" valign="bottom"><img src="imagenes/lineasup2.gif" alt="." width="100%" height="4" /></td>
+  </tr>
+  <tr>
+    <td class="textotabla01">CARGUE INVENTARIO :</td>
+  </tr>
+  <tr>
+    <td><img src="imagenes/lineasup2.gif"  width="100%" height="4" /></td>
+  </tr>
+  <tr>
+    <td bgcolor="#E9E9E9" valign="top">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td width="50" class="textotabla1">Fecha:</td>
+        <td width="164">
+          <input name="fecha" type="text" class="fecha" id="fecha" readonly="1" value="" />
+          <img src="imagenes/date.png" alt="Calendario" name="calendario" width="16" height="16" border="0" id="calendario" style="cursor:pointer"/></td>
+        <td width="8" class="textorojo">*</td>
+        <td width="93" rowspan="2" class="textotabla1" valign="top">Observaicones:</td>
+        <td rowspan="2">
+		  <textarea name="observaciones" cols="45" rows="4" class="textfield02"  onchange='buscar_rutas()' ></textarea></td>
+        </tr>
+      
+       <tr>
+         <td class="textotabla1">Bodega</td>
+         <td><span class="textotabla1">
+            <select name='bodega' id='bodega' class='SELECT'      ><option value='0' selected='selected'>Seleccione..</option> <option value=225>ALMACEN 7 AGOSTO</option> <option value=306>MANUFACTURAS DEPORTIVAS LIDER S.A.S.</option> <option value=0>PRINCIPAL</option></select>         </span></td>
+         <td>&nbsp;</td>
+         </tr>
+       
+	         <tr>
+         <td class="textotabla1">Factura No:</td>
+         <td class="textotabla1"><input name="num_fac" id="num_fac" type="text" class="textfield2" value="" onkeypress=" return validaInt()"/></td>
+         <td>&nbsp;</td>
+         <td width="93" class="textotabla1" valign="top">Proveedor</td>
+         <td> <select name='proveedor' id='proveedor' class='SELECT'     ><option value='0' selected='selected'>Seleccione..</option> <option value=6>china</option> <option value=4>LASMARCAS.NET</option></select></td>
+            </tr>
+	   <tr>
+        <td colspan="5" class="textotabla1" >
+		<table  width="99%" border="1">         
+          <tr >
+            <td  class="ctablasup">Categoria</td>
+			<td  class="ctablasup">Tipo Producto </td>
+            <td colspan="2"  class="ctablasup">Referencia</td>
+			<td  class="ctablasup">&nbsp;Codigo</td>
+            <td  class="ctablasup">Talla</td>
+            <td   class="ctablasup">Cantidad</td>
+			<td    class="ctablasup">Costo</td>
+			<td width="4%" class="ctablasup" align="center">Agregar:</td>
+          </tr>
+          <tr >
+            <td > <select name='marca' id='marca' class='SELECT'   onchange="busca_proveedores()"   ><option value='0' selected='selected'>Seleccione..</option> <option value=7>ACCESORIOS</option> <option value=27>ACCESORIOS FUTBOL</option> <option value=28>BALONES</option> <option value=29>CAMISETAS COLECCION</option> <option value=30>GUAYOS</option> <option value=31>GYM</option> <option value=32>NATACION</option> <option value=33>PING PONG</option> <option value=34>RECREACION</option> <option value=1>RELOJERIA</option> <option value=5>ROPA DEPORTIVA</option> <option value=2>ROPA FORMAL</option> <option value=4>ROPA INTERIOR</option> <option value=24>ROPA MUJER</option> <option value=25>ROPA NINOS</option> <option value=3>ROPA SPORT</option> <option value=6>TECNOLOGIA</option> <option value=35>TENIS</option> <option value=36>TERAPIA</option> <option value=21>UNIFORMES</option></select></td>
+			<td >
+			<select size="1" id="tipo_producto" name="tipo_producto"  class='SELECT' onchange="busca_referencia()" >
+            </select>
+			</td>
+            <td colspan="2" align="center"><select size="1" id="combo_referncia" name="combo_referncia"  class='SELECT' onchange="busca_codigo()">
+            </select>
+              <input name="hidden" type="hidden" id="codigo_producto" value="0" /></td>
+            <td align="center"><input name="codigo_fry" id="codigo_fry" type="text" class="caja_resalte1" onkeypress=" return valida_evento(this,'cantidad')"  onchange="cargar_combos()"  ></td>
+			 <td align="center">
+		 <select name='peso' id='peso' class='SELECT'   onfocus='cargar_combos()'    ><option value='0' selected='selected'>Seleccione..</option> <option value=6>10</option> <option value=7>12</option> <option value=8>14</option> <option value=9>16</option> <option value=10>18</option> <option value=11>AMARILLO</option> <option value=128>AZUL BLANCA</option> <option value=20>AZUL OSCURO</option> <option value=12>AZUL REY</option> <option value=17>BL X AZU</option> <option value=18>BL X NEG</option> <option value=19>BL X ROJ</option> <option value=16>BL X VER</option> <option value=4>L</option> <option value=3>M</option> <option value=14>NARANJA</option> <option value=21>NEGRA</option> <option value=1>NO APLICA</option> <option value=13>ROJO</option> <option value=2>S</option> <option value=15>VERDE</option> <option value=5>XL</option></select>		</td>
+			 <td align="center">
+			 <input name="cantidad" type="text" class="caja_resalte" id="cantidad" onkeypress="return validaInt_evento(this,'costo')"/>			 </td>
+			 <td align="center">
+			 <input name="costo" type="text" class="caja_resalte1" id="costo" onkeypress="return validaInt_evento(this,'mas')"/></td>
+			 <td align="center"> 
+			 <input id="mas" type='button'  class='botones' value='  +  '  onclick="adicion()">			 </td>
+          </tr>
+		      
+		  <tr >
+		  <td  colspan="9">
+			  <table width="100%">
+				<tr id="fila_0">
+				<td  class="ctablasup">Categoria</td>
+				<td  class="ctablasup">Tipo Producto </td>
+				<td   class="ctablasup">Referencia:</td>
+				<td  class="ctablasup">Codigo</td>
+				<td  class="ctablasup">Talla</td>
+				<td   class="ctablasup">Cantidad:              </td>
+				<td    class="ctablasup">Costo</td>
+				<td width="4%" class="ctablasup" align="center">Borrar:</td>
+				</tr>
+								</table>			</td>
+			</tr>			
+		 <tr >
+		  <td  colspan="9">
+			  <table width="100%">
+				<tr >
+				<td  class="ctablasup"><div align="right">Resumen Entrada </div></td>
+				</tr>
+				<tr >
+				<td ><div align="right" >Total  Compra:
+				    <input name="todocompra" id="todocompra" type="text" class="textfield01" readonly="1" value="0"/>
+				</div>				  </td>
+				</tr>
+				</table>			</td>
+			</tr>
+		</table>	
+		  </table>
+	    </td>
+		 </tr>
+	  <tr> 
+		  <td colspan="8" >		  </td>
+		  </tr>
+    </table>
+<tr>
+  <tr>
+    <td>
+	<input type="hidden" name="val_inicial" id="val_inicial" value="0" />
+	<input type="hidden" name="guardar" id="guardar" />
+		 	   <input type="hidden" id="valDoc_inicial" value=""> 
+	   <input type="hidden" name="cant_items" id="cant_items" value=" ">
+	</td>
+  </tr>
+</table>
+</form> 
+</div>
+<script type="text/javascript">
+		Calendar.setup(
+			{
+			inputField  : "fecha",      
+			ifFormat    : "%Y-%m-%d",    
+			button      : "calendario" ,  
+			align       :"T3",
+			singleClick :true
+			}
+		);
+</script>
+<div  id="relacion" align="center" style="display:none" >
+<!-- <div  id="relacion" align="center" >-->
+<table width="413" border="0" cellspacing="0" cellpadding="0" bgcolor="#E9E9E9" align="center">
+   <tr id="pongale_0" >
+    <td width="81" class="textotabla1"><strong>Referncia:</strong></td>
+    <td width="332" class="textotabla1"><strong id="serial_nombre_"> </strong>
+      <input type="hidden" name="textfield3"  id="ref_serial_"/>
+	  <input type="hidden" name="textfield3"  id="campo_guardar"/>
+	  </td>
+   </tr>
+   
+   
+   
+   <tr>
+     <td class="textotabla1" colspan="2"><div align="center">
+       <input type="button" name="Submit" value="Guardar"  onclick="guardar_serial()"/>  
+	    <input type="button" name="Submit" value="Cancelar"  onclick="limpiar()" id="cancelar" />  
+       <input type="hidden" name="textfield32"  id="catidad_seriales" value="0"/>
+     </div></td>
+   </tr>
+</table>
+</div>
+</body>
+</html>

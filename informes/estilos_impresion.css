@@ -1,0 +1,35 @@
+.subfongris
+{
+     visibility:hidden; 
+   display: none; 
+}
+.textoproductos1
+{
+    visibility:hidden; 
+     display: none; 
+}
+.txtablas
+{
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	margin: 2px;
+	padding: 2px;
+}
+.subtitulosproductos
+{
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+}
+.titulogran
+{
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}

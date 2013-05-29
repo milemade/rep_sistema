@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<table width="800" border="1">
+  <tr>
+    <td width="98">Valor Factura</td>
+    <td width="285">&nbsp;</td>
+    <td width="104">Saldo Factura</td>
+    <td width="285">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Fecha Nota</td>
+    <td>&nbsp;</td>
+    <td>Valor Nota</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<table width="400" border="1">
+  <tr>
+    <td width="79">Usuario</td>
+    <td width="305">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Fechahora</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+ <table width="100%" border="1" cellpadding="1" cellspacing="0" bordercolor="#333333">
+			  	<tr>
+			  		<td width="47%" rowspan="2"><span class="Estilo4">NOTA COMPRA<span> </td>
+				    <td width="22%" height="22" class="ctablaform"> <span class="textoproductos1"> &nbsp;&nbsp;Fecha Factura:<span class="textotabla01">
+                    <?=$fecha?>
+				    </span></span></td>
+			  	    <td width="51%" class="ctablaform"><span class="textoproductos1">&nbsp;&nbsp;Numero Factura: &nbsp;<?=$numero_factura?></span></td>
+			  	</tr>
+			  	<tr>
+			  	  <td  colspan="2" class="ctablaform"><span class="textoproductos1">&nbsp;&nbsp;Proveedor :<span class="textotabla01">
+			  	    <?=strtoupper($proveedor)?>
+			  	  </span></span></td>
+			  	</tr>
+				
+
+				</table>
+</body>
+</html>

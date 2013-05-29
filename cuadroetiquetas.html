@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Documento sin t&iacute;tulo</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="css/styles1.css" rel="stylesheet" type="text/css" />
+<script>
+function vacio(q)
+{
+    for ( i = 0; i < q.length; i++ ) { //la funcion q.length devuelve el tamaño de la palabra contenia por el textbox
+	  if ( q.charAt(i) != " " ) {//la funcion q.charAt nos deuelve el caracter contenido en la posicion i de la variable q
+		return true
+	  }
+	}
+ return false;
+}
+
+function validar()
+{
+     if(document.frmimp.inicial.value=="")
+	 {
+	     alert("Debe ingresar el valor inicial.");
+	     document.frmimp.inicial.focus();
+	     return false;
+	 }
+	 if(vacio(document.frmimp.inicial.value)==false ) {
+	     alert("Debe ingresar el valor inicial.");
+	     document.frmimp.inicial.focus();
+	     return false;
+   } 
+   if(document.frmimp.final.value=="")
+	 {
+	     alert("Debe ingresar el valor final.");
+	     document.frmimp.final.focus();
+	     return false;
+	 }
+	 if(vacio(document.frmimp.final.value)==false ) {
+	     alert("Debe ingresar el valor final.");
+	     document.frmimp.final.focus();
+	     return false;
+   } 
+   if(document.frmimp.final.value<=document.frmimp.inicial.value)
+   {
+         alert("El numero inicial debe ser menor, Gracias!");
+		 document.frmimp.inicial.focus();
+		 document.frmimp.final.value = "";
+		 document.frmimp.inicial.value = "";
+		 return false;
+   }
+    if(document.frmimp.serie.value=="")
+	 {
+	     alert("Debe ingresar la serie.");
+	     document.frmimp.serie.focus();
+	     return false;
+	 }
+	 if(vacio(document.frmimp.serie.value)==false ) {
+	     alert("Debe ingresar la serie.");
+	     document.frmimp.serie.focus();
+	     return false;
+   } 
+   else
+   {
+       document.frmimp.submit();
+       return true;	   
+   }
+}
+
+function validarnumero(e) { // 1
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla==8) return true; // 3
+    //patron =/[A-Za-z\s]/; // 4
+    patron = /\d/; // Solo acepta números
+    //patron = /\w/; // Acepta números y letras
+    //patron = /\D/; // No acepta números
+    //patron =/[A-Za-zñÑ\s]/; // igual que el ejemplo, pero acepta también las letras ñ y Ñ
+    //patron = /[ajt69]/;
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+} 
+function numeros()
+{
+   if(document.frmimp.final.value>document.frmimp.inicial.value)
+   {
+      total = document.frmimp.final.value - document.frmimp.inicial.value;
+	  document.frmimp.total.value = total + 1;
+	  return true;
+   }
+   if(document.frmimp.final.value!="" && document.frmimp.inicial.value !="" &&
+     document.frmimp.final.value<document.frmimp.inicial.value)
+   {
+      alert("El numero inicial debe ser menor!");
+	  document.frmimp.final.value = "";
+	  document.frmimp.inicial.value = "";
+	  document.frmimp.total.value = "";
+	  document.frmimp.inicial.focus();
+	  return false;
+   }
+}
+</script>
+<style type="text/css">
+table{
+-moz-border-radius: 15px;
+background-color : #AEAEAE;
+border : 1px solid #000000;
+font-family : Arial, Verdana, Helvetica, sans-serif;
+font-size : 12px;
+padding-left : 5px;
+padding-right : 5px;
+}
+</style>
+</head>
+
+<body>
+<p style="padding-bottom:29px"></p>
+<form name="frmimp" method="POST" action="etiquetas.php">
+<table width="411" border="0" align="center" border="2" cellspacing="0" cellpadding="8">
+  <tr>
+    <td colspan="4" class="tituloproductos"><div align="center">IMPRESION DE ETIQUETAS</div></td>
+  </tr>
+  <tr>
+    <td width="72" height="35" class="tituloproductos">INICIAL</td>
+    <td width="108"><input type="text" name="inicial"  size="6" onkeypress="return validarnumero(event);" onblur="numeros()"/></td>
+    <td width="74" class="tituloproductos">FINAL</td>
+    <td width="129"><input type="text" name="final"  size="6" onkeypress="return validarnumero(event);" onblur="numeros()"/></td>
+  </tr>
+  <tr>
+    <td class="tituloproductos">Total  </td>
+    <td><input type="text" name="total"  size="6" readonly/>&nbsp;</td>
+    <td class="tituloproductos">Serie</td>
+    <td><input type="text" name="serie"  size="6" onkeypress="return validarnumero(event);" maxlength="1" /></td> 
+  </tr>
+  <tr>
+    <td colspan="2"><div align="right">
+      <input type="button" class="botones" name="imprimir" value="Imprimir" onclick="validar();" />
+    </div></td>
+    <td colspan="2"><input class="botones" type="button" name="salir" value="Salir" /></td>
+  </tr>
+</table>
+
+</form>
+</body>
+</html>

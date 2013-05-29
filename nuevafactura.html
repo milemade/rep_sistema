@@ -1,0 +1,563 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Documento sin t&iacute;tulo</title>
+<style type="text/css">
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.Estilo1 {font-size: 12px}
+</style> 
+
+<script type="text/javascript" src="calendario/javascript/calendar.js"></script>
+	<script type="text/javascript" src="calendario/javascript/calendar-es.js"></script>
+	<script type="text/javascript" src="calendario/javascript/calendar-setup.js"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="calendario/styles/calendar-win2k-cold-1.css" title="win2k-cold-1" />
+	<link href="css/styles.css" rel="stylesheet" type="text/css" /> 
+	<script type="text/javascript" src="js/funciones.js"></script> 
+
+
+<script language="javascript">
+function buscar_datos_total(opc) {
+	var vec_datos_total = new Array;
+	var vec_codigo=0;
+	var vec_nombre=0; 
+	var combo_llenar="";
+	var xx=1 ;
+
+		
+	/*if(opc="tipo_producto") {
+		vec_codigo=6;
+		vec_nombre=7; 
+		combo_llenar=document.getElementById('tipo_producto');
+	}*/
+
+	vec_datos_total[0]=  new Array('' , ''  , '' );
+vec_datos_total[1]=  new Array('3' , 'GENERAL'  , '3' );
+	if(opc=="marca"  ) 
+	{
+		limpiar_combos();
+		vec_codigo=0;
+		vec_nombre=1; 
+		combo_llenar=document.getElementById('tipo_producto');
+		combo_llenar.options.length=0;
+		combo_llenar.options[0] = new Option('Seleccione','0'); 
+		for (j=1; j<= vec_datos_total.length  ;j++)
+		{
+			if(document.getElementById('marca').value== vec_datos_total[j-1][2]) 
+			{
+				combo_llenar.options[xx] = new Option(vec_datos_total[j-1][vec_nombre],vec_datos_total[j-1][vec_codigo]);  
+				xx++;
+			}
+		}
+	}
+	
+	
+	vec_datos_total[0]=  new Array('1' , ''  , '' );
+vec_datos_total[1]=  new Array('6' , 'FRANELAS'  , '3' );
+	if(opc=="tipo_producto") {
+	
+		vec_codigo=0;
+		vec_nombre=1; 
+		combo_llenar=document.getElementById('combo_referncia');
+		combo_llenar.options.length=0;
+		combo_llenar.options[0] = new Option('Seleccione','0'); 
+
+		for (j=1; j<= vec_datos_total.length  ;j++)
+		{
+			if(document.getElementById('tipo_producto').value== vec_datos_total[j-1][2]) 
+			{
+				combo_llenar.options[xx] = new Option(vec_datos_total[j-1][vec_nombre],vec_datos_total[j-1][vec_codigo]);  
+				xx++;
+			}
+		}
+	}	
+	
+	
+		vec_datos_total[0]=  new Array('6'   ,'323' , '1969' , '01' , "FRANELAS" , '0' , '3' , 'GENERAL' , '3' , 'GENERAL' , '1' , 'N/A' , '' , '1' , 'GENERAL' , '' , '50000' );
+	if(opc=="combo_referncia") {
+	
+		vec_codigo=10;
+		vec_nombre=11; 
+		var lleno_peso=0;
+		combo_llenar=document.getElementById('peso');
+		combo_llenar.options.length=0;
+		combo_llenar.options[0] = new Option('Seleccione','0'); 
+		
+		for (j=1; j<= vec_datos_total.length -1 ;j++)
+		{
+
+			if(document.getElementById('combo_referncia').value== vec_datos_total[j-1][0]) 
+			{
+				document.getElementById('codigo_fry').value = vec_datos_total[j-1][3];
+			}
+	
+			//alert(document.getElementById('combo_referncia').value)
+			//alert(vec_datos_total[j-1][0])
+			if(document.getElementById('combo_referncia').value== vec_datos_total[j-1][0]) 
+			{
+				combo_llenar.options[xx] = new Option(vec_datos_total[j-1][vec_nombre],vec_datos_total[j-1][vec_codigo]);  
+				xx++;
+				lleno_peso=1;
+			}
+		}
+		
+	}
+	
+	
+	
+	if(opc=="cantidad") {
+			vec_datos_total[0]=  new Array('6'   ,'323' , '1969' , '01' , "FRANELAS" , '0' , '3' , 'GENERAL' , '3' , 'GENERAL' , '1' , 'N/A' , '3' , '1' , 'GENERAL' , '' , '50000' );
+
+	
+		var cantidad_actu;
+		for (j=1; j<= vec_datos_total.length  ;j++)
+		{
+			if(document.getElementById('combo_referncia').value== vec_datos_total[j-1][0] &&  document.getElementById('peso').value== vec_datos_total[j-1][10]) 
+			{	
+				if( parseInt(document.getElementById('cantidad').value) > parseInt(vec_datos_total[j-1][2])) {
+					alert("La Cantidad No Corresponde")
+					return false;
+				}
+				else 
+					return true;
+			}
+		}
+	}
+	
+	
+	if(opc=="valor_lista") {
+	
+			vec_datos_total[0]=  new Array('6'   ,'323' , '1969' , '01' , "FRANELAS" , '0' , '3' , 'GENERAL' , '3' , 'GENERAL' , '1' , 'N/A' , '3' , '1' , 'GENERAL' , '' , '50000' );
+
+	
+	
+	//	document.getElementById('valor_lista').value=document.getElementById('valor_lista').value;	
+/*		for (j=1; j<= vec_datos_total.length  ;j++)
+		{
+			if(document.getElementById('combo_referncia').value== vec_datos_total[j-1][0] &&  vec_datos_total[j-1][10]>0) 
+			{	
+				document.getElementById('valor_lista').value=vec_datos_total[j-1][16];
+
+			}
+		}
+*/		
+		if(document.getElementById('valor_lista').value==""){
+			alert("No hay Precio Asignado")
+			return false;
+		}
+		else 
+			return true;	
+	}
+	
+	
+	if(opc=="refe_codigo") {
+	
+			vec_datos_total[0]=  new Array('6'   ,'323' , '1969' , '01' , "FRANELAS" , '0' , '3' , 'GENERAL' , '3' , 'GENERAL' , '1' , 'N/A' , '3' , '1' , 'GENERAL' , '' , '50000' );
+		for (j=1; j<= vec_datos_total.length  ;j++)
+		{
+
+			//alert(document.getElementById('codigo_fry').value)
+			//alert(vec_datos_total[j-1][3])
+			if(document.getElementById('codigo_fry').value== vec_datos_total[j-1][3]) 
+			{								
+				document.getElementById('marca').value=vec_datos_total[j-1][8];
+				
+				document.getElementById('tipo_producto').options.length=0;
+				document.getElementById('tipo_producto').options[0] = new Option(vec_datos_total[j-1][7],vec_datos_total[j-1][6]);  
+				
+				document.getElementById('combo_referncia').options.length=0;
+				document.getElementById('combo_referncia').options[0] = new Option(vec_datos_total[j-1][4],vec_datos_total[j-1][0]);  
+				
+				
+				buscar_datos_total('combo_referncia');
+				return false;
+				
+			}
+		}
+	}
+
+	
+}
+
+
+function limpiar_combos()
+{
+	document.getElementById('tipo_producto').options.length=0;
+	document.getElementById('combo_referncia').options.length=0;
+	document.getElementById('codigo_fry').value="";
+	document.getElementById('peso').options.length=0;
+	document.getElementById('valor_lista').value="";
+	document.getElementById('cantidad').value="";	
+	
+}
+
+function datos_completos(){ 
+
+	if(document.getElementById("Credito").checked==true &&  parseInt(document.getElementById('cupo_covinoc').value) <= parseInt(document.getElementById('todocompra').value) ) {
+		alert('No hay Cupo para esta Compra')
+		return false;
+	}
+		
+	if (document.getElementById('todocompra').value == ""){	
+		return false;
+	}
+	else 
+		return true;
+
+}
+
+
+function verificar_credito()
+{
+	if (document.getElementById("Credito").checked==false)
+	{
+		document.getElementById("div_credito").style.display="none";
+	}
+	else 
+	{
+		if(document.getElementById("cupo_covinoc").value>0) 
+		{
+			document.getElementById("div_credito").style.display="inline";
+		}
+		else 
+		{
+			alert("Este Cliente No tiene Credito")
+			document.getElementById("Credito").checked=false;
+		}
+	}
+}
+
+
+function resalte (declarado, sumado){
+if(document.getElementById(declarado).value!=document.getElementById(sumado).value) {
+	document.getElementById(declarado).style.color="#FF0000";
+}
+else 
+	document.getElementById(declarado).style.color="#000000";
+}
+
+
+function  adicion() 
+{
+
+	if(document.getElementById('marca').value < 1 || document.getElementById('tipo_producto').value < 1 || document.getElementById('combo_referncia').value < 1 || document.getElementById('peso').value < 1  || document.getElementById('cantidad').value=="" ) 
+	{
+		alert("Datos Incompletos")
+		return false;
+	}
+
+	if(buscar_datos_total('cantidad')==false)
+		return false;
+		
+	if(buscar_datos_total('valor_lista')==false)
+		return false;
+	
+	var  vali_ref=0;
+	//var  vali_ref= anti_trampa(document.getElementById("combo_referncia").value, document.getElementById('peso').value);
+	
+	if(vali_ref==1)
+	{
+		alert("Esta Referencia Ya fue agregada  Si desea Modificar la Cantidad  Elimine el Registro y Agregue nuevamente")
+		return false;
+	}
+	//anti_trampa(cod_ref_comp,peso_comp);
+	
+
+	//return  false;
+
+	if(document.getElementById("marca").value>0  && document.getElementById("tipo_producto").value > "" && document.getElementById('combo_referncia').value > 0 && document.getElementById('peso').value > 0 && document.getElementById("cantidad").value>0 ) 
+	{
+		Agregar_html_venta();						
+		limpiar_combos();
+		document.getElementById('marca').value=0;
+		document.getElementById("codigo_fry").focus();
+		return false;
+	}
+	
+	else 
+	{
+		alert("Ingrese una Referencia Valida junto con los demas Valores")
+		document.getElementById("codigo_fry").focus();
+	}
+}
+
+
+
+function buscar_producto(){
+var ruta="con_consulta_inf.php";
+var tamano="recibo";
+var ancho=0;
+var alto=0;
+	
+if(tamano=="mediano") {
+	ancho=900;
+	alto=600;
+}
+
+if(tamano=="grande") {
+	ancho=900;
+	alto=700;
+}
+
+if(tamano=="recibo") {
+	ancho=700;
+	alto=500;
+}
+
+
+
+var marginleft = (screen.width - ancho) / 2;
+var margintop = (screen.height - alto) / 2;
+propiedades = 'menubar=0,resizable=1,height='+alto+',width='+ancho+',top='+margintop+',left='+marginleft+',toolbar=0,scrollbars=yes';
+window.open(""+ruta+"?codigo=0","Busqueda",propiedades)
+
+}
+
+
+document.onkeydown = function(e) 
+{ 
+	
+	
+	if(e) 
+	document.onkeypress = function(){return true;} 
+
+
+	var evt = e?e:event; 
+	if(evt.keyCode==120 || evt.keyCode==121) 
+	{ 
+		if(evt.keyCode==120)
+		buscar_producto();
+		if(evt.keyCode==121){
+		calcula_cambio();
+		cambio_guardar();		
+		}
+	
+		if(e) 
+		document.onkeypress = function(){return false;} 
+		else 
+		{ 
+		evt.keyCode = 0; 
+		evt.returnValue = false; 
+		} 
+	} 
+} 
+
+
+function anti_trampa(cod_ref_comp,peso_comp)
+{	
+	var myString =document.getElementById("tipo_referencias").value;
+	var mySplitResult = myString.split("@");
+	var myString_sub;
+	var mySplitResult_sub ;
+	var validador=0;
+	
+	//alert(cod_ref_comp)
+	//alert(peso_comp)
+	//var cod_ref_comp= 594;
+	//var peso_comp=5;
+	
+	
+	for(i = 1; i < mySplitResult.length; i++)
+	{		
+		//alert(mySplitResult[i]) 
+		myString_sub=mySplitResult[i];
+		mySplitResult_sub = myString_sub.split(",");
+		//cod_ref_comp= document.getElementById("combo_referncia ").value;
+		//peso_comp=document.getElementById("peso").value;
+		
+//		alert(mySplitResult_sub[0])
+//		alert(mySplitResult_sub[1])
+		
+		if(mySplitResult_sub[1]== cod_ref_comp &&  mySplitResult_sub[0]== peso_comp) 
+		{
+			//alert('si')
+			//return false;
+			validador=1;
+		}
+		//else  {
+		//	alert('nooo')
+		//}
+		//alert(mySplitResult_sub[0]) 		//alert(mySplitResult_sub[1])
+	}
+	
+	return validador;
+}
+
+</script>
+
+<script type="text/javascript" src="js/js.js"></script>
+<link href="css/stylesforms.css" rel="stylesheet" type="text/css" />
+<link href="css/styles2.css" rel="stylesheet" type="text/css" />
+<link href="informes/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body >
+<div id="total">
+<form  name="forma" id="forma" action="man_venta.php"  method="post">
+<table width="750" border="0" cellspacing="0" cellpadding="0" align="center" >
+  <tr>
+   <td bgcolor="#E9E9E9" >
+   <table width="100%" height="30" border="0" cellspacing="0" cellpadding="0" align="center" > 
+      <tr>
+        <td width="5" height="30">&nbsp;</td>
+        <td width="20" ><img src="imagenes/icoguardar.png" alt="Nueno Registro" width="16" height="16" border="0" onClick="cambio_guardar()" style="cursor:pointer"/></td>
+        <td width="61" class="ctablaform">Guardar</td>
+        <td width="21" class="ctablaform"><a href="con_venta.php?confirmacion=0&editar=1&insertar=1&eliminar=1"><img src="imagenes/cancel.png" alt="Cancelar" width="16" height="16" border="0" /></a></td>
+        <td width="65" class="ctablaform">Cancelar </td>
+        <td width="22" class="ctablaform"><a href="#"><img src="imagenes/iconolupa.gif" alt="Buscar" width="16" height="16" border="0" onclick="buscar_producto()" /></a></td>
+        <td width="70" class="ctablaform">Consultar(F9)</td>
+        <td width="21" class="ctablaform"></td>
+        <td width="60" class="ctablaform">&nbsp;</td>
+        <td width="24" valign="middle" class="ctablaform">&nbsp;</td>
+        <td width="193" valign="middle">
+
+          <input type="hidden" name="editar"   id="editar"   value="1">
+		  <input type="hidden" name="insertar" id="insertar" value="1">
+		  <input type="hidden" name="eliminar" id="eliminar" value="1">
+          <input type="hidden" name="codigo" id="codigo" value="0" /> </td>
+        
+        <td width="67" valign="middle">&nbsp;</td>
+      </tr>
+    </table>
+	</td>
+  </tr>
+  <tr>
+    <td height="4" valign="bottom"><img src="imagenes/lineasup2.gif" alt="." width="100%" height="4" /></td>
+  </tr>
+  <tr>
+    <td class="textotabla01">FACTURACION :</td>
+  </tr>
+  <tr>
+    <td><img src="imagenes/lineasup2.gif"  width="100%" height="4" /></td>
+  </tr>
+  <tr>
+    <td bgcolor="#E9E9E9" valign="top">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+        <td width="62" class="textotabla1">Fecha:</td>
+        <td width="275" class="subtitulosproductos">2011-07-21          <input name="fecha_fac" id="fecha_fac" type="hidden" value="2011-07-21"  /></td>
+        <td width="20" class="textorojo">*</td>
+        <td width="77" class="textotabla1">Vendedor:</td>
+        <td width="145"  class="subtitulosproductos">
+		administrador		<input name="vendedor" id="vendedor" type="hidden" value="1"></td>		 
+        <td width="171" class="textorojo">&nbsp;</td>
+       </tr>
+	   <tr>
+        <td width="62" height="24" class="textotabla1">Empresa:</td>
+        <td width="275" class="subtitulosproductos">
+		EMPRESA DE PRUEBA		<input name="empresa" id="empresa" type="hidden" value="20"></td>
+        <td width="20" class="textorojo">*</td>
+        <td width="77" class="textotabla1"> Bodega:</td>
+        <td class="subtitulosproductos"><span class="textoproductos1">
+          BODEGA CONTABLE          <input name="bodega_fac" id="bodega_fac" type="hidden" value="323">
+        </span></td>		 
+        <td width="171" >
+          <input name="precio_lista" id="precio_lista" type="hidden" class="subtitulosproductos" />
+        </td>
+       </tr>
+	   <tr>
+        <td width="62" class="textotabla1">Cliente:</td>
+        <td width="275" class="subtitulosproductos">
+		ANGEL FAJARDO HUGO ANDRES		<input name="cliente_fac" id="cliente_fac" type="hidden" value="3"></td>
+        <td width="20" class="textorojo">*</td>
+        <td width="77" class="textotabla1"> Credito:</td>
+        <td colspan="2">
+          <input name="Credito" id="Credito" type="checkbox"  value="Credito" onclick="verificar_credito()" />
+          <div id="cupo" style="display:none">
+            <span class="textotabla1">Cupo:<span class="textorojo">
+              <input name="cupo_credito" id="cupo_credito" type="hidden" class="caja_resalte1"  readonly="-1"/>
+              </span></span>		  </div>		  
+          <span  id="div_credito" style="display:none" class="textoproductos1"> 
+            $  0            <input name="cupo_covinoc" type="hidden" id="cupo_covinoc"  value="0" readonly="-1" align="right"/>
+            </span>
+          <textarea name="tipo_referencias"  id="tipo_referencias"   cols="45" rows="4"  style="display:none"></textarea>
+          Numero Factura:
+          <input name="numero_factura_tela" type="text" class="caja_resalte1" id="numero_factura_tela" onkeypress="return validaInt_evento(this,'mas')" value="24SDSDSFSD" readonly="-1"/></td>
+        </tr>
+	   <tr>
+        <td colspan="7" class="textotabla1" >
+		<table  width="100%" border="1">         
+          <tr >
+            
+            <td width="9%"  class="ctablasup">Referencia</td>
+			<td width="11%"  class="ctablasup">Codigo</td>
+            <td colspan="2"  class="ctablasup">Descripcion</td>
+			<td width="20%"  class="ctablasup">&nbsp;<label>Color</label></td>
+            <td width="6%"  class="ctablasup">Cantidad</td>
+            <td width="19%"   class="ctablasup">Valor U.</td>
+            <td width="8%" class="ctablasup" align="center">Agregar:</td>
+          </tr>
+          <tr >
+            <td ><select size="1" id="combo_referncia" name="combo_referncia"  class='SELECT'  onchange="buscar_datos_total('combo_referncia')">
+            </select></td>
+			<td ><input name="codigo_fry" id="codigo_fry" type="text" class="caja_resalte1" onkeypress=" return valida_evento(this,'peso')"  onchange="buscar_datos_total('refe_codigo')" /></td>
+            <td colspan="2" align="center"><input name="codigo_fry2" id="codigo_fry2" type="text" class="caja_resalte1" onkeypress=" return valida_evento(this,'peso')"  onchange="buscar_datos_total('refe_codigo')" /></td>
+            <td align="center"><select size="1" id="peso" name="peso"  class='SELECT'  onfocus="buscar_datos_total('refe_codigo')">
+            </select></td>
+			 <td align="center"><input name="cantidad" type="text" class="caja_resalte" id="cantidad" onkeypress="return validaInt_evento(this,'valor_lista')"/></td>
+			 <td align="center"><input name="valor_lista" type="text" id="valor_lista" class="caja_resalte1" onkeypress="return validaInt_evento(this,'mas')" /></td>
+			 <td align="center"> 
+			   <input id="mas" type='button'  class='botones' value='  +  '  onclick="adicion()">			 </td>
+          </tr>
+		      
+		  <tr >
+		  <td  colspan="8">
+			  <table width="100%">
+				<tr id="fila_0">
+				
+				<td width="14%"  class="ctablasup">Referencia</td>
+				<td width="21%"  class="ctablasup">Codigo</td>
+				<td width="20%"   class="ctablasup">Descripcion</td>
+				<td width="9%"  class="ctablasup">Color</td>
+				<td  class="ctablasup">Cantidad</td>
+				<td width="13%"    class="ctablasup">Valor</td>
+				<td width="7%" class="ctablasup" align="center">Borrar</td>
+				</tr>
+								</table>			</td>
+			</tr>			
+		 <tr >
+		  <td  colspan="8">
+			  <table width="100%">
+				<tr >
+				<td  class="ctablasup"><div align="left">Observaciones:</div></td>
+				<td  class="ctablasup"><div align="right">Resumen Venta </div></td>
+				</tr>
+				<tr >
+				<td width="47%" ><div align="left" >
+				  <textarea name="observaciones" cols="45" rows="3" class="textfield02"  onchange='buscar_rutas()' ></textarea>
+				</div>				  </td>
+				<td width="53%" ><div align="right"><span class="ctablasup">Total  Venta:</span>
+				    <input name="todocompra" id="todocompra" type="text" class="textfield01" readonly="1" value="0"/>
+				  </div></td>
+				</tr>
+				</table>			  </td>
+			</tr>
+		</table>
+		  </table>
+	    </td>
+	  </tr>
+	  <tr> 
+		  <td colspan="8" >		  </td>
+	  </tr>
+    </table>
+<tr>
+
+  <tr>
+    <td>
+	<input type="hidden" name="val_inicial" id="val_inicial" value="0" />
+	<input type="hidden" name="guardar" id="guardar" />
+		 	   <input type="hidden" id="valDoc_inicial" value=""> 
+	   <input type="hidden" name="cant_items" id="cant_items" value=" ">
+	</td>
+  </tr>
+  
+</table>
+</form> 
+</div>
+</body>
+</html>

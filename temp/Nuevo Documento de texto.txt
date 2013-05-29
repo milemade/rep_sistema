@@ -1,0 +1,901 @@
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Documento sin t&iacute;tulo</title>
+<style type="text/css"> 
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.Estilo1 {font-size: 12px}
+</style> 
+ 
+<script type="text/javascript" src="calendario/javascript/calendar.js"></script>
+	<script type="text/javascript" src="calendario/javascript/calendar-es.js"></script>
+	<script type="text/javascript" src="calendario/javascript/calendar-setup.js"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="calendario/styles/calendar-win2k-cold-1.css" title="win2k-cold-1" />
+	<link href="css/styles.css" rel="stylesheet" type="text/css" /> 
+	<script type="text/javascript" src="js/funciones.js"></script> 
+<script language="javascript"> 
+function buscar_datos_total(opc) {
+	var vec_datos_total = new Array;
+	var vec_codigo=0;
+	var vec_nombre=0; 
+	var combo_llenar="";
+	var xx=1 ;
+	vec_datos_total[0]=  new Array('626'   ,'225' , '2' , 'leo' , "leo" , '16' , '67' , 'ABRIGO MUJER PROMOCION' , '7' , 'ACCESORIOS' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '626' , '5500' );
+vec_datos_total[1]=  new Array('625'   ,'225' , '9' , 'BAF0007' , "BALON FUTBOL JAV" , '16' , '141' , 'BALON' , '28' , 'BALONES' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '625' , '25000' );
+vec_datos_total[2]=  new Array('625'   ,'225' , '9' , 'BAF0007' , "BALON FUTBOL JAV" , '16' , '141' , 'BALON' , '28' , 'BALONES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '625' , '25000' );
+vec_datos_total[3]=  new Array('624'   ,'225' , '20' , 'UEFA0104' , "UNIFORME BAYERN AWAY N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '624' , '19000' );
+vec_datos_total[4]=  new Array('624'   ,'225' , '26' , 'UEFA0104' , "UNIFORME BAYERN AWAY N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '624' , '19000' );
+vec_datos_total[5]=  new Array('624'   ,'225' , '21' , 'UEFA0104' , "UNIFORME BAYERN AWAY N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '624' , '19000' );
+vec_datos_total[6]=  new Array('624'   ,'225' , '40' , 'UEFA0104' , "UNIFORME BAYERN AWAY N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '624' , '19000' );
+vec_datos_total[7]=  new Array('623'   ,'225' , '1' , 'UEFA0138' , "COVER TRAINING BLANCO" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '623' , '7000' );
+vec_datos_total[8]=  new Array('623'   ,'225' , '32' , 'UEFA0138' , "COVER TRAINING BLANCO" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '623' , '7000' );
+vec_datos_total[9]=  new Array('622'   ,'225' , '3' , 'UEFA0137' , "COVER TRAINING ROJO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '622' , '7000' );
+vec_datos_total[10]=  new Array('622'   ,'225' , '16' , 'UEFA0137' , "COVER TRAINING ROJO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '622' , '7000' );
+vec_datos_total[11]=  new Array('618'   ,'225' , '34' , 'UEFA0108' , "UNIFORME WOLFSBURG HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '618' , '19000' );
+vec_datos_total[12]=  new Array('618'   ,'225' , '26' , 'UEFA0108' , "UNIFORME WOLFSBURG HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '618' , '19000' );
+vec_datos_total[13]=  new Array('618'   ,'225' , '29' , 'UEFA0108' , "UNIFORME WOLFSBURG HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '618' , '19000' );
+vec_datos_total[14]=  new Array('618'   ,'225' , '35' , 'UEFA0108' , "UNIFORME WOLFSBURG HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '618' , '19000' );
+vec_datos_total[15]=  new Array('617'   ,'225' , '30' , 'UEFA0107' , "UNIFORME SPORTING HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '617' , '19000' );
+vec_datos_total[16]=  new Array('617'   ,'225' , '30' , 'UEFA0107' , "UNIFORME SPORTING HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '617' , '19000' );
+vec_datos_total[17]=  new Array('617'   ,'225' , '25' , 'UEFA0107' , "UNIFORME SPORTING HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '617' , '19000' );
+vec_datos_total[18]=  new Array('617'   ,'225' , '24' , 'UEFA0107' , "UNIFORME SPORTING HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '617' , '19000' );
+vec_datos_total[19]=  new Array('616'   ,'225' , '7' , 'UEFA0106' , "UNIFORME CHEASEA AWAY 2 N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '616' , '19000' );
+vec_datos_total[20]=  new Array('616'   ,'225' , '8' , 'UEFA0106' , "UNIFORME CHEASEA AWAY 2 N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '616' , '19000' );
+vec_datos_total[21]=  new Array('616'   ,'225' , '28' , 'UEFA0106' , "UNIFORME CHEASEA AWAY 2 N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '616' , '19000' );
+vec_datos_total[22]=  new Array('616'   ,'225' , '23' , 'UEFA0106' , "UNIFORME CHEASEA AWAY 2 N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '616' , '19000' );
+vec_datos_total[23]=  new Array('615'   ,'225' , '33' , 'UEFA0105' , "UNIFORME BOCA JR N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '615' , '19000' );
+vec_datos_total[24]=  new Array('615'   ,'225' , '24' , 'UEFA0105' , "UNIFORME BOCA JR N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '615' , '19000' );
+vec_datos_total[25]=  new Array('615'   ,'225' , '26' , 'UEFA0105' , "UNIFORME BOCA JR N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '615' , '19000' );
+vec_datos_total[26]=  new Array('615'   ,'225' , '43' , 'UEFA0105' , "UNIFORME BOCA JR N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '615' , '19000' );
+vec_datos_total[27]=  new Array('614'   ,'225' , '31' , 'UEFA0103' , "UNIFORME ROMA HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '614' , '19000' );
+vec_datos_total[28]=  new Array('614'   ,'225' , '41' , 'UEFA0103' , "UNIFORME ROMA HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '614' , '19000' );
+vec_datos_total[29]=  new Array('614'   ,'225' , '27' , 'UEFA0103' , "UNIFORME ROMA HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '614' , '19000' );
+vec_datos_total[30]=  new Array('614'   ,'225' , '33' , 'UEFA0103' , "UNIFORME ROMA HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '614' , '19000' );
+vec_datos_total[31]=  new Array('613'   ,'225' , '20' , 'TERM0001' , "TERMO PLASTICO" , '16' , '153' , 'GENERICO' , '31' , 'GYM' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '613' , '4000' );
+vec_datos_total[32]=  new Array('612'   ,'225' , '5' , 'BOLTEN0002' , "ESTUCHE BOLA TENNIS X 12" , '16' , '147' , 'BOLAS SPORT' , '35' , 'TENIS' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '612' , '21000' );
+vec_datos_total[33]=  new Array('611'   ,'225' , '3' , 'BOLTEN0001' , "SET BOLA TENNIS PROF. X 3" , '16' , '147' , 'BOLAS SPORT' , '35' , 'TENIS' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '611' , '9000' );
+vec_datos_total[34]=  new Array('610'   ,'225' , '8' , 'RASQ0001' , "RAQUETA SQUASH" , '16' , '148' , 'RAQUETAS' , '35' , 'TENIS' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '610' , '35000' );
+vec_datos_total[35]=  new Array('609'   ,'225' , '2' , 'RATE0001' , "RAQUETA TENNIS" , '16' , '148' , 'RAQUETAS' , '35' , 'TENIS' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '609' , '35000' );
+vec_datos_total[36]=  new Array('606'   ,'225' , '11' , 'BAV0001' , "BALON VOLEYBALL" , '16' , '141' , 'BALON' , '28' , 'BALONES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '606' , '25000' );
+vec_datos_total[37]=  new Array('605'   ,'225' , '8' , 'LYC010' , "BUSO LYCRA NEGRO" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '605' , '21500' );
+vec_datos_total[38]=  new Array('605'   ,'225' , '25' , 'LYC010' , "BUSO LYCRA NEGRO" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '605' , '21500' );
+vec_datos_total[39]=  new Array('605'   ,'225' , '26' , 'LYC010' , "BUSO LYCRA NEGRO" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '605' , '21500' );
+vec_datos_total[40]=  new Array('604'   ,'225' , '11' , 'LYC009' , "BUSO LYCRA ROJO" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '604' , '21500' );
+vec_datos_total[41]=  new Array('604'   ,'225' , '19' , 'LYC009' , "BUSO LYCRA ROJO" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '604' , '21500' );
+vec_datos_total[42]=  new Array('604'   ,'225' , '19' , 'LYC009' , "BUSO LYCRA ROJO" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '604' , '21500' );
+vec_datos_total[43]=  new Array('603'   ,'225' , '7' , 'LYC008' , "BUSO LYCRA AZUL" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '603' , '21500' );
+vec_datos_total[44]=  new Array('603'   ,'225' , '11' , 'LYC008' , "BUSO LYCRA AZUL" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '603' , '21500' );
+vec_datos_total[45]=  new Array('603'   ,'225' , '19' , 'LYC008' , "BUSO LYCRA AZUL" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '603' , '21500' );
+vec_datos_total[46]=  new Array('602'   ,'225' , '8' , 'LYC007' , "BUSO LYCRA BLANCO" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '602' , '21500' );
+vec_datos_total[47]=  new Array('602'   ,'225' , '65' , 'LYC007' , "BUSO LYCRA BLANCO" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '602' , '21500' );
+vec_datos_total[48]=  new Array('602'   ,'225' , '41' , 'LYC007' , "BUSO LYCRA BLANCO" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '602' , '21500' );
+vec_datos_total[49]=  new Array('601'   ,'225' , '18' , 'UEFA0102' , "UNIFORME JUVENTUS VISITOR NT" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '601' , '19000' );
+vec_datos_total[50]=  new Array('601'   ,'225' , '20' , 'UEFA0102' , "UNIFORME JUVENTUS VISITOR NT" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '601' , '19000' );
+vec_datos_total[51]=  new Array('601'   ,'225' , '40' , 'UEFA0102' , "UNIFORME JUVENTUS VISITOR NT" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '601' , '19000' );
+vec_datos_total[52]=  new Array('600'   ,'225' , '1' , 'UEFA0101' , "UNIFORME RIVER HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '600' , '19000' );
+vec_datos_total[53]=  new Array('600'   ,'225' , '14' , 'UEFA0101' , "UNIFORME RIVER HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '600' , '19000' );
+vec_datos_total[54]=  new Array('600'   ,'225' , '23' , 'UEFA0101' , "UNIFORME RIVER HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '600' , '19000' );
+vec_datos_total[55]=  new Array('600'   ,'225' , '24' , 'UEFA0101' , "UNIFORME RIVER HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '600' , '19000' );
+vec_datos_total[56]=  new Array('599'   ,'225' , '27' , 'UEFA0100' , "UNIFORME ARSENAL AWAY N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '599' , '19000' );
+vec_datos_total[57]=  new Array('599'   ,'225' , '3' , 'UEFA0100' , "UNIFORME ARSENAL AWAY N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '599' , '19000' );
+vec_datos_total[58]=  new Array('599'   ,'225' , '58' , 'UEFA0100' , "UNIFORME ARSENAL AWAY N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '599' , '19000' );
+vec_datos_total[59]=  new Array('599'   ,'225' , '19' , 'UEFA0100' , "UNIFORME ARSENAL AWAY N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '599' , '19000' );
+vec_datos_total[60]=  new Array('598'   ,'225' , '12' , 'UEFA0099' , "UNIFORME PORTO HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '598' , '19000' );
+vec_datos_total[61]=  new Array('598'   ,'225' , '34' , 'UEFA0099' , "UNIFORME PORTO HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '598' , '19000' );
+vec_datos_total[62]=  new Array('598'   ,'225' , '36' , 'UEFA0099' , "UNIFORME PORTO HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '598' , '19000' );
+vec_datos_total[63]=  new Array('598'   ,'225' , '24' , 'UEFA0099' , "UNIFORME PORTO HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '598' , '19000' );
+vec_datos_total[64]=  new Array('597'   ,'225' , '39' , 'UEFA0098' , "UNIFORME ARSENAL HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '597' , '19000' );
+vec_datos_total[65]=  new Array('597'   ,'225' , '37' , 'UEFA0098' , "UNIFORME ARSENAL HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '597' , '19000' );
+vec_datos_total[66]=  new Array('597'   ,'225' , '40' , 'UEFA0098' , "UNIFORME ARSENAL HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '597' , '19000' );
+vec_datos_total[67]=  new Array('597'   ,'225' , '18' , 'UEFA0098' , "UNIFORME ARSENAL HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '597' , '19000' );
+vec_datos_total[68]=  new Array('596'   ,'225' , '24' , 'UEFA0097' , "UNIFORME JUVENTUS HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '596' , '19000' );
+vec_datos_total[69]=  new Array('596'   ,'225' , '27' , 'UEFA0097' , "UNIFORME JUVENTUS HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '596' , '19000' );
+vec_datos_total[70]=  new Array('596'   ,'225' , '34' , 'UEFA0097' , "UNIFORME JUVENTUS HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '596' , '19000' );
+vec_datos_total[71]=  new Array('596'   ,'225' , '28' , 'UEFA0097' , "UNIFORME JUVENTUS HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '596' , '19000' );
+vec_datos_total[72]=  new Array('595'   ,'225' , '33' , 'UEFA0096' , "UNIFORME ATLETICO HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '595' , '19000' );
+vec_datos_total[73]=  new Array('595'   ,'225' , '25' , 'UEFA0096' , "UNIFORME ATLETICO HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '595' , '19000' );
+vec_datos_total[74]=  new Array('595'   ,'225' , '33' , 'UEFA0096' , "UNIFORME ATLETICO HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '595' , '19000' );
+vec_datos_total[75]=  new Array('595'   ,'225' , '27' , 'UEFA0096' , "UNIFORME ATLETICO HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '595' , '19000' );
+vec_datos_total[76]=  new Array('594'   ,'225' , '10' , 'NBA023' , "UNIFORME BASKET CELTICS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '594' , '22000' );
+vec_datos_total[77]=  new Array('594'   ,'225' , '7' , 'NBA023' , "UNIFORME BASKET CELTICS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '594' , '22000' );
+vec_datos_total[78]=  new Array('594'   ,'225' , '34' , 'NBA023' , "UNIFORME BASKET CELTICS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '594' , '22000' );
+vec_datos_total[79]=  new Array('594'   ,'225' , '33' , 'NBA023' , "UNIFORME BASKET CELTICS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '594' , '22000' );
+vec_datos_total[80]=  new Array('593'   ,'225' , '7' , 'NBA022' , "UNIFORME BASKET PHONEX" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '593' , '22000' );
+vec_datos_total[81]=  new Array('593'   ,'225' , '10' , 'NBA022' , "UNIFORME BASKET PHONEX" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '593' , '22000' );
+vec_datos_total[82]=  new Array('593'   ,'225' , '39' , 'NBA022' , "UNIFORME BASKET PHONEX" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '593' , '22000' );
+vec_datos_total[83]=  new Array('593'   ,'225' , '24' , 'NBA022' , "UNIFORME BASKET PHONEX" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '593' , '22000' );
+vec_datos_total[84]=  new Array('592'   ,'225' , '1' , 'NBA021' , "UNIFORME BASKET HEAT" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '592' , '22000' );
+vec_datos_total[85]=  new Array('592'   ,'225' , '5' , 'NBA021' , "UNIFORME BASKET HEAT" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '592' , '22000' );
+vec_datos_total[86]=  new Array('592'   ,'225' , '10' , 'NBA021' , "UNIFORME BASKET HEAT" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '592' , '22000' );
+vec_datos_total[87]=  new Array('592'   ,'225' , '7' , 'NBA021' , "UNIFORME BASKET HEAT" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '592' , '22000' );
+vec_datos_total[88]=  new Array('590'   ,'225' , '13' , 'ACFU0031' , "BUFANDA CHEALSE" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '590' , '7000' );
+vec_datos_total[89]=  new Array('589'   ,'225' , '32' , 'ACFU0030' , "BUFANDA HOLANDA" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '589' , '7000' );
+vec_datos_total[90]=  new Array('587'   ,'225' , '6' , 'ACFU0028' , "BUFANDA MILAN" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '587' , '7000' );
+vec_datos_total[91]=  new Array('586'   ,'225' , '10' , 'ACFU0027' , "BUFANDA ARSENAL" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '586' , '7000' );
+vec_datos_total[92]=  new Array('585'   ,'225' , '18' , 'ACFU0026' , "BUFANDA INTER" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '585' , '7000' );
+vec_datos_total[93]=  new Array('584'   ,'225' , '12' , 'ACFU0025' , "BUFANDA MANCHESTER" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '584' , '7000' );
+vec_datos_total[94]=  new Array('582'   ,'225' , '28' , 'ACFU0023' , "BUFANDA LIVERPOOL" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '582' , '7000' );
+vec_datos_total[95]=  new Array('581'   ,'225' , '53' , 'ACFU0022' , "BUFANDA ARGENTINA" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '581' , '7000' );
+vec_datos_total[96]=  new Array('580'   ,'225' , '66' , 'ACFU0021' , "BUFANDA ALEMANIA" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '580' , '7000' );
+vec_datos_total[97]=  new Array('579'   ,'225' , '74' , 'ACFU0020' , "BUFANDA ESPA&Ntilde;A" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '579' , '7000' );
+vec_datos_total[98]=  new Array('578'   ,'225' , '28' , 'ACFU0019' , "BUFANDA ITALIA" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '578' , '7000' );
+vec_datos_total[99]=  new Array('577'   ,'225' , '17' , 'ACFU0018' , "BUFANDA BRASIL" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '577' , '7000' );
+vec_datos_total[100]=  new Array('576'   ,'225' , '51' , 'ACFU0017' , "BUFANDA MILLONARIOS" , '16' , '155' , 'BUFANDA EQUIPOS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '576' , '7000' );
+vec_datos_total[101]=  new Array('574'   ,'225' , '1' , 'UEFA0094' , "UNIFORME MILAN HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '574' , '19000' );
+vec_datos_total[102]=  new Array('574'   ,'225' , '7' , 'UEFA0094' , "UNIFORME MILAN HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '574' , '19000' );
+vec_datos_total[103]=  new Array('573'   ,'225' , '27' , 'UEFA0093' , "UNIFORME MANCHESTER VISITOR N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '573' , '19000' );
+vec_datos_total[104]=  new Array('573'   ,'225' , '13' , 'UEFA0093' , "UNIFORME MANCHESTER VISITOR N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '573' , '19000' );
+vec_datos_total[105]=  new Array('573'   ,'225' , '5' , 'UEFA0093' , "UNIFORME MANCHESTER VISITOR N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '573' , '19000' );
+vec_datos_total[106]=  new Array('572'   ,'225' , '43' , 'UEFA0092' , "UNIFORME MANCHESTER HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '572' , '19000' );
+vec_datos_total[107]=  new Array('572'   ,'225' , '11' , 'UEFA0092' , "UNIFORME MANCHESTER HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '572' , '19000' );
+vec_datos_total[108]=  new Array('572'   ,'225' , '40' , 'UEFA0092' , "UNIFORME MANCHESTER HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '572' , '19000' );
+vec_datos_total[109]=  new Array('572'   ,'225' , '3' , 'UEFA0092' , "UNIFORME MANCHESTER HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '572' , '19000' );
+vec_datos_total[110]=  new Array('571'   ,'225' , '1' , 'UEFA0091' , "UNIFORME LIVERPOOL VISITOR N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '571' , '19000' );
+vec_datos_total[111]=  new Array('571'   ,'225' , '13' , 'UEFA0091' , "UNIFORME LIVERPOOL VISITOR N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '571' , '19000' );
+vec_datos_total[112]=  new Array('571'   ,'225' , '3' , 'UEFA0091' , "UNIFORME LIVERPOOL VISITOR N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '571' , '19000' );
+vec_datos_total[113]=  new Array('568'   ,'225' , '1' , 'UEFA0088' , "UNIFORME BARCELONA AWAY N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '568' , '19000' );
+vec_datos_total[114]=  new Array('567'   ,'225' , '6' , 'UEFA0087' , "UNIFORME AJAX VISITOR N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '567' , '19000' );
+vec_datos_total[115]=  new Array('566'   ,'225' , '19' , 'UEFA0086' , "PETO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '11' , 'AMARILLO' , '247' , '12' , 'LISTA PARA ALMACENES' , '566' , '7000' );
+vec_datos_total[116]=  new Array('566'   ,'225' , '19' , 'UEFA0086' , "PETO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '12' , 'AZUL REY' , '247' , '12' , 'LISTA PARA ALMACENES' , '566' , '7000' );
+vec_datos_total[117]=  new Array('566'   ,'225' , '20' , 'UEFA0086' , "PETO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '13' , 'ROJO' , '247' , '12' , 'LISTA PARA ALMACENES' , '566' , '7000' );
+vec_datos_total[118]=  new Array('566'   ,'225' , '6' , 'UEFA0086' , "PETO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '14' , 'NARANJA' , '247' , '12' , 'LISTA PARA ALMACENES' , '566' , '7000' );
+vec_datos_total[119]=  new Array('566'   ,'225' , '17' , 'UEFA0086' , "PETO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '15' , 'VERDE' , '247' , '12' , 'LISTA PARA ALMACENES' , '566' , '7000' );
+vec_datos_total[120]=  new Array('565'   ,'225' , '18' , 'UEFA0085' , "UNIFORME OLIMPIQUE HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '565' , '19000' );
+vec_datos_total[121]=  new Array('565'   ,'225' , '19' , 'UEFA0085' , "UNIFORME OLIMPIQUE HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '565' , '19000' );
+vec_datos_total[122]=  new Array('565'   ,'225' , '1' , 'UEFA0085' , "UNIFORME OLIMPIQUE HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '565' , '19000' );
+vec_datos_total[123]=  new Array('564'   ,'225' , '36' , 'UEFA0084' , "UNIFORME BAYERN HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '564' , '19000' );
+vec_datos_total[124]=  new Array('564'   ,'225' , '33' , 'UEFA0084' , "UNIFORME BAYERN HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '564' , '19000' );
+vec_datos_total[125]=  new Array('564'   ,'225' , '38' , 'UEFA0084' , "UNIFORME BAYERN HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '564' , '19000' );
+vec_datos_total[126]=  new Array('564'   ,'225' , '38' , 'UEFA0084' , "UNIFORME BAYERN HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '564' , '19000' );
+vec_datos_total[127]=  new Array('562'   ,'225' , '35' , 'UEFA0082' , "UNIFORME INTER HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '562' , '19000' );
+vec_datos_total[128]=  new Array('562'   ,'225' , '15' , 'UEFA0082' , "UNIFORME INTER HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '562' , '19000' );
+vec_datos_total[129]=  new Array('562'   ,'225' , '33' , 'UEFA0082' , "UNIFORME INTER HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '562' , '19000' );
+vec_datos_total[130]=  new Array('562'   ,'225' , '43' , 'UEFA0082' , "UNIFORME INTER HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '562' , '19000' );
+vec_datos_total[131]=  new Array('558'   ,'225' , '35' , 'UEFA0079' , "UNIFORME LIVERPOL HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '558' , '19000' );
+vec_datos_total[132]=  new Array('558'   ,'225' , '19' , 'UEFA0079' , "UNIFORME LIVERPOL HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '558' , '19000' );
+vec_datos_total[133]=  new Array('558'   ,'225' , '2' , 'UEFA0079' , "UNIFORME LIVERPOL HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '558' , '19000' );
+vec_datos_total[134]=  new Array('557'   ,'225' , '4' , 'UEFA0078' , "UNIFORME CHEALSE HOME N.T" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '557' , '19000' );
+vec_datos_total[135]=  new Array('556'   ,'225' , '45' , 'UEFA0077' , "UNI NI&Ntilde;O UEFA NARANJA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '556' , '17000' );
+vec_datos_total[136]=  new Array('556'   ,'225' , '53' , 'UEFA0077' , "UNI NI&Ntilde;O UEFA NARANJA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '9' , '16' , '247' , '12' , 'LISTA PARA ALMACENES' , '556' , '17000' );
+vec_datos_total[137]=  new Array('555'   ,'225' , '15' , 'UEFA0076' , "UNI NI&Ntilde;O UEFA ROJO" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '555' , '17000' );
+vec_datos_total[138]=  new Array('555'   ,'225' , '45' , 'UEFA0076' , "UNI NI&Ntilde;O UEFA ROJO" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '555' , '17000' );
+vec_datos_total[139]=  new Array('555'   ,'225' , '15' , 'UEFA0076' , "UNI NI&Ntilde;O UEFA ROJO" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '555' , '17000' );
+vec_datos_total[140]=  new Array('555'   ,'225' , '54' , 'UEFA0076' , "UNI NI&Ntilde;O UEFA ROJO" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '9' , '16' , '247' , '12' , 'LISTA PARA ALMACENES' , '555' , '17000' );
+vec_datos_total[141]=  new Array('554'   ,'225' , '17' , 'UEFA0075' , "UNI NI&Ntilde;O UEFA AZUL" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '554' , '17000' );
+vec_datos_total[142]=  new Array('554'   ,'225' , '43' , 'UEFA0075' , "UNI NI&Ntilde;O UEFA AZUL" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '554' , '17000' );
+vec_datos_total[143]=  new Array('554'   ,'225' , '53' , 'UEFA0075' , "UNI NI&Ntilde;O UEFA AZUL" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '9' , '16' , '247' , '12' , 'LISTA PARA ALMACENES' , '554' , '17000' );
+vec_datos_total[144]=  new Array('553'   ,'225' , '7' , 'UEFA0074' , "UNI NI&Ntilde;O INTER " , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '553' , '17000' );
+vec_datos_total[145]=  new Array('553'   ,'225' , '64' , 'UEFA0074' , "UNI NI&Ntilde;O INTER " , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '553' , '17000' );
+vec_datos_total[146]=  new Array('553'   ,'225' , '63' , 'UEFA0074' , "UNI NI&Ntilde;O INTER " , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '553' , '17000' );
+vec_datos_total[147]=  new Array('553'   ,'225' , '19' , 'UEFA0074' , "UNI NI&Ntilde;O INTER " , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '9' , '16' , '247' , '12' , 'LISTA PARA ALMACENES' , '553' , '17000' );
+vec_datos_total[148]=  new Array('552'   ,'225' , '37' , 'UEFA0073' , "UNI NI&Ntilde;O BAYERN" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '552' , '17000' );
+vec_datos_total[149]=  new Array('552'   ,'225' , '78' , 'UEFA0073' , "UNI NI&Ntilde;O BAYERN" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '552' , '17000' );
+vec_datos_total[150]=  new Array('552'   ,'225' , '74' , 'UEFA0073' , "UNI NI&Ntilde;O BAYERN" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '552' , '17000' );
+vec_datos_total[151]=  new Array('552'   ,'225' , '25' , 'UEFA0073' , "UNI NI&Ntilde;O BAYERN" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '9' , '16' , '247' , '12' , 'LISTA PARA ALMACENES' , '552' , '17000' );
+vec_datos_total[152]=  new Array('551'   ,'225' , '21' , 'UEFA0072' , "UNIF AD USA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '551' , '19000' );
+vec_datos_total[153]=  new Array('551'   ,'225' , '25' , 'UEFA0072' , "UNIF AD USA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '551' , '19000' );
+vec_datos_total[154]=  new Array('551'   ,'225' , '27' , 'UEFA0072' , "UNIF AD USA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '551' , '19000' );
+vec_datos_total[155]=  new Array('551'   ,'225' , '26' , 'UEFA0072' , "UNIF AD USA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '551' , '19000' );
+vec_datos_total[156]=  new Array('550'   ,'225' , '75' , 'UEFA0071' , "UNIF AD ARGENTINA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '550' , '19000' );
+vec_datos_total[157]=  new Array('550'   ,'225' , '46' , 'UEFA0071' , "UNIF AD ARGENTINA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '550' , '19000' );
+vec_datos_total[158]=  new Array('550'   ,'225' , '86' , 'UEFA0071' , "UNIF AD ARGENTINA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '550' , '19000' );
+vec_datos_total[159]=  new Array('550'   ,'225' , '47' , 'UEFA0071' , "UNIF AD ARGENTINA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '550' , '19000' );
+vec_datos_total[160]=  new Array('549'   ,'225' , '9' , 'UEFA0070' , "UNIF ADU PORTUGAL HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '549' , '19000' );
+vec_datos_total[161]=  new Array('549'   ,'225' , '19' , 'UEFA0070' , "UNIF ADU PORTUGAL HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '549' , '19000' );
+vec_datos_total[162]=  new Array('549'   ,'225' , '1' , 'UEFA0070' , "UNIF ADU PORTUGAL HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '549' , '19000' );
+vec_datos_total[163]=  new Array('547'   ,'225' , '54' , 'UEFA0069' , "UNIF AD BRASIL AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '547' , '19000' );
+vec_datos_total[164]=  new Array('547'   ,'225' , '26' , 'UEFA0069' , "UNIF AD BRASIL AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '547' , '19000' );
+vec_datos_total[165]=  new Array('547'   ,'225' , '1' , 'UEFA0069' , "UNIF AD BRASIL AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '547' , '19000' );
+vec_datos_total[166]=  new Array('544'   ,'225' , '73' , 'UEFA0067' , "UNI NI&Ntilde;O ITALIA HOME" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '544' , '17000' );
+vec_datos_total[167]=  new Array('544'   ,'225' , '63' , 'UEFA0067' , "UNI NI&Ntilde;O ITALIA HOME" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '544' , '17000' );
+vec_datos_total[168]=  new Array('544'   ,'225' , '13' , 'UEFA0067' , "UNI NI&Ntilde;O ITALIA HOME" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '544' , '17000' );
+vec_datos_total[169]=  new Array('543'   ,'225' , '58' , 'UEFA0066' , "UNIF AD ITALIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '543' , '19000' );
+vec_datos_total[170]=  new Array('543'   ,'225' , '58' , 'UEFA0066' , "UNIF AD ITALIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '543' , '19000' );
+vec_datos_total[171]=  new Array('543'   ,'225' , '59' , 'UEFA0066' , "UNIF AD ITALIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '543' , '19000' );
+vec_datos_total[172]=  new Array('543'   ,'225' , '25' , 'UEFA0066' , "UNIF AD ITALIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '543' , '19000' );
+vec_datos_total[173]=  new Array('542'   ,'225' , '49' , 'UEFA0065' , "UNIF AD KOREA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '542' , '19000' );
+vec_datos_total[174]=  new Array('542'   ,'225' , '48' , 'UEFA0065' , "UNIF AD KOREA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '542' , '19000' );
+vec_datos_total[175]=  new Array('542'   ,'225' , '16' , 'UEFA0065' , "UNIF AD KOREA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '542' , '19000' );
+vec_datos_total[176]=  new Array('542'   ,'225' , '6' , 'UEFA0065' , "UNIF AD KOREA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '542' , '19000' );
+vec_datos_total[177]=  new Array('541'   ,'225' , '148' , 'BAGGUA0001' , "BOLSA GUAYOS" , '16' , '139' , 'GUAYERA - BAG SOCCER' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '541' , '4000' );
+vec_datos_total[178]=  new Array('539'   ,'225' , '25' , 'UEFA0064' , "UNIF AD PARAGUAY AWAY    " , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '539' , '19000' );
+vec_datos_total[179]=  new Array('539'   ,'225' , '36' , 'UEFA0064' , "UNIF AD PARAGUAY AWAY    " , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '539' , '19000' );
+vec_datos_total[180]=  new Array('539'   ,'225' , '14' , 'UEFA0064' , "UNIF AD PARAGUAY AWAY    " , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '539' , '19000' );
+vec_datos_total[181]=  new Array('539'   ,'225' , '15' , 'UEFA0064' , "UNIF AD PARAGUAY AWAY    " , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '539' , '19000' );
+vec_datos_total[182]=  new Array('538'   ,'225' , '10' , 'UEFA0063' , "UNI NI&Ntilde;O SUDAFRICA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '538' , '17000' );
+vec_datos_total[183]=  new Array('538'   ,'225' , '3' , 'UEFA0063' , "UNI NI&Ntilde;O SUDAFRICA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '538' , '17000' );
+vec_datos_total[184]=  new Array('537'   ,'225' , '1' , 'UEFA0062' , "UNIF ADU USA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '537' , '19000' );
+vec_datos_total[185]=  new Array('536'   ,'225' , '69' , 'UEFA0061' , "UNIF AD PORTUGAL AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '536' , '19000' );
+vec_datos_total[186]=  new Array('536'   ,'225' , '37' , 'UEFA0061' , "UNIF AD PORTUGAL AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '536' , '19000' );
+vec_datos_total[187]=  new Array('536'   ,'225' , '67' , 'UEFA0061' , "UNIF AD PORTUGAL AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '536' , '19000' );
+vec_datos_total[188]=  new Array('536'   ,'225' , '33' , 'UEFA0061' , "UNIF AD PORTUGAL AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '536' , '19000' );
+vec_datos_total[189]=  new Array('535'   ,'225' , '27' , 'UEFA0060' , "UNIF AD NIGERIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '535' , '19000' );
+vec_datos_total[190]=  new Array('535'   ,'225' , '19' , 'UEFA0060' , "UNIF AD NIGERIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '535' , '19000' );
+vec_datos_total[191]=  new Array('535'   ,'225' , '19' , 'UEFA0060' , "UNIF AD NIGERIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '535' , '19000' );
+vec_datos_total[192]=  new Array('535'   ,'225' , '5' , 'UEFA0060' , "UNIF AD NIGERIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '535' , '19000' );
+vec_datos_total[193]=  new Array('534'   ,'225' , '51' , 'UEFA0059' , "UNIF AD MEXICO HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '534' , '19000' );
+vec_datos_total[194]=  new Array('534'   ,'225' , '86' , 'UEFA0059' , "UNIF AD MEXICO HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '534' , '19000' );
+vec_datos_total[195]=  new Array('534'   ,'225' , '15' , 'UEFA0059' , "UNIF AD MEXICO HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '534' , '19000' );
+vec_datos_total[196]=  new Array('534'   ,'225' , '1' , 'UEFA0059' , "UNIF AD MEXICO HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '534' , '19000' );
+vec_datos_total[197]=  new Array('533'   ,'225' , '3' , 'UEFA0058' , "UNIF AD JAPON HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '533' , '19000' );
+vec_datos_total[198]=  new Array('533'   ,'225' , '2' , 'UEFA0058' , "UNIF AD JAPON HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '533' , '19000' );
+vec_datos_total[199]=  new Array('533'   ,'225' , '1' , 'UEFA0058' , "UNIF AD JAPON HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '533' , '19000' );
+vec_datos_total[200]=  new Array('532'   ,'225' , '5' , 'UEFA0057' , "UNIF ADU HOLANDA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '532' , '19000' );
+vec_datos_total[201]=  new Array('532'   ,'225' , '20' , 'UEFA0057' , "UNIF ADU HOLANDA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '532' , '19000' );
+vec_datos_total[202]=  new Array('532'   ,'225' , '3' , 'UEFA0057' , "UNIF ADU HOLANDA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '532' , '19000' );
+vec_datos_total[203]=  new Array('532'   ,'225' , '1' , 'UEFA0057' , "UNIF ADU HOLANDA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '532' , '19000' );
+vec_datos_total[204]=  new Array('531'   ,'225' , '13' , 'UEFA0056' , "UNIF AD GRECIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '531' , '19000' );
+vec_datos_total[205]=  new Array('531'   ,'225' , '8' , 'UEFA0056' , "UNIF AD GRECIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '531' , '19000' );
+vec_datos_total[206]=  new Array('531'   ,'225' , '1' , 'UEFA0056' , "UNIF AD GRECIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '531' , '19000' );
+vec_datos_total[207]=  new Array('530'   ,'225' , '64' , 'UEFA0055' , "UNIF AD FRANCIA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '530' , '19000' );
+vec_datos_total[208]=  new Array('530'   ,'225' , '21' , 'UEFA0055' , "UNIF AD FRANCIA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '530' , '19000' );
+vec_datos_total[209]=  new Array('530'   ,'225' , '68' , 'UEFA0055' , "UNIF AD FRANCIA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '530' , '19000' );
+vec_datos_total[210]=  new Array('530'   ,'225' , '41' , 'UEFA0055' , "UNIF AD FRANCIA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '530' , '19000' );
+vec_datos_total[211]=  new Array('529'   ,'225' , '31' , 'UEFA0054' , "UNIF AD ESPA&Ntilde;A AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '529' , '19000' );
+vec_datos_total[212]=  new Array('529'   ,'225' , '14' , 'UEFA0054' , "UNIF AD ESPA&Ntilde;A AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '529' , '19000' );
+vec_datos_total[213]=  new Array('529'   ,'225' , '12' , 'UEFA0054' , "UNIF AD ESPA&Ntilde;A AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '529' , '19000' );
+vec_datos_total[214]=  new Array('529'   ,'225' , '29' , 'UEFA0054' , "UNIF AD ESPA&Ntilde;A AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '529' , '19000' );
+vec_datos_total[215]=  new Array('528'   ,'225' , '42' , 'UEFA0053' , "UNIF AD DINAMARCA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '528' , '19000' );
+vec_datos_total[216]=  new Array('528'   ,'225' , '19' , 'UEFA0053' , "UNIF AD DINAMARCA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '528' , '19000' );
+vec_datos_total[217]=  new Array('528'   ,'225' , '9' , 'UEFA0053' , "UNIF AD DINAMARCA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '528' , '19000' );
+vec_datos_total[218]=  new Array('528'   ,'225' , '9' , 'UEFA0053' , "UNIF AD DINAMARCA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '528' , '19000' );
+vec_datos_total[219]=  new Array('527'   ,'225' , '1' , 'UEFA0052' , "UNI AD COSTA MARFIL " , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '527' , '19000' );
+vec_datos_total[220]=  new Array('527'   ,'225' , '1' , 'UEFA0052' , "UNI AD COSTA MARFIL " , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '527' , '19000' );
+vec_datos_total[221]=  new Array('526'   ,'225' , '25' , 'UEFA0051' , "UNIF AD CAMERUM HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '526' , '19000' );
+vec_datos_total[222]=  new Array('525'   ,'225' , '86' , 'UEFA0050' , "UNIF AD BRASIL HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '525' , '19000' );
+vec_datos_total[223]=  new Array('525'   ,'225' , '55' , 'UEFA0050' , "UNIF AD BRASIL HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '525' , '19000' );
+vec_datos_total[224]=  new Array('525'   ,'225' , '46' , 'UEFA0050' , "UNIF AD BRASIL HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '525' , '19000' );
+vec_datos_total[225]=  new Array('524'   ,'225' , '1' , 'UEFA0049' , "UNIF AD ARGENTINA AWAY 2" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '524' , '19000' );
+vec_datos_total[226]=  new Array('523'   ,'225' , '67' , 'UEFA0048' , "UNIF AD ALEMANIA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '523' , '19000' );
+vec_datos_total[227]=  new Array('523'   ,'225' , '49' , 'UEFA0048' , "UNIF AD ALEMANIA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '523' , '19000' );
+vec_datos_total[228]=  new Array('523'   ,'225' , '102' , 'UEFA0048' , "UNIF AD ALEMANIA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '523' , '19000' );
+vec_datos_total[229]=  new Array('523'   ,'225' , '37' , 'UEFA0048' , "UNIF AD ALEMANIA AWAY" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '523' , '19000' );
+vec_datos_total[230]=  new Array('522'   ,'225' , '1' , 'UEFA0047' , "UNIF AD SUDAFRICA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '522' , '19000' );
+vec_datos_total[231]=  new Array('520'   ,'225' , '58' , 'UEFA0045' , "UNIF AD ESPA&Ntilde;A HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '520' , '19000' );
+vec_datos_total[232]=  new Array('520'   ,'225' , '51' , 'UEFA0045' , "UNIF AD ESPA&Ntilde;A HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '520' , '19000' );
+vec_datos_total[233]=  new Array('520'   ,'225' , '32' , 'UEFA0045' , "UNIF AD ESPA&Ntilde;A HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '520' , '19000' );
+vec_datos_total[234]=  new Array('520'   ,'225' , '3' , 'UEFA0045' , "UNIF AD ESPA&Ntilde;A HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '520' , '19000' );
+vec_datos_total[235]=  new Array('519'   ,'225' , '19' , 'UEFA0044' , "UNIF AD INGLATERRA X BLANCO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '519' , '19000' );
+vec_datos_total[236]=  new Array('519'   ,'225' , '27' , 'UEFA0044' , "UNIF AD INGLATERRA X BLANCO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '519' , '19000' );
+vec_datos_total[237]=  new Array('519'   ,'225' , '43' , 'UEFA0044' , "UNIF AD INGLATERRA X BLANCO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '519' , '19000' );
+vec_datos_total[238]=  new Array('519'   ,'225' , '38' , 'UEFA0044' , "UNIF AD INGLATERRA X BLANCO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '519' , '19000' );
+vec_datos_total[239]=  new Array('518'   ,'225' , '18' , 'UEFA0043' , "UNIF AD FRANCIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '518' , '19000' );
+vec_datos_total[240]=  new Array('517'   ,'225' , '8' , 'UEFA0042' , "UNIF AD ARGENTINA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '517' , '19000' );
+vec_datos_total[241]=  new Array('517'   ,'225' , '39' , 'UEFA0042' , "UNIF AD ARGENTINA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '517' , '19000' );
+vec_datos_total[242]=  new Array('515'   ,'225' , '4' , 'MFPN0002' , "MEDIA FUTBOL PROFESIONAL" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '515' , '0' );
+vec_datos_total[243]=  new Array('514'   ,'225' , '154' , 'MFPN0001' , "MEDI FUTBOL SEMI PROFESIONAL" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '514' , '0' );
+vec_datos_total[244]=  new Array('513'   ,'225' , '2' , 'LYCR0005' , "BICICLETERO LYCRA" , '16' , '107' , 'PANTALONETA PARA HOMBRE' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '513' , '15000' );
+vec_datos_total[245]=  new Array('513'   ,'225' , '4' , 'LYCR0005' , "BICICLETERO LYCRA" , '16' , '107' , 'PANTALONETA PARA HOMBRE' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '513' , '15000' );
+vec_datos_total[246]=  new Array('513'   ,'225' , '11' , 'LYCR0005' , "BICICLETERO LYCRA" , '16' , '107' , 'PANTALONETA PARA HOMBRE' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '513' , '15000' );
+vec_datos_total[247]=  new Array('513'   ,'225' , '4' , 'LYCR0005' , "BICICLETERO LYCRA" , '16' , '107' , 'PANTALONETA PARA HOMBRE' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '513' , '15000' );
+vec_datos_total[248]=  new Array('512'   ,'225' , '12' , 'LYCR0004' , "CAMISILLA LYCRA SEMI" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '512' , '21500' );
+vec_datos_total[249]=  new Array('512'   ,'225' , '3' , 'LYCR0004' , "CAMISILLA LYCRA SEMI" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '512' , '21500' );
+vec_datos_total[250]=  new Array('511'   ,'225' , '1' , 'LYCR0003' , "CAMISILLA MANGA LARGA" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '511' , '0' );
+vec_datos_total[251]=  new Array('511'   ,'225' , '2' , 'LYCR0003' , "CAMISILLA MANGA LARGA" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '511' , '0' );
+vec_datos_total[252]=  new Array('511'   ,'225' , '2' , 'LYCR0003' , "CAMISILLA MANGA LARGA" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '511' , '0' );
+vec_datos_total[253]=  new Array('511'   ,'225' , '1' , 'LYCR0003' , "CAMISILLA MANGA LARGA" , '16' , '41' , 'CAMISETA DEPORTIVA HOMBRE' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '511' , '0' );
+vec_datos_total[254]=  new Array('510'   ,'225' , '2' , 'LYCR0002' , "BICIFUTBOL LYCRA COLORES ADULTO" , '16' , '107' , 'PANTALONETA PARA HOMBRE' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '510' , '0' );
+vec_datos_total[255]=  new Array('510'   ,'225' , '4' , 'LYCR0002' , "BICIFUTBOL LYCRA COLORES ADULTO" , '16' , '107' , 'PANTALONETA PARA HOMBRE' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '510' , '0' );
+vec_datos_total[256]=  new Array('510'   ,'225' , '1' , 'LYCR0002' , "BICIFUTBOL LYCRA COLORES ADULTO" , '16' , '107' , 'PANTALONETA PARA HOMBRE' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '510' , '0' );
+vec_datos_total[257]=  new Array('509'   ,'225' , '3' , 'LYCR0001' , "BICIFUTBOL LYCRA COLORES" , '16' , '107' , 'PANTALONETA PARA HOMBRE' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '509' , '15000' );
+vec_datos_total[258]=  new Array('509'   ,'225' , '1' , 'LYCR0001' , "BICIFUTBOL LYCRA COLORES" , '16' , '107' , 'PANTALONETA PARA HOMBRE' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '509' , '15000' );
+vec_datos_total[259]=  new Array('509'   ,'225' , '1' , 'LYCR0001' , "BICIFUTBOL LYCRA COLORES" , '16' , '107' , 'PANTALONETA PARA HOMBRE' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '509' , '15000' );
+vec_datos_total[260]=  new Array('506'   ,'225' , '1' , 'ARQU0002' , "PANTALON ARQUERO SEMI PROFESIONAL" , '16' , '47' , 'PANTALON SUDADERA' , '21' , 'UNIFORMES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '506' , '0' );
+vec_datos_total[261]=  new Array('505'   ,'225' , '1' , 'ARQU0001' , "PANTALON ARQUERO PROFESIONAL ADULTO" , '16' , '47' , 'PANTALON SUDADERA' , '21' , 'UNIFORMES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '505' , '0' );
+vec_datos_total[262]=  new Array('503'   ,'225' , '2' , 'TERA0013' , "SOGA DE SALTAR" , '16' , '151' , 'PILATES' , '36' , 'TERAPIA' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '503' , '0' );
+vec_datos_total[263]=  new Array('502'   ,'225' , '2' , 'TERA0012' , "BANDA DE RESISTENCIA SENCILA" , '16' , '151' , 'PILATES' , '36' , 'TERAPIA' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '502' , '0' );
+vec_datos_total[264]=  new Array('498'   ,'225' , '2' , 'TERA0008' , "TENSOR DE MANO" , '16' , '151' , 'PILATES' , '36' , 'TERAPIA' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '498' , '0' );
+vec_datos_total[265]=  new Array('497'   ,'225' , '1' , 'TERA0007' , "RODILLO ABDOMINAL BODY" , '16' , '151' , 'PILATES' , '36' , 'TERAPIA' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '497' , '0' );
+vec_datos_total[266]=  new Array('495'   ,'225' , '2' , 'TERA0005' , "DONA PILATES BODY" , '16' , '151' , 'PILATES' , '36' , 'TERAPIA' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '495' , '0' );
+vec_datos_total[267]=  new Array('493'   ,'225' , '2' , 'TERA0003' , "COLCHONETA YOGA" , '16' , '151' , 'PILATES' , '36' , 'TERAPIA' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '493' , '0' );
+vec_datos_total[268]=  new Array('491'   ,'225' , '1' , 'TERA0001' , "BOLA PILATES BODY 65 CM" , '16' , '151' , 'PILATES' , '36' , 'TERAPIA' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '491' , '0' );
+vec_datos_total[269]=  new Array('490'   ,'225' , '1' , 'TENI0001' , "BOLA TENNIS PENN X 3" , '16' , '147' , 'BOLAS SPORT' , '35' , 'TENIS' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '490' , '0' );
+vec_datos_total[270]=  new Array('489'   ,'225' , '1' , 'RECR0001' , "TABLERO DARDOS" , '16' , '150' , 'TABLERO DARDOS' , '34' , 'RECREACION' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '489' , '0' );
+vec_datos_total[271]=  new Array('487'   ,'225' , '6' , 'PING0005' , "SET 2 RAQUETAS 3 PING PONG" , '16' , '148' , 'RAQUETAS' , '33' , 'PING PONG' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '487' , '10000' );
+vec_datos_total[272]=  new Array('486'   ,'225' , '2' , 'PING0004' , "RAQUETA PING PONG BUTTER WAKABA" , '16' , '148' , 'RAQUETAS' , '33' , 'PING PONG' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '486' , '0' );
+vec_datos_total[273]=  new Array('485'   ,'225' , '2' , 'PING0003' , "RAQUETA PING PONG RUTTER CHAMP" , '16' , '148' , 'RAQUETAS' , '33' , 'PING PONG' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '485' , '0' );
+vec_datos_total[274]=  new Array('484'   ,'225' , '7' , 'PING0002' , "RAQUETA PING PONG PRO" , '16' , '148' , 'RAQUETAS' , '33' , 'PING PONG' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '484' , '16000' );
+vec_datos_total[275]=  new Array('483'   ,'225' , '1' , 'PING0001' , "BOLA PING PONG RUNIC X 6" , '16' , '147' , 'BOLAS SPORT' , '33' , 'PING PONG' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '483' , '4000' );
+vec_datos_total[276]=  new Array('482'   ,'225' , '2' , 'NATA0005' , "TAPA OIDO SILICONA" , '16' , '146' , 'TAPA OIDOS' , '32' , 'NATACION' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '482' , '0' );
+vec_datos_total[277]=  new Array('481'   ,'225' , '48' , 'NATA0004' , "GORRO NATACION PROFESIONAL" , '16' , '145' , 'GORRO NATACION' , '32' , 'NATACION' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '481' , '5000' );
+vec_datos_total[278]=  new Array('480'   ,'225' , '13' , 'NATA0001' , "GAFA NATACION ANTI FOG. PROFESIONAL" , '16' , '144' , 'GAFAS NATACION' , '32' , 'NATACION' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '480' , '10000' );
+vec_datos_total[279]=  new Array('479'   ,'225' , '2' , 'MUNE0001' , "MUNEQUERAS" , '16' , '143' , 'MANILLA-MUNEQUERA' , '31' , 'GYM' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '479' , '0' );
+vec_datos_total[280]=  new Array('477'   ,'225' , '3' , 'GYM0005' , "GUANTE NEOPRENE SENCILLO" , '16' , '142' , 'GUANTE GIMNASIO' , '31' , 'GYM' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '477' , '0' );
+vec_datos_total[281]=  new Array('476'   ,'225' , '3' , 'GYM0004' , "GUANTE NEOPRENE MUNEQUERA" , '16' , '142' , 'GUANTE GIMNASIO' , '31' , 'GYM' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '476' , '0' );
+vec_datos_total[282]=  new Array('475'   ,'225' , '1' , 'GYM0003' , "SUDADERA SAUNA" , '16' , '109' , 'SUDADERA' , '31' , 'GYM' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '475' , '0' );
+vec_datos_total[283]=  new Array('474'   ,'225' , '29' , 'NBA020' , "UNIFORME BASKET SUNS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '474' , '22000' );
+vec_datos_total[284]=  new Array('474'   ,'225' , '36' , 'NBA020' , "UNIFORME BASKET SUNS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '474' , '22000' );
+vec_datos_total[285]=  new Array('474'   ,'225' , '76' , 'NBA020' , "UNIFORME BASKET SUNS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '474' , '22000' );
+vec_datos_total[286]=  new Array('474'   ,'225' , '72' , 'NBA020' , "UNIFORME BASKET SUNS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '474' , '22000' );
+vec_datos_total[287]=  new Array('473'   ,'225' , '14' , 'NBA019' , "UNIFORME BASKET SPURS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '473' , '22000' );
+vec_datos_total[288]=  new Array('473'   ,'225' , '11' , 'NBA019' , "UNIFORME BASKET SPURS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '473' , '22000' );
+vec_datos_total[289]=  new Array('473'   ,'225' , '28' , 'NBA019' , "UNIFORME BASKET SPURS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '473' , '22000' );
+vec_datos_total[290]=  new Array('473'   ,'225' , '33' , 'NBA019' , "UNIFORME BASKET SPURS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '473' , '22000' );
+vec_datos_total[291]=  new Array('472'   ,'225' , '22' , 'NBA018' , "UNIFORME BASKET ROCKETS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '472' , '22000' );
+vec_datos_total[292]=  new Array('472'   ,'225' , '33' , 'NBA018' , "UNIFORME BASKET ROCKETS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '472' , '22000' );
+vec_datos_total[293]=  new Array('472'   ,'225' , '25' , 'NBA018' , "UNIFORME BASKET ROCKETS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '472' , '22000' );
+vec_datos_total[294]=  new Array('472'   ,'225' , '29' , 'NBA018' , "UNIFORME BASKET ROCKETS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '472' , '22000' );
+vec_datos_total[295]=  new Array('471'   ,'225' , '38' , 'NBA017' , "UNIFORME BASKET PISTONS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '471' , '22000' );
+vec_datos_total[296]=  new Array('471'   ,'225' , '41' , 'NBA017' , "UNIFORME BASKET PISTONS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '471' , '22000' );
+vec_datos_total[297]=  new Array('471'   ,'225' , '86' , 'NBA017' , "UNIFORME BASKET PISTONS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '471' , '22000' );
+vec_datos_total[298]=  new Array('471'   ,'225' , '86' , 'NBA017' , "UNIFORME BASKET PISTONS" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '471' , '22000' );
+vec_datos_total[299]=  new Array('460'   ,'225' , '34' , 'NBA006' , "UNIFORME BASKET DALLAS BLAN" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '460' , '22000' );
+vec_datos_total[300]=  new Array('460'   ,'225' , '27' , 'NBA006' , "UNIFORME BASKET DALLAS BLAN" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '460' , '22000' );
+vec_datos_total[301]=  new Array('460'   ,'225' , '32' , 'NBA006' , "UNIFORME BASKET DALLAS BLAN" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '460' , '22000' );
+vec_datos_total[302]=  new Array('460'   ,'225' , '66' , 'NBA006' , "UNIFORME BASKET DALLAS BLAN" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '460' , '22000' );
+vec_datos_total[303]=  new Array('456'   ,'225' , '25' , 'NBA002' , "UNIFORME BASKET LAKERS BLANCO" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '456' , '22000' );
+vec_datos_total[304]=  new Array('456'   ,'225' , '19' , 'NBA002' , "UNIFORME BASKET LAKERS BLANCO" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '456' , '22000' );
+vec_datos_total[305]=  new Array('456'   ,'225' , '69' , 'NBA002' , "UNIFORME BASKET LAKERS BLANCO" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '456' , '22000' );
+vec_datos_total[306]=  new Array('456'   ,'225' , '69' , 'NBA002' , "UNIFORME BASKET LAKERS BLANCO" , '16' , '154' , 'NBA' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '456' , '22000' );
+vec_datos_total[307]=  new Array('454'   ,'225' , '1' , 'GYM0002' , "GUANTES PESAS MARCA" , '16' , '142' , 'GUANTE GIMNASIO' , '31' , 'GYM' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '454' , '0' );
+vec_datos_total[308]=  new Array('452'   ,'225' , '4' , 'GUYN0002' , "GUAYO NINO NIKE PREMIER FG-R" , '16' , '116' , 'GUAYOS FUTBOL' , '30' , 'GUAYOS' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '452' , '0' );
+vec_datos_total[309]=  new Array('450'   ,'225' , '15' , 'UEFA057' , "UNIF AD ARGELIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '450' , '19000' );
+vec_datos_total[310]=  new Array('450'   ,'225' , '15' , 'UEFA057' , "UNIF AD ARGELIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '450' , '19000' );
+vec_datos_total[311]=  new Array('450'   ,'225' , '2' , 'UEFA057' , "UNIF AD ARGELIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '450' , '19000' );
+vec_datos_total[312]=  new Array('448'   ,'225' , '30' , 'UEFA0041' , "UNI NI&Ntilde;O INGLATERRA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '448' , '17000' );
+vec_datos_total[313]=  new Array('448'   ,'225' , '87' , 'UEFA0041' , "UNI NI&Ntilde;O INGLATERRA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '448' , '17000' );
+vec_datos_total[314]=  new Array('448'   ,'225' , '5' , 'UEFA0041' , "UNI NI&Ntilde;O INGLATERRA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '448' , '17000' );
+vec_datos_total[315]=  new Array('448'   ,'225' , '19' , 'UEFA0041' , "UNI NI&Ntilde;O INGLATERRA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '9' , '16' , '247' , '12' , 'LISTA PARA ALMACENES' , '448' , '17000' );
+vec_datos_total[316]=  new Array('447'   ,'225' , '11' , 'UEFA0040' , "UNI NI&Ntilde;O BRASIL" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '447' , '17000' );
+vec_datos_total[317]=  new Array('447'   ,'225' , '63' , 'UEFA0040' , "UNI NI&Ntilde;O BRASIL" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '447' , '17000' );
+vec_datos_total[318]=  new Array('447'   ,'225' , '41' , 'UEFA0040' , "UNI NI&Ntilde;O BRASIL" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '447' , '17000' );
+vec_datos_total[319]=  new Array('447'   ,'225' , '10' , 'UEFA0040' , "UNI NI&Ntilde;O BRASIL" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '9' , '16' , '247' , '12' , 'LISTA PARA ALMACENES' , '447' , '17000' );
+vec_datos_total[320]=  new Array('446'   ,'225' , '31' , 'UEFA0039' , "UNI NI&Ntilde;O ALEMANIA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '446' , '17000' );
+vec_datos_total[321]=  new Array('446'   ,'225' , '4' , 'UEFA0039' , "UNI NI&Ntilde;O ALEMANIA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '446' , '17000' );
+vec_datos_total[322]=  new Array('445'   ,'225' , '37' , 'UEFA0038' , "UNI NI&Ntilde;O FRANCIA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '445' , '17000' );
+vec_datos_total[323]=  new Array('445'   ,'225' , '177' , 'UEFA0038' , "UNI NI&Ntilde;O FRANCIA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '445' , '17000' );
+vec_datos_total[324]=  new Array('445'   ,'225' , '106' , 'UEFA0038' , "UNI NI&Ntilde;O FRANCIA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '445' , '17000' );
+vec_datos_total[325]=  new Array('445'   ,'225' , '40' , 'UEFA0038' , "UNI NI&Ntilde;O FRANCIA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '9' , '16' , '247' , '12' , 'LISTA PARA ALMACENES' , '445' , '17000' );
+vec_datos_total[326]=  new Array('444'   ,'225' , '60' , 'UEFA0037' , "UNI NI&Ntilde;O ESPA&Ntilde;A" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '444' , '17000' );
+vec_datos_total[327]=  new Array('444'   ,'225' , '47' , 'UEFA0037' , "UNI NI&Ntilde;O ESPA&Ntilde;A" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '444' , '17000' );
+vec_datos_total[328]=  new Array('444'   ,'225' , '66' , 'UEFA0037' , "UNI NI&Ntilde;O ESPA&Ntilde;A" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '444' , '17000' );
+vec_datos_total[329]=  new Array('444'   ,'225' , '51' , 'UEFA0037' , "UNI NI&Ntilde;O ESPA&Ntilde;A" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '9' , '16' , '247' , '12' , 'LISTA PARA ALMACENES' , '444' , '17000' );
+vec_datos_total[330]=  new Array('443'   ,'225' , '11' , 'GUYAOOO2' , "GUAYO ADULTO FUTBOL NIKE PREMIER II" , '16' , '116' , 'GUAYOS FUTBOL' , '30' , 'GUAYOS' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '443' , '0' );
+vec_datos_total[331]=  new Array('442'   ,'225' , '5' , 'GUYA0001' , "GUAYO ADULTO NIKE MARQUIS TF" , '16' , '116' , 'GUAYOS FUTBOL' , '30' , 'GUAYOS' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '442' , '0' );
+vec_datos_total[332]=  new Array('438'   ,'225' , '4' , 'BAF0006' , "MINI BALON FUTBOL LUJO" , '16' , '141' , 'BALON' , '28' , 'BALONES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '438' , '30000' );
+vec_datos_total[333]=  new Array('437'   ,'225' , '11' , 'BAF0005' , "BALON FUTBOL PROFESIONAL N." , '16' , '141' , 'BALON' , '28' , 'BALONES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '437' , '40000' );
+vec_datos_total[334]=  new Array('436'   ,'225' , '2' , 'BAF0004' , "MINI BALON FUTBOL" , '16' , '141' , 'BALON' , '28' , 'BALONES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '436' , '17000' );
+vec_datos_total[335]=  new Array('435'   ,'225' , '9' , 'BAF0003' , "BALON FUTBOL G-PROMO" , '16' , '141' , 'BALON' , '28' , 'BALONES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '435' , '25000' );
+vec_datos_total[336]=  new Array('434'   ,'225' , '2' , 'BAF0002' , "BALON FUTBOL PUMA" , '16' , '141' , 'BALON' , '28' , 'BALONES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '434' , '0' );
+vec_datos_total[337]=  new Array('433'   ,'225' , '2' , 'BAF0001' , "BALON FUTBOL NIKE T 90" , '16' , '141' , 'BALON' , '28' , 'BALONES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '433' , '0' );
+vec_datos_total[338]=  new Array('432'   ,'225' , '1' , 'BAB0003' , "BALON BASKET SPTF # 5" , '16' , '141' , 'BALON' , '28' , 'BALONES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '432' , '25000' );
+vec_datos_total[339]=  new Array('430'   ,'225' , '6' , 'BAB0001' , "BALON BASKET COLORES" , '16' , '141' , 'BALON' , '28' , 'BALONES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '430' , '0' );
+vec_datos_total[340]=  new Array('427'   ,'225' , '4' , 'ACFU0011' , "CANILLERA CON TOBILLERA " , '16' , '111' , 'CANILLERAS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '427' , '10000' );
+vec_datos_total[341]=  new Array('426'   ,'225' , '1' , 'ACFU0016' , "PROTECTOR BUCAL" , '16' , '140' , 'PROTECTOR BUCAL' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '426' , '0' );
+vec_datos_total[342]=  new Array('425'   ,'225' , '1' , 'ACFU0010' , "GUAYERA FUTBOL " , '16' , '139' , 'GUAYERA - BAG SOCCER' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '425' , '0' );
+vec_datos_total[343]=  new Array('424'   ,'225' , '4' , 'ACFU0009' , "PITO ARBITRO FOX 40" , '16' , '138' , 'PITO ARBITRO' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '424' , '2000' );
+vec_datos_total[344]=  new Array('423'   ,'225' , '39' , 'ACFU0015' , "GUANTE ARQUERO ANTIFRACTURANTE" , '16' , '137' , 'GUANTE ARQUERO' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '423' , '30000' );
+vec_datos_total[345]=  new Array('421'   ,'225' , '8' , 'ACFU0008' , "GUANTE ARQUERO ADULTO" , '16' , '137' , 'GUANTE ARQUERO' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '421' , '15000' );
+vec_datos_total[346]=  new Array('420'   ,'225' , '2' , 'ACFU0007' , "COPA PROTECTOR " , '16' , '136' , 'COPA PROTECTOR' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '420' , '0' );
+vec_datos_total[347]=  new Array('419'   ,'225' , '30' , 'ACFU0006' , "CANILLERA SENCILLA " , '16' , '111' , 'CANILLERAS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '419' , '7000' );
+vec_datos_total[348]=  new Array('418'   ,'225' , '1' , 'ACFU0005' , "CANILLERA N. SENCILLA SP198" , '16' , '111' , 'CANILLERAS' , '27' , 'ACCESORIOS FUTBOL' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '418' , '0' );
+vec_datos_total[349]=  new Array('405'   ,'225' , '47' , 'UEFA055' , "ZIPPER AZUL" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '405' , '19000' );
+vec_datos_total[350]=  new Array('405'   ,'225' , '30' , 'UEFA055' , "ZIPPER AZUL" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '405' , '19000' );
+vec_datos_total[351]=  new Array('404'   ,'225' , '29' , 'UEFA054' , "ZIPPER VERDE" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '404' , '19000' );
+vec_datos_total[352]=  new Array('404'   ,'225' , '27' , 'UEFA054' , "ZIPPER VERDE" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '404' , '19000' );
+vec_datos_total[353]=  new Array('404'   ,'225' , '21' , 'UEFA054' , "ZIPPER VERDE" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '404' , '19000' );
+vec_datos_total[354]=  new Array('404'   ,'225' , '20' , 'UEFA054' , "ZIPPER VERDE" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '404' , '19000' );
+vec_datos_total[355]=  new Array('403'   ,'225' , '46' , 'UEFA053' , "ZIPPER AMARILLO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '403' , '19000' );
+vec_datos_total[356]=  new Array('403'   ,'225' , '57' , 'UEFA053' , "ZIPPER AMARILLO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '403' , '19000' );
+vec_datos_total[357]=  new Array('403'   ,'225' , '28' , 'UEFA053' , "ZIPPER AMARILLO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '403' , '19000' );
+vec_datos_total[358]=  new Array('403'   ,'225' , '33' , 'UEFA053' , "ZIPPER AMARILLO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '403' , '19000' );
+vec_datos_total[359]=  new Array('402'   ,'225' , '1' , 'UEFA052' , "ZIPPER ROJO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '402' , '19000' );
+vec_datos_total[360]=  new Array('401'   ,'225' , '2' , 'UEFA051' , "ZIPPER OCRE" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '401' , '19000' );
+vec_datos_total[361]=  new Array('401'   ,'225' , '1' , 'UEFA051' , "ZIPPER OCRE" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '401' , '19000' );
+vec_datos_total[362]=  new Array('400'   ,'225' , '3' , 'UEFA050' , "ZIPPER CELESTE" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '400' , '19000' );
+vec_datos_total[363]=  new Array('398'   ,'225' , '18' , 'UEFA048' , "UEFA WOLFSBURG HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '398' , '15000' );
+vec_datos_total[364]=  new Array('398'   ,'225' , '8' , 'UEFA048' , "UEFA WOLFSBURG HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '398' , '15000' );
+vec_datos_total[365]=  new Array('397'   ,'225' , '24' , 'UEFA047' , "UEFA PSV HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '397' , '15000' );
+vec_datos_total[366]=  new Array('397'   ,'225' , '7' , 'UEFA047' , "UEFA PSV HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '397' , '15000' );
+vec_datos_total[367]=  new Array('396'   ,'225' , '55' , 'UEFA046' , "UEFA AJAX HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '396' , '15000' );
+vec_datos_total[368]=  new Array('396'   ,'225' , '12' , 'UEFA046' , "UEFA AJAX HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '396' , '15000' );
+vec_datos_total[369]=  new Array('393'   ,'225' , '1' , 'UEFA043' , "UEFA ARSENAL VISITOR 2" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '393' , '15000' );
+vec_datos_total[370]=  new Array('393'   ,'225' , '1' , 'UEFA043' , "UEFA ARSENAL VISITOR 2" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '393' , '15000' );
+vec_datos_total[371]=  new Array('392'   ,'225' , '9' , 'UEFA042' , "UEFA BAYERN VISITOR" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '392' , '15000' );
+vec_datos_total[372]=  new Array('391'   ,'225' , '19' , 'UEFA041' , "UEFA BOCA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '391' , '15000' );
+vec_datos_total[373]=  new Array('391'   ,'225' , '14' , 'UEFA041' , "UEFA BOCA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '391' , '15000' );
+vec_datos_total[374]=  new Array('391'   ,'225' , '10' , 'UEFA041' , "UEFA BOCA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '391' , '15000' );
+vec_datos_total[375]=  new Array('391'   ,'225' , '8' , 'UEFA041' , "UEFA BOCA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '391' , '15000' );
+vec_datos_total[376]=  new Array('390'   ,'225' , '7' , 'UEFA040' , "UEFA OLIMPIQUE HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '390' , '15000' );
+vec_datos_total[377]=  new Array('388'   ,'225' , '35' , 'UEFA038' , "UEFA INTER VISITOR" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '388' , '15000' );
+vec_datos_total[378]=  new Array('388'   ,'225' , '18' , 'UEFA038' , "UEFA INTER VISITOR" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '388' , '15000' );
+vec_datos_total[379]=  new Array('388'   ,'225' , '5' , 'UEFA038' , "UEFA INTER VISITOR" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '388' , '15000' );
+vec_datos_total[380]=  new Array('388'   ,'225' , '10' , 'UEFA038' , "UEFA INTER VISITOR" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '388' , '15000' );
+vec_datos_total[381]=  new Array('380'   ,'225' , '3' , 'UEFA0036' , "COVER TRAINING AMARILLO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '380' , '7000' );
+vec_datos_total[382]=  new Array('380'   ,'225' , '16' , 'UEFA0036' , "COVER TRAINING AMARILLO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '380' , '7000' );
+vec_datos_total[383]=  new Array('378'   ,'225' , '90' , 'UEFA0034' , "UNIF AD HOLANDA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '378' , '19000' );
+vec_datos_total[384]=  new Array('378'   ,'225' , '35' , 'UEFA0034' , "UNIF AD HOLANDA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '378' , '19000' );
+vec_datos_total[385]=  new Array('378'   ,'225' , '66' , 'UEFA0034' , "UNIF AD HOLANDA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '378' , '19000' );
+vec_datos_total[386]=  new Array('378'   ,'225' , '4' , 'UEFA0034' , "UNIF AD HOLANDA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '378' , '19000' );
+vec_datos_total[387]=  new Array('377'   ,'225' , '65' , 'UEFA0033' , "UNIF AD INGLATERRA X AZUL" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '377' , '19000' );
+vec_datos_total[388]=  new Array('377'   ,'225' , '57' , 'UEFA0033' , "UNIF AD INGLATERRA X AZUL" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '377' , '19000' );
+vec_datos_total[389]=  new Array('377'   ,'225' , '41' , 'UEFA0033' , "UNIF AD INGLATERRA X AZUL" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '377' , '19000' );
+vec_datos_total[390]=  new Array('377'   ,'225' , '54' , 'UEFA0033' , "UNIF AD INGLATERRA X AZUL" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '377' , '19000' );
+vec_datos_total[391]=  new Array('376'   ,'225' , '22' , 'UEFA0032' , "UNIF AD ALEMANIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '376' , '19000' );
+vec_datos_total[392]=  new Array('376'   ,'225' , '32' , 'UEFA0032' , "UNIF AD ALEMANIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '376' , '19000' );
+vec_datos_total[393]=  new Array('376'   ,'225' , '7' , 'UEFA0032' , "UNIF AD ALEMANIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '376' , '19000' );
+vec_datos_total[394]=  new Array('376'   ,'225' , '21' , 'UEFA0032' , "UNIF AD ALEMANIA HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '376' , '19000' );
+vec_datos_total[395]=  new Array('375'   ,'225' , '2' , 'UEFA0031' , "UNI NI&Ntilde;O ARGENTINA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '375' , '17000' );
+vec_datos_total[396]=  new Array('375'   ,'225' , '9' , 'UEFA0031' , "UNI NI&Ntilde;O ARGENTINA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '375' , '17000' );
+vec_datos_total[397]=  new Array('374'   ,'225' , '16' , 'UEFA0030' , "UNI NI&Ntilde;O MILL." , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '374' , '17000' );
+vec_datos_total[398]=  new Array('374'   ,'225' , '16' , 'UEFA0030' , "UNI NI&Ntilde;O MILL." , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '374' , '17000' );
+vec_datos_total[399]=  new Array('374'   ,'225' , '10' , 'UEFA0030' , "UNI NI&Ntilde;O MILL." , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '374' , '17000' );
+vec_datos_total[400]=  new Array('374'   ,'225' , '41' , 'UEFA0030' , "UNI NI&Ntilde;O MILL." , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '9' , '16' , '247' , '12' , 'LISTA PARA ALMACENES' , '374' , '17000' );
+vec_datos_total[401]=  new Array('372'   ,'225' , '4' , 'UEFA0028' , "UNI NI&Ntilde;O MANCHESTER" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '372' , '17000' );
+vec_datos_total[402]=  new Array('372'   ,'225' , '67' , 'UEFA0028' , "UNI NI&Ntilde;O MANCHESTER" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '372' , '17000' );
+vec_datos_total[403]=  new Array('372'   ,'225' , '66' , 'UEFA0028' , "UNI NI&Ntilde;O MANCHESTER" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '372' , '17000' );
+vec_datos_total[404]=  new Array('372'   ,'225' , '25' , 'UEFA0028' , "UNI NI&Ntilde;O MANCHESTER" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '9' , '16' , '247' , '12' , 'LISTA PARA ALMACENES' , '372' , '17000' );
+vec_datos_total[405]=  new Array('371'   ,'225' , '1' , 'UEFA0027' , "UNI NI&Ntilde;O CHELSEA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '6' , '10' , '247' , '12' , 'LISTA PARA ALMACENES' , '371' , '17000' );
+vec_datos_total[406]=  new Array('371'   ,'225' , '32' , 'UEFA0027' , "UNI NI&Ntilde;O CHELSEA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '7' , '12' , '247' , '12' , 'LISTA PARA ALMACENES' , '371' , '17000' );
+vec_datos_total[407]=  new Array('371'   ,'225' , '4' , 'UEFA0027' , "UNI NI&Ntilde;O CHELSEA" , '16' , '71' , 'UNIFORME LIGA NINO' , '21' , 'UNIFORMES' , '8' , '14' , '247' , '12' , 'LISTA PARA ALMACENES' , '371' , '17000' );
+vec_datos_total[408]=  new Array('351'   ,'225' , '39' , 'KIN0001' , "HOJA TRANSFER" , '16' , '115' , 'KIT NUMEROS TRANSFER' , '21' , 'UNIFORMES' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '351' , '10000' );
+vec_datos_total[409]=  new Array('348'   ,'225' , '94' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '129' , 'VERDE CLARO' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[410]=  new Array('348'   ,'225' , '110' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '17' , 'BL X AZU' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[411]=  new Array('348'   ,'225' , '80' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '18' , 'BL X NEG' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[412]=  new Array('348'   ,'225' , '23' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '19' , 'BL X ROJ' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[413]=  new Array('348'   ,'225' , '73' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '16' , 'BL X VER' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[414]=  new Array('348'   ,'225' , '91' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '12' , 'AZUL REY' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[415]=  new Array('348'   ,'225' , '96' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '21' , 'NEGRA' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[416]=  new Array('348'   ,'225' , '105' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '13' , 'ROJO' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[417]=  new Array('348'   ,'225' , '126' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '15' , 'VERDE' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[418]=  new Array('348'   ,'225' , '112' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '11' , 'AMARILLO' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[419]=  new Array('348'   ,'225' , '128' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '14' , 'NARANJA' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[420]=  new Array('348'   ,'225' , '78' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '132' , 'BL X VER CLA' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[421]=  new Array('348'   ,'225' , '78' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '131' , 'BL X AMA' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[422]=  new Array('348'   ,'225' , '84' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '130' , 'BLANCO' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[423]=  new Array('348'   ,'225' , '104' , 'MFC0002' , "MEDIA FUTBOL PROF" , '16' , '72' , 'MEDIAS FUTBOL' , '21' , 'UNIFORMES' , '20' , 'AZUL OSCURO' , '247' , '12' , 'LISTA PARA ALMACENES' , '348' , '3500' );
+vec_datos_total[424]=  new Array('346'   ,'225' , '19' , 'UEFA022' , "UNIFORME UEFA BLANCO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '346' , '19000' );
+vec_datos_total[425]=  new Array('346'   ,'225' , '1' , 'UEFA022' , "UNIFORME UEFA BLANCO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '346' , '19000' );
+vec_datos_total[426]=  new Array('344'   ,'225' , '1' , 'UEFA020' , "UNIFORME UEFA NARANJA" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '344' , '19000' );
+vec_datos_total[427]=  new Array('344'   ,'225' , '39' , 'UEFA020' , "UNIFORME UEFA NARANJA" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '344' , '19000' );
+vec_datos_total[428]=  new Array('342'   ,'225' , '2' , 'UEFA018' , "UNIFORME UEFA ROJO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '342' , '19000' );
+vec_datos_total[429]=  new Array('341'   ,'225' , '1' , 'UEFA017' , "UNIFORME UEFA AZUL" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '341' , '19000' );
+vec_datos_total[430]=  new Array('341'   ,'225' , '1' , 'UEFA017' , "UNIFORME UEFA AZUL" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '341' , '19000' );
+vec_datos_total[431]=  new Array('340'   ,'225' , '26' , 'UEFA016' , "UNIFORME UEFA AMARILLO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '340' , '19000' );
+vec_datos_total[432]=  new Array('340'   ,'225' , '31' , 'UEFA016' , "UNIFORME UEFA AMARILLO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '340' , '19000' );
+vec_datos_total[433]=  new Array('340'   ,'225' , '27' , 'UEFA016' , "UNIFORME UEFA AMARILLO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '340' , '19000' );
+vec_datos_total[434]=  new Array('340'   ,'225' , '37' , 'UEFA016' , "UNIFORME UEFA AMARILLO" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '340' , '19000' );
+vec_datos_total[435]=  new Array('339'   ,'225' , '42' , 'UEFA015' , "UEFA BAYER HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '339' , '15000' );
+vec_datos_total[436]=  new Array('339'   ,'225' , '7' , 'UEFA015' , "UEFA BAYER HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '339' , '15000' );
+vec_datos_total[437]=  new Array('339'   ,'225' , '1' , 'UEFA015' , "UEFA BAYER HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '339' , '15000' );
+vec_datos_total[438]=  new Array('338'   ,'225' , '2' , 'UEFA014' , "UEFA JUVENTUS HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '338' , '15000' );
+vec_datos_total[439]=  new Array('336'   ,'225' , '63' , 'UEFA012' , "UEFA INTER HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '336' , '15000' );
+vec_datos_total[440]=  new Array('336'   ,'225' , '18' , 'UEFA012' , "UEFA INTER HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '336' , '15000' );
+vec_datos_total[441]=  new Array('336'   ,'225' , '68' , 'UEFA012' , "UEFA INTER HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '336' , '15000' );
+vec_datos_total[442]=  new Array('336'   ,'225' , '11' , 'UEFA012' , "UEFA INTER HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '336' , '15000' );
+vec_datos_total[443]=  new Array('333'   ,'225' , '53' , 'UEFA009' , "UEFA LIVERPOOL HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '3' , 'M' , '247' , '12' , 'LISTA PARA ALMACENES' , '333' , '15000' );
+vec_datos_total[444]=  new Array('333'   ,'225' , '27' , 'UEFA009' , "UEFA LIVERPOOL HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '2' , 'S' , '247' , '12' , 'LISTA PARA ALMACENES' , '333' , '15000' );
+vec_datos_total[445]=  new Array('333'   ,'225' , '54' , 'UEFA009' , "UEFA LIVERPOOL HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '333' , '15000' );
+vec_datos_total[446]=  new Array('333'   ,'225' , '16' , 'UEFA009' , "UEFA LIVERPOOL HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '333' , '15000' );
+vec_datos_total[447]=  new Array('329'   ,'225' , '2' , 'UEFA005' , "UEFA MANCHESTER HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '4' , 'L' , '247' , '12' , 'LISTA PARA ALMACENES' , '329' , '15000' );
+vec_datos_total[448]=  new Array('329'   ,'225' , '1' , 'UEFA005' , "UEFA MANCHESTER HOME" , '16' , '70' , 'UNIFORME LIGA ADULTO' , '21' , 'UNIFORMES' , '5' , 'XL' , '247' , '12' , 'LISTA PARA ALMACENES' , '329' , '15000' );
+vec_datos_total[449]=  new Array('283'   ,'225' , '14' , 'GUA0001' , "GUANTES INVIERNO" , '16' , '99' , 'GUANTES INVIERNO' , '25' , 'ROPA NINOS' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '283' , '25000' );
+vec_datos_total[450]=  new Array('228'   ,'225' , '149' , 'MDM0001' , "MEDIAS DEPORTE MUJER" , '16' , '44' , 'MEDIAS DEPORTE MUJER' , '5' , 'ROPA DEPORTIVA' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '228' , '2500' );
+vec_datos_total[451]=  new Array('227'   ,'225' , '111' , 'MDH0001' , "MEDIAS DEPORTE HOMBRE" , '16' , '43' , 'MEDIAS DEPORTE HOMBRE' , '5' , 'ROPA DEPORTIVA' , '1' , 'N/A ' , '247' , '12' , 'LISTA PARA ALMACENES' , '227' , '2500' );
+	
+	/*if(opc="tipo_producto") {
+		vec_codigo=6;
+		vec_nombre=7; 
+		combo_llenar=document.getElementById('tipo_producto');
+	}*/
+ 
+	if(opc=="marca") {
+		limpiar_combos();
+		vec_codigo=6;
+		vec_nombre=7; 
+		combo_llenar=document.getElementById('tipo_producto');
+		combo_llenar.options.length=0;
+		combo_llenar.options[0] = new Option('Seleccione','0'); 
+ 
+		for (j=1; j<= vec_datos_total.length  ;j++)
+		{
+			if(document.getElementById('marca').value== vec_datos_total[j-1][8]) 
+			{
+				combo_llenar.options[xx] = new Option(vec_datos_total[j-1][vec_nombre],vec_datos_total[j-1][vec_codigo]);  
+				xx++;
+			}
+		}
+	}
+	
+	if(opc=="tipo_producto") {
+		vec_codigo=0;
+		vec_nombre=4; 
+		combo_llenar=document.getElementById('combo_referncia');
+		combo_llenar.options.length=0;
+		combo_llenar.options[0] = new Option('Seleccione','0'); 
+ 
+		for (j=1; j<= vec_datos_total.length  ;j++)
+		{
+			if(document.getElementById('tipo_producto').value== vec_datos_total[j-1][6]) 
+			{
+				combo_llenar.options[xx] = new Option(vec_datos_total[j-1][vec_nombre],vec_datos_total[j-1][vec_codigo]);  
+				xx++;
+			}
+		}
+	}	
+	
+	if(opc=="combo_referncia") {
+		vec_codigo=10;
+		vec_nombre=11; 
+		combo_llenar=document.getElementById('peso');
+		combo_llenar.options.length=0;
+		combo_llenar.options[0] = new Option('Seleccione','0'); 
+		
+		for (j=1; j<= vec_datos_total.length  ;j++)
+		{
+			if(document.getElementById('combo_referncia').value== vec_datos_total[j-1][0]) 
+			{
+				document.getElementById('codigo_fry').value = vec_datos_total[j-1][3];
+			}
+			
+			if(document.getElementById('combo_referncia').value== vec_datos_total[j-1][0]) 
+			{
+				combo_llenar.options[xx] = new Option(vec_datos_total[j-1][vec_nombre],vec_datos_total[j-1][vec_codigo]);  
+				xx++;
+			}
+		}
+	}
+	
+	if(opc=="cantidad") {
+		var cantidad_actu;
+		for (j=1; j<= vec_datos_total.length  ;j++)
+		{
+			if(document.getElementById('combo_referncia').value== vec_datos_total[j-1][0] &&  document.getElementById('peso').value== vec_datos_total[j-1][10]) 
+			{	
+				if( parseInt(document.getElementById('cantidad').value) > parseInt(vec_datos_total[j-1][2])) {
+					alert("La Cantidad No Corresponde")
+					return false;
+				}
+				else 
+					return true;
+			}
+		}
+	}
+	
+	
+	if(opc=="valor_lista") {
+		for (j=1; j<= vec_datos_total.length  ;j++)
+		{
+			if(document.getElementById('combo_referncia').value== vec_datos_total[j-1][0] &&  vec_datos_total[j-1][10]>0) 
+			{	
+				document.getElementById('valor_lista').value=vec_datos_total[j-1][16];
+			}
+		}
+		
+		if(document.getElementById('valor_lista').value==""){
+			alert("No hay Precio Asignado")
+			return false;
+		}
+		else 
+			return true;	
+	}
+	
+	
+	if(opc=="refe_codigo") {
+		for (j=1; j<= vec_datos_total.length  ;j++)
+		{
+			if(document.getElementById('codigo_fry').value== vec_datos_total[j-1][3]) 
+			{	
+				document.getElementById('marca').value=vec_datos_total[j-1][8];
+				
+				document.getElementById('tipo_producto').options.length=0;
+				document.getElementById('tipo_producto').options[0] = new Option(vec_datos_total[j-1][7],vec_datos_total[j-1][6]);  
+				
+				document.getElementById('combo_referncia').options.length=0;
+				document.getElementById('combo_referncia').options[0] = new Option(vec_datos_total[j-1][4],vec_datos_total[j-1][0]);  
+				
+				buscar_datos_total('combo_referncia');
+			}
+		}
+	}
+	
+	
+}
+ 
+ 
+function limpiar_combos()
+{
+	document.getElementById('tipo_producto').options.length=0;
+	document.getElementById('combo_referncia').options.length=0;
+	document.getElementById('codigo_fry').value="";
+	document.getElementById('peso').options.length=0;
+	document.getElementById('valor_lista').value="";
+	document.getElementById('cantidad').value="";
+}
+ 
+function datos_completos(){ 
+ 
+ 
+	if( document.getElementById('todocompra').value < -1) {
+		alert('No Valor en la Devolucion')
+		return false;
+	}
+		
+	if (document.getElementById('todocompra').value == ""){	
+		return false;
+	}
+	else 
+		return true;
+ 
+}
+ 
+ 
+function verificar_credito()
+{
+	if (document.getElementById("credito").checked==false)
+	{
+		document.getElementById("div_credito").style.display="none";
+	}
+	else 
+	{
+		if(document.getElementById("cupo_covinoc").value>0) 
+		{
+			document.getElementById("div_credito").style.display="inline";
+		}
+		else 
+		{
+			alert("Este Cliente No tiene Credito")
+			document.getElementById("credito").checked=false;
+		}
+	}
+}
+ 
+ 
+function resalte (declarado, sumado){
+if(document.getElementById(declarado).value!=document.getElementById(sumado).value) {
+	document.getElementById(declarado).style.color="#FF0000";
+}
+else 
+	document.getElementById(declarado).style.color="#000000";
+}
+ 
+ 
+function  adicion() 
+{
+ 
+	if(document.getElementById('marca').value < 1 || document.getElementById('tipo_producto').value < 1 || document.getElementById('combo_referncia').value < 1 || document.getElementById('peso').value < 1  || document.getElementById('cantidad').value=="" ) 
+	{
+		alert("Datos Incompletos")
+		return false;
+	}
+ 
+	if(buscar_datos_total('cantidad')==false)
+		return false;
+		
+	if(buscar_datos_total('valor_lista')==false)
+		return false;
+	
+ 
+	if(document.getElementById("marca").value>0  && document.getElementById("tipo_producto").value > "" && document.getElementById('combo_referncia').value > 0 && document.getElementById('peso').value > 0 && document.getElementById("cantidad").value>0 ) 
+	{
+		Agregar_html_venta();						
+		limpiar_combos();
+		document.getElementById("codigo_fry").focus();
+		return false;
+	}
+	
+	else 
+	{
+		alert("Ingrese una Referencia Valida junto con los demas Valores")
+		document.getElementById("codigo_fry").focus();
+	}
+}
+ 
+ 
+ 
+function crear_descuento(div_caja,caja,val_uni,span_desc,boton_crear, div_guardar){
+document.getElementById(boton_crear).style.display='none';
+document.getElementById(div_guardar).style.display='inline';
+document.getElementById(span_desc).style.display='none';
+document.getElementById(div_caja).style.display='inline';
+//crear_descuento(\"div_caja_desc_$jj\",\"caja_cant_desc_$jj\",\"$dbdatos_1->val_uni\",\"span_crear_desc_$jj\",\"boton_desc_$jj\")
+}
+ 
+function guardar_descuento(div_caja,caja,val_uni,span_desc,boton_crear, div_guardar,cant_ori,letrero_span){
+ 
+alert(document.getElementById(cant_ori).value)
+return false;
+//var canti_origi=parseInt(document.getElementById(cant_ori).value);
+ 
+//alert(canti_origi)
+//alert(parseInt(document.getElementById(caja).value))
+ 
+ 
+/*
+if ( parseInt(document.getElementById(cant_ori).value) < parseInt(document.getElementById(caja).value) )
+{
+	alert('Cantidad No permitida, Verifique')
+	return false;
+}
+ 
+ 
+document.getElementById("todocompra").value = parseInt(document.getElementById("todocompra").value) - parseInt((val_uni * document.getElementById(letrero_span).value) );
+document.getElementById(boton_crear).style.display='inline';
+document.getElementById(div_guardar).style.display='none';
+document.getElementById(span_desc).style.display='inline';
+document.getElementById(div_caja).style.display='none';
+document.getElementById(letrero_span).value=document.getElementById(caja).value;
+ 
+document.getElementById("todocompra").value = parseInt(document.getElementById("todocompra").value) + parseInt((val_uni * document.getElementById(letrero_span).value));*/
+alert("hola mundo")
+ 
+}
+ 
+ 
+</script>
+ 
+<script type="text/javascript" src="js/js.js"></script>
+<link href="css/stylesforms.css" rel="stylesheet" type="text/css" />
+<link href="css/styles2.css" rel="stylesheet" type="text/css" />
+<link href="informes/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body >
+<div id="total">
+<form  name="forma" id="forma" action="man_devolucion.php"  method="post">
+<table width="750" border="0" cellspacing="0" cellpadding="0" align="center" >
+  <tr>
+   <td bgcolor="#E9E9E9" >
+   <table width="100%" height="30" border="0" cellspacing="0" cellpadding="0" align="center" > 
+      <tr>
+        <td width="5" height="30">&nbsp;</td>
+        <td width="20" ><img src="imagenes/icoguardar.png" alt="Nueno Registro" width="16" height="16" border="0" onClick="cambio_guardar()" style="cursor:pointer"/></td>
+        <td width="61" class="ctablaform">Guardar</td>
+        <td width="21" class="ctablaform"><a href="con_cargue.php?confirmacion=0&editar=1&insertar=1&eliminar=1"><img src="imagenes/cancel.png" alt="Cancelar" width="16" height="16" border="0" /></a></td>
+        <td width="65" class="ctablaform">Cancelar </td>
+        <td width="22" class="ctablaform"><a href="con_cargue.php?confirmacion=0&editar=1&insertar=1&eliminar=1"><img src="imagenes/iconolupa.gif" alt="Buscar" width="16" height="16" border="0" /></a></td>
+        <td width="70" class="ctablaform">Consultar</td>
+        <td width="21" class="ctablaform"></td>
+        <td width="60" class="ctablaform">&nbsp;</td>
+        <td width="24" valign="middle" class="ctablaform">&nbsp;</td>
+        <td width="193" valign="middle">
+ 
+          <input type="hidden" name="editar"   id="editar"   value="1">
+		  <input type="hidden" name="insertar" id="insertar" value="1">
+		  <input type="hidden" name="eliminar" id="eliminar" value="1">
+          <input type="hidden" name="codigo" id="codigo" value="5260" /> </td>
+        
+        <td width="67" valign="middle">&nbsp;</td>
+      </tr>
+    </table>
+	</td>
+  </tr>
+  <tr>
+    <td height="4" valign="bottom"><img src="imagenes/lineasup2.gif" alt="." width="100%" height="4" /></td>
+  </tr>
+  <tr>
+    <td class="textotabla01">FACTURACION :</td>
+  </tr>
+  <tr>
+    <td><img src="imagenes/lineasup2.gif"  width="100%" height="4" /></td>
+  </tr>
+  <tr>
+    <td bgcolor="#E9E9E9" valign="top">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+        <td width="62" class="textotabla1">Fecha:</td>
+        <td width="275" class="subtitulosproductos">2011-02-19          <input name="fecha_fac" id="fecha_fac" type="hidden" value="2011-02-19"  /></td>
+        <td width="20" class="textorojo">*</td>
+        <td width="77" class="textotabla1">Vendedor:</td>
+        <td width="145"  class="subtitulosproductos">
+		RUBEN DARIO		<input name="vendedor" id="vendedor" type="hidden" value="5"></td>		 
+        <td width="171" class="textorojo">&nbsp;</td>
+       </tr>
+	   <tr>
+        <td width="62" class="textotabla1">Empresa:</td>
+        <td width="275" class="subtitulosproductos">
+		THE SPORT SHOP / RUBEN SARMIENTO		<input name="empresa" id="empresa" type="hidden" value="15"></td>
+        <td width="20" class="textorojo">*</td>
+        <td width="77" class="textotabla1"> Bodega:</td>
+        <td class="subtitulosproductos"><span class="textoproductos1">
+          ALMACEN 7 AGOSTO          <input name="bodega_fac" id="bodega_fac" type="hidden" value="225">
+        </span></td>		 
+        <td width="171" >
+			<input name="numero_factura" id="numero_factura" type="hidden" value="5260" />
+		</td>
+       </tr>
+	   <tr>
+        <td width="62" class="textotabla1">Cliente:</td>
+        <td width="275" class="subtitulosproductos">
+		STELLA CELIS  /  MICEL		<input name="cliente_fac" id="cliente_fac" type="hidden" value="247"></td>
+        <td width="20" class="textorojo">*</td>
+        <td width="77" class="textotabla1">&nbsp;</td>
+        <td colspan="2"><div id="cupo" style="display:none">
+          <span class="textotabla1">Cupo:<span class="textorojo">
+          <input name="cupo_credito" id="cupo_credito" type="text" class="caja_resalte1"  readonly="-1"/>
+          </span></span>		  </div>		  
+		<span  id="div_credito" style="display:none" class="textoproductos1"> 
+		$  0		<input name="cupo_covinoc" type="hidden" id="cupo_covinoc"  value="0" readonly="-1" align="right"/>
+		</span></td>		 
+        </tr>
+	   <tr>
+        <td colspan="7" class="textotabla1" >
+		<table  width="100%" border="1">
+		      
+		  <tr >
+		  <td width="4%">
+			  <table width="100%">
+				<tr id="fila_0">
+				
+				<td width="20%"  class="ctablasup">Referencia</td>
+				<td width="13%"  class="ctablasup">Codigo</td>
+				<td width="9%"   class="ctablasup">Talla</td>
+				<td width="10%"  class="ctablasup">Cantidad</td>
+				<td width="7%"  class="ctablasup">Valor</td>
+				<td width="13%"   class="ctablasup">Opcion</td>
+				<td width="21%"    class="ctablasup">Cantidad Dev. </td>
+				
+				</tr>
+				<tr id='fila_1'><td > <INPUT type='hidden'  name='codigo_mfac_1' value='5260'> <INPUT type='hidden'  name='codigo_det_fac_1' value='12279'> <INPUT type='hidden'  name='codigo_referencia_1' value='573'><span  class='textfield01'> UNIFORME MANCHESTER VISITOR N.T </span> </td><td ><span  class='textfield01'> UEFA0093 </span> </td><td   ><INPUT type='hidden'  name='codigo_peso_1' value='3'><span  class='textfield01'> M </span> </td><td align='right'><INPUT type='hidden'  name='cantidad_ref_1' value='1'><span  class='textfield01'>1  </span> </td><td align='right'><INPUT type='hidden'  name='costo_ref_1' value='19000'><span  class='textfield01'>19.000  </span> </td><td>
+						<div align='center'>	
+<INPUT type='button' class='botones' value='Descontar' id='boton_desc_1' onclick='crear_descuento("div_caja_desc_1","caja_cant_desc_1","19000","span_crear_desc_1","boton_desc_1","div_actua_1" );'>
+						</div>
+						<div align='center' style='display:none' id='div_actua_1'>	
+<INPUT type='button' class='botones' value='Actualizar' id='boton_actua_1' onclick='guardar_descuento("div_caja_desc_1","caja_cant_desc_1","19000","span_crear_desc_1","boton_desc_1","div_actua_1" ,"cantidad_ref_1" ,"valor_span_1" );'> 
+						</div>
+						</td><td>
+								<table width='100%'>
+									<tr>
+										<td >
+										 	<div style='display:none' id='div_caja_desc_1'>
+										 		<input name='caja_cant_desc_1' id='cant_desc_1' type='text' class='textfield01'  value='0'   onkeypress='return validaInt(this)' />
+										 	</div>
+										 </td>
+										 <td  style='display:inline'>
+										 	<div id='span_crear_desc_1' >
+											<input name='valor_span_1' id='valor_span_1' type='text' class='botones'  value='0' readonly='-1'/>
+											</div>
+										 </td>
+									</tr>
+								</table>
+						 </td></tr>				</table>			</td>
+			</tr>			
+		 <tr >
+		  <td>
+			  <table width="100%">
+				<tr >
+				<td  class="ctablasup"><div align="left">Observaciones:</div></td>
+				<td  class="ctablasup"><div align="right">Resumen Venta </div></td>
+				</tr>
+				<tr >
+				<td width="47%" ><div align="left" >
+				  <textarea name="observaciones" cols="45" rows="3" class="textfield02"></textarea>
+				</div>				  </td>
+				<td width="53%" ><div align="right"><span class="ctablasup">Total  Descuento:</span>
+ <input name="todocompra" id="todocompra" type="text" class="textfield01" readonly="1"  value="0 "/>
+				  </div></td>
+				</tr>
+				</table>			  </td>
+			</tr>
+		</table>
+		  </table>
+		  
+	    </td>
+	  </tr>
+	  <tr> 
+		  <td colspan="8" >		  </td>
+	  </tr>
+    </table>
+<tr>
+ 
+  <tr>
+    <td>
+	<input type="hidden" name="val_inicial" id="val_inicial" value="1" />
+	<input type="hidden" name="guardar" id="guardar" />
+		 	   <input type="hidden" id="valDoc_inicial" value=""> 
+	   <input type="hidden" name="cant_items" id="cant_items" value=" ">
+	</td>
+  </tr>
+  
+</table>
+</form> 
+</div>
+</body>
+</html>
+
